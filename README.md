@@ -1,1 +1,3 @@
-Team 5
+# DuoGradus
+
+Wenn Duolingo ein Schrittezähler wäre
