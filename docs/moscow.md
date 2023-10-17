@@ -1,4 +1,4 @@
-# DuoGradus - Requirements Engineering (MoSCoW)
+# DuoGradus - Requirements Engineering ([MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method))
 
 ## Must have
 
