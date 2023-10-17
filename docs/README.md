@@ -1,1 +1,1 @@
-Docs
+# DuoGradus - Dokumentation
