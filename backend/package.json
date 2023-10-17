@@ -1,0 +1,14 @@
+{
+  "name": "duogradus-backend",
+  "version": "1.0.0",
+  "description": "Software-Engineering Project TINF22B2 - Team 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TINF22B2-G5",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
