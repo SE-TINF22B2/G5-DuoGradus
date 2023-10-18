@@ -1,4 +1,5 @@
-![test](https://github.com/SE-TINF22B2/DuoGradus/actions/workflows/backend.yml/badge.svg)
+![Backend](https://github.com/SE-TINF22B2/DuoGradus/actions/workflows/backend.yml/badge.svg)
+![Frontend](https://github.com/SE-TINF22B2/DuoGradus/actions/workflows/frontend.yml/badge.svg)
 
 # DuoGradus
 
