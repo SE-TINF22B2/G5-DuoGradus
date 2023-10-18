@@ -1,5 +1,5 @@
-![Backend](https://github.com/SE-TINF22B2/DuoGradus/actions/workflows/backend.yml/badge.svg)
-![Frontend](https://github.com/SE-TINF22B2/DuoGradus/actions/workflows/frontend.yml/badge.svg)
+![GitHub Workflow Status Backend](https://img.shields.io/github/actions/workflow/status/SE-TINF22B2/DuoGradus/backend.yml?style=flat-square&label=Backend)
+![GitHub Workflow Status Frontend](https://img.shields.io/github/actions/workflow/status/SE-TINF22B2/DuoGradus/frontend.yml?style=flat-square&label=Frontend)
 
 # DuoGradus
 
