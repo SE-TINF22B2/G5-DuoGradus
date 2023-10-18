@@ -2,7 +2,7 @@
 
 - [MoSCoW Analyse](./moscow.md)
 - [Architektur](./architecture.md)
-- [Weekly Reports](./weekly.md)
+- [Weekly Reports](https://github.com/SE-TINF22B2/DuoGradus/discussions/categories/statusberichte)
 
 ## Idee
 
