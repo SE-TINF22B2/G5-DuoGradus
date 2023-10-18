@@ -1,3 +1,5 @@
+![test](https://github.com/SE-TINF22B2/DuoGradus/actions/workflows/backend.yml/badge.svg)
+
 # DuoGradus
 
 DuoGradus (lat. Gradus = Schritte, DuoGradus = Zwei Schritte)
