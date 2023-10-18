@@ -1,3 +1,11 @@
 # DuoGradus
 
-Wenn Duolingo ein Schrittezähler wäre
+DuoGradus (lat. Gradus = Schritte, DuoGradus = Zwei Schritte)
+
+Dieses Repository beinhaltet das Software Engineering Projekt der Gruppe 5.
+
+## Struktur
+
+- [frontend](./frontend/) - Beinhaltet den frontend code
+- [backend](./backend/) -  Beinhaltet den backend code
+- [docs](./docs/) - Beinhaltet alle Dateien die das Projektmanagement sowie die Dokumentation des Projektes
