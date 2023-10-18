@@ -3,7 +3,7 @@
 
 name: Backend
 
-on:
+on: workflow_dispatch
 
 jobs:
   echo:
