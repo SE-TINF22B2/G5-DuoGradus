@@ -12,4 +12,4 @@ Dieses Repository beinhaltet das Software Engineering Projekt der Gruppe 5.
 
 - [frontend](./frontend/) - Beinhaltet den frontend code
 - [backend](./backend/) -  Beinhaltet den backend code
-- [docs](./docs/) - Beinhaltet alle Dateien die das Projektmanagement sowie die Dokumentation des Projektes
+- [wiki](https://github.com/SE-TINF22B2/G5-DuoGradus/wiki) - Beinhaltet die Dokumentation des Projektes, sowohl die technische, als auch die benutzerorientierte
