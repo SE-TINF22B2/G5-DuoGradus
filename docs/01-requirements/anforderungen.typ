@@ -1,7 +1,4 @@
 #set heading(numbering: "1.")
-#set page(
-    numbering: "1"
-)
 
 #align(center, text(24pt)[
     *DuoGradus*
@@ -10,6 +7,28 @@
 #align(center, text(17pt)[
     Anforderungen
 ])
+
+#pagebreak()
+#set page(
+    numbering: "i"
+)
+
+#show outline.entry.where(
+    level: 1
+): it => {
+    v(10pt)
+    text(size: 14pt, strong(it))
+}
+#outline(
+    title: [Inhalt],
+    indent: auto,
+    depth: 3
+)
+
+#pagebreak()
+#set page(
+    numbering: "1",
+)
 
 = Präambel
 == Projektbeschreibung
@@ -68,6 +87,12 @@ Folgende Anbieter werden für die Implementierung herangezogen:
 
 Mindestens erforderlich ist die Integration eines einzigen Anbieters, aufgrund der vergleichsweise simplen Schnittstelle wird Fitbit für eine erste Implementierung empfohlen.
 
+==== Technische Betrachtung
+Für die Integration mit Drittanbietern ist es notwendig, dass diese eine Schnittstelle anbieten, auf die wir zugreifen können. Wir möchten für diese Anwendung nur offizielle Schnittstellen verwenden. Da wir keine Anwendung auf den Endgeräten planen müssen wir uns auf Web-APIs beschränken.
+
+FitBit bietet eine Rest-API an, die sich für diesen Zweck eignen könnte. Für die Nutzung dieser ist lediglich ein FitBit-Account notwendig. 
+
+Die Daten müssen durch das Backend von der API abgerufen werden, dafür ist bei den meisten APIs eine Zustimmung des Nutzers über das OAuth2-Verfahren notwendig. Der Nutzer muss die Anwendung einmalig berechtigen und kann dabei auch Berechtigungen festlegenen.
 === Aufgaben, Ziele und Abzeichen [PM-2]
 #table(
     columns: (1fr, 2fr),
@@ -158,7 +183,26 @@ Die Wetter-Daten sollen für personalisierte Aufgaben verwendet werden (z.B. "Ma
 )
 Die Anwendung soll dem Nutzer die Möglichkeit bieten in Aktivitäten gesammelte Punkte für virtuelle Gegenstände auszugeben. Denkbar wäre z.B. ein spezielles Design der Anwendung oder eine Wiederherstellung verlorengeganer Tagespunkte. 
 
-== Kalorienverbrauch [PM-8]
+=== Kalorienverbrauch [PM-8]
+#table(
+    columns: (1fr, 2fr),
+    align: horizon,
+    inset: 7pt,
+    stroke: 1pt,
+    [*Priorität*], [4],
+    [*Komponenten*], [Backend, Frontend],
+)
 Die Anwendung soll, falls durch die Drittanbieter [PM-1] bereitgestellt, dem Nutzer seine aktuell verbrannten Kalorien anzeigen.
 
 Diese Daten können zudem für Aufgaben oder Erfolge verwendet werden.
+
+=== Unterstützung für verschiedene Anmeldeverfahren
+#table(
+    columns: (1fr, 2fr),
+    align: horizon,
+    inset: 7pt,
+    stroke: 1pt,
+    [*Priorität*], [2],
+    [*Komponenten*], [Backend, Frontend],
+)
+Das System ermöglicht es dem Nutzer sich über verschiedene Verfahren und Dienstanbieter (z.B. Google, Apple) anzumelden. Für die Integration kann optional ein Drittsystem verantwortlich sein.
