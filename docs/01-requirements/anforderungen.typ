@@ -8,7 +8,7 @@
 ])
 
 #align(center, text(17pt)[
-    Lastenheft
+    Anforderungen
 ])
 
 = Präambel
@@ -68,7 +68,7 @@ Folgende Anbieter werden für die Implementierung herangezogen:
 
 Mindestens erforderlich ist die Integration eines einzigen Anbieters, aufgrund der vergleichsweise simplen Schnittstelle wird Fitbit für eine erste Implementierung empfohlen.
 
-=== Aufgaben und Ziele [PM-2]
+=== Aufgaben, Ziele und Abzeichen [PM-2]
 #table(
     columns: (1fr, 2fr),
     align: horizon,
@@ -92,6 +92,8 @@ Weitere optionale Felder sind:
 
 Falls möglich, sollen neben Schrittzielen zusätzlich Aktivitätsziele definiert werden.
 
+Für bestimmte Aktivitäten soll ein Nutzer zudem Abzeichen / Erfolge sammeln können. Denkbar wäre hier beispielsweise ein Abzeichen "Nicht aus Zucker" für eine Aktivität im Regen.
+
 === Tageszielpunkte [PM-3]
 #table(
     columns: (1fr, 2fr),
@@ -103,6 +105,60 @@ Falls möglich, sollen neben Schrittzielen zusätzlich Aktivitätsziele definier
 )
 Damit der Nutzer die App regelmäßig verwendet soll der Nutzer für jeden Tag an dem er die App verwendet einen Punkt erhalten. Nutzt er die App an einem Tag nicht (bzw. erfüllt seine Mindest-Anzahl an Schritten nicht) werden die Punkte auf 0 zurückgesetzt.
 
-Gegen Abend soll der Nutzer eine Benachrichtigung erhalten, falls er bisher noch keinen Punkt erreicht hat. Diese soll den Nutzer passiv-aggressiv an seine Schritte erinnern.
+Gegen Abend soll der Nutzer eine Benachrichtigung erhalten, falls er bisher noch keinen Punkt erreicht hat. Diese soll den Nutzer passiv-aggressiv an seine Schritte erinnern (siehe [PM-5])
 
 Optional: Nachrichten mithilfe generativer AI erstellen.
+
+Benachrichtiungen z.B. über E-Mail
+
+=== Rangliste [PM-4]
+#table(
+    columns: (1fr, 2fr),
+    align: horizon,
+    inset: 7pt,
+    stroke: 1pt,
+    [*Priorität*], [7],
+    [*Komponenten*], [Backend, Frontend],
+)
+Die Anwendung bietet Nutzern die Möglichkeit sich in einer Rangliste zu vergleichen. Dabei gibt es eine globale Rangliste und eine private Rangliste, in der sich Nutzer mit Freunden vergleichen können.
+
+Für die private Rangliste müssen Nutzer Freundschaftsanfragen an Nutzer senden können und ihre Freundesliste verwalten können.
+
+=== Erinnerungen [PM-5]
+#table(
+    columns: (1fr, 2fr),
+    align: horizon,
+    inset: 7pt,
+    stroke: 1pt,
+    [*Priorität*], [7],
+    [*Komponenten*], [Backend],
+)
+Die Anwendung soll dem Nutzer automatisiert Benachrichtungen senden, falls er bis zu einer bestimmten Tageszeit seine Ziele noch nicht erreicht hat.
+
+=== Schnittstelle für Wetter-Daten [PM-6]
+#table(
+    columns: (1fr, 2fr),
+    align: horizon,
+    inset: 7pt,
+    stroke: 1pt,
+    [*Priorität*], [5],
+    [*Komponenten*], [Backend, Frontend],
+)
+Die Anwendung soll es Nutzern ermöglichen ihren (Haupt-)Standort festzulegen und sich dann mit den Wetter-Daten des jeweiligen Standorts verknüpfen lassen.
+Die Wetter-Daten sollen für personalisierte Aufgaben verwendet werden (z.B. "Mache 2.000 Schritte im Regen") oder dem Nutzer ein Bonus-Abzeichen geben.
+
+=== Integration eines Shops [PM-7]
+#table(
+    columns: (1fr, 2fr),
+    align: horizon,
+    inset: 7pt,
+    stroke: 1pt,
+    [*Priorität*], [2],
+    [*Komponenten*], [Backend, Frontend],
+)
+Die Anwendung soll dem Nutzer die Möglichkeit bieten in Aktivitäten gesammelte Punkte für virtuelle Gegenstände auszugeben. Denkbar wäre z.B. ein spezielles Design der Anwendung oder eine Wiederherstellung verlorengeganer Tagespunkte. 
+
+== Kalorienverbrauch [PM-8]
+Die Anwendung soll, falls durch die Drittanbieter [PM-1] bereitgestellt, dem Nutzer seine aktuell verbrannten Kalorien anzeigen.
+
+Diese Daten können zudem für Aufgaben oder Erfolge verwendet werden.
