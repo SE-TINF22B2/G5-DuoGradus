@@ -13,20 +13,13 @@ body:
   - type: textarea
   attributes:
     label: "### ✅ Was ist diese Woche passiert?"
-    placeholder: |
-      - 
-      - 
-      - 
   - type: textarea
   attributes:
     label: "### 👣 Was sind die nächsten Schritte?"
-    value: "- "
   - type: textarea
   attributes:
     label: "### 🤺 Was waren/sind eventuelle Hindernisse?"
-    value: "- "
   - type: textarea
   attributes:
     label: "### 💡 Was waren die Erkenntnisse dieser Woche?"
-    value: "- "
   
