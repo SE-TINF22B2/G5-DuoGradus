@@ -29,6 +29,7 @@ Die Dokumentation des Projekts findet hauptsächlich über das [Wiki](https://gi
 ## 🕰️ Status
 - ✅ Neue und Erledigte Aufgaben befinden sich im ➡️ [Backlog](https://github.com/orgs/SE-TINF22B2/projects/14)
 - ⏺️ Aktuelle Aufgaben werden zudem in Issues repliziert, in denen zudem der Zwischenstand dokumentiert wird. ➡️ [Issues](https://github.com/SE-TINF22B2/G5-DuoGradus/issues)
+- 📜 Status Reports werden wöchentlich als Discussion angelegt ➡️ [Status Reports](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions/categories/statusberichte)
 
 ## ⚙️ Technische Planung
 Weitere Details über Technische Entscheidungen finden sich im Wiki ➡️ [Technische Planung](https://github.com/SE-TINF22B2/G5-DuoGradus/wiki/Technische%20Planung)
