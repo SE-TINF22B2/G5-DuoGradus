@@ -1,25 +1,25 @@
 title: "Week [Woche] ([Jahr] KW [Kalenderwoche], [Startdatum]-[Enddatum])"
 body:
   - type: dropdown
-  attributes:
-    label: "Aktueller Status: "
-    options:
-      - 🟥
-      - 🟨
-      - 🟩
-    default: 2
-  validations:
-    required: true
+    attributes:
+      label: "### Aktueller Status: "
+      options:
+        - 🟥
+        - 🟨
+        - 🟩
+      default: 2
+    validations:
+      required: true
   - type: textarea
-  attributes:
-    label: "### ✅ Was ist diese Woche passiert?"
+    attributes:
+      label: "### ✅ Was ist diese Woche passiert?"
   - type: textarea
-  attributes:
-    label: "### 👣 Was sind die nächsten Schritte?"
+    attributes:
+      label: "### 👣 Was sind die nächsten Schritte?"
   - type: textarea
-  attributes:
-    label: "### 🤺 Was waren/sind eventuelle Hindernisse?"
+    attributes:
+      label: "### 🤺 Was waren/sind eventuelle Hindernisse?"
   - type: textarea
-  attributes:
-    label: "### 💡 Was waren die Erkenntnisse dieser Woche?"
+    attributes:
+      label: "### 💡 Was waren die Erkenntnisse dieser Woche?"
   
