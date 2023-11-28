@@ -53,7 +53,7 @@ paths:
                             email:
                                 type: string
                             name:
-                                typpe: string
+                                type: string
                     example:
                         name: Ingolf Neiße
                         email: ingolf@neis.se
@@ -80,6 +80,84 @@ paths:
                             type: array
                             items:
                                 $ref: '#/components/schemas/Activity'
+    post:
+        summary: Create an activity as manual record (limits may apply)
+        operationId: recordActivity
+        tags:
+            - Activity
+        requestBody:
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        properties:
+                            type:
+                                type: integer
+                            begin:
+                                type: string
+                                format: date-time
+                            end:
+                                type: string
+                                format: date-time
+                            value:
+                                type: number
+                            metric:
+                                type: integer
+                            points:
+                                type: integer
+        responses:
+            '201':
+                description: The activity was created successfully
+                content:
+                    'application/json':
+                        schema:
+                            $ref: '#/components/schemas/Activity'
+            '400':
+                description: Invalid properties / activity type not supported
+            '401':
+                description: User is not authenticated
+ '/activities/{id}':
+    get:
+        summary: Returns a single activity
+        operationId: getActivity
+        tags:
+            - Activity
+        parameters:
+            - in: path
+              name: id
+              schema:
+                type: string
+              required: true
+        responses:
+            '200':
+                description: Activity
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Activity'
+            '404':
+                description: Activity not found
+            '401':
+                description: User is not authenticated
+    delete:
+        summary: Delete an activity
+        operationId: deleteActivity
+        tags:
+            - Activity
+        parameters:
+            - in: path
+              name: id
+              schema:
+                type: string
+              required: true
+        responses:
+            '204':
+                description: Activity deleted successfully
+            '403':
+                description: Not allowed to delete activity
+            '401':
+                description: User not authenticated
+                            
 components:
   schemas:
     User:
@@ -105,8 +183,10 @@ components:
           type: integer
         begin:
           type: string
+          format: date-time
         end:
           type: string
+          format: date-time
         value:
           type: number
         metric:
