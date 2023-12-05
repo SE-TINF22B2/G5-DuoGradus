@@ -346,19 +346,17 @@ components:
     Order:
       type: object
     Leaderboard:
-      schema:
-        type: object
-        properties:
-          position:
-            type: integer
-          color:
-            type: integer
-          displayname:
-            type: string
-          points:
-            type: integer
+      type: object
+      properties:
+        position:
+          type: integer
+        color:
+          type: integer
+        displayname:
+          type: string
+        points:
+          type: integer
     PrivateLeaderboard:
-        schema:
           type: object
           properties:
             id:
