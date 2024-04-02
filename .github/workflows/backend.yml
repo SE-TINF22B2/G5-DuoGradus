@@ -7,6 +7,9 @@ on:
   push:
     branches:
       - main
+  pull_request_target:
+    branches:
+      - main
 
 jobs:
   build:
@@ -22,7 +25,7 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install
+      run: cd backend && npm install
 
     - name: Run tests
-      run: npm test
+      run: cd backend && npm test
