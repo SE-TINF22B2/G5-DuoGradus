@@ -11,7 +11,7 @@ describe('AppController', () => {
   });
 
   describe('getPing', () => {
-    it('should return pong on ping', () => {
+    it('should call getPing in app service', () => {
       jest.spyOn(appService, 'getPing').mockReturnValue('pong');
       expect(appController.getPing()).toBe('pong');
     });
