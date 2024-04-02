@@ -27,4 +27,4 @@ jobs:
       run: cd frontend && npm install
 
     - name: Run tests
-      run: cd frontend && npm test
+      run: cd frontend && npm run test

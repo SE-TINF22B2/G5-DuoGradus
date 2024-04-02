@@ -26,5 +26,5 @@ jobs:
     - name: Install dependencies
       run: cd backend && npm install
 
-    - name: Run tests
-      run: cd backend && npm test
+    - name: Run verify
+      run: cd backend && npm run verify
