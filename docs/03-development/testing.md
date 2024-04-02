@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Since backend and frontend use the same technology, the same testing framework can be used for both. Mocka and jest were considered as testing frameworks. Jest was chosed, because it is more commonly used and the team was more familiar with it. Nest, which is used as the bacckend framework, also uses jest for testing by default.
+Since backend and frontend use the same technology, the same testing framework can be used for both. Mocha and Jest were considered as testing frameworks. Jest was chosen, because it is more commonly used and the team was more familiar with it. NestJS, which is used as the backend framework, also uses jest for testing by default.
 
 ## Getting started
 
