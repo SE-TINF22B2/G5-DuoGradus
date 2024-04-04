@@ -4,7 +4,9 @@
 
 > **Disclaimer**: DuoGradus is is a project for the lecture "Software Engineering" held in the Baden-Württemberg Cooperative State University. **This is not a real world application.**
 
-# 👟 DuoGradus
+<p align="center">
+  <img width="523" src="https://github.com/Jstn2004/Login/assets/135236159/0e961393-d04d-4a7b-97ed-37e91c011778">
+</p>
 “DuoGradus” ist eine innovative Anwendung, die dir hilft, deine Fitness-Ziele zu erreichen. Dazu bieten wir dir ein innovatives Konzept, welches auf Gamification und Regelmäßigkeit setzt, sodass du dein Ziel auch langfristig erreichen kannst.  
 
 Mithilfe von vielen spannenden Challenges ermutigen wir dich Schritte zu sammeln, Fahrrad zu fahren oder im Fitness-Studio zu trainieren. Manchmal geben wir dir auch zusätzliche Herausforderungen (z.B. Schritte im Regen), die dann mit Abzeichen und anderen Erfolgen belohnt werden. 
