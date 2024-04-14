@@ -9,7 +9,7 @@
     "verify": "npm run build && npm run check && npm run test:cov && npm run test:e2e",
     "build": "nest build",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "start:dev": "npm run db:reset && nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
