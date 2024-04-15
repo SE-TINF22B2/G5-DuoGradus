@@ -69,12 +69,9 @@ describe('Cats', () => {
   });
 
   it(`/GET cats`, () => {
-    return request(app.getHttpServer())
-      .get('/cats')
-      .expect(200)
-      .expect({
-        data: catsService.findAll(),
-      });
+    return request(app.getHttpServer()).get('/cats').expect(200).expect({
+      data: catsService.findAll(),
+    });
   });
 
   afterAll(async () => {
@@ -102,7 +99,7 @@ Potractor: https://www.protractortest.org/#/
 
 The unit tests are placed directly within the same folder as the file being tested and have the extension `.spec.ts`. End-to-end tests are located in a `test` folder and have the extension `.e2e-spec.ts`.
 
-### Example Unit Test 
+### Example Unit Test
 
 ```ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -114,9 +111,8 @@ describe('GreetingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GreetingComponent ]
-    })
-    .compileComponents();
+      declarations: [GreetingComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -134,11 +130,12 @@ describe('GreetingComponent', () => {
     expect(element.textContent).toContain('Hello, World!');
   });
 });
-
 ```
 
 ### Example E2E-Test
+
 ---
+
 ```ts
 // Beispiel-E2E-Test: app.e2e-spec.ts
 
@@ -154,9 +151,4 @@ describe('Greeting App', () => {
     expect(greetingMessage.getText()).toEqual('Hello, World!');
   });
 });
-
 ```
-
-
-
-
