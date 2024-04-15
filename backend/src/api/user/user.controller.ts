@@ -1,6 +1,6 @@
 import { Controller, Get, Request, UseGuards } from '@nestjs/common';
 import { User } from '@prisma/client';
-import { AutoGuard } from 'src/auth/auto.guard';
+import { AutoGuard } from '../../auth/auto.guard';
 
 type SanatizedUser = Omit<User, 'password'>;
 

@@ -17,7 +17,7 @@ describe('UserController', () => {
     expect(controller).toBeDefined();
   });
 
-  it('Should return a SanatizedUser object in a gest request', () => {
+  it('Should return a SanatizedUser object in a gest request', async () => {
     const user : User = {
       id: '1',
       displayName: 'Max Mustermann',
@@ -31,7 +31,7 @@ describe('UserController', () => {
       user
     };
 
-    const response = await controller.me(req);
+    const response = (await controller.me(req)) as any;
 
     expect(response?.password).toBeUndefined();
   });

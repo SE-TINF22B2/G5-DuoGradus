@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { PassportModule } from '@nestjs/passport';
 import { HTTPStrategy } from './strategies/http.strategy';
+import { PrismaModule } from '../db/prisma.module';
 import { AutoGuard } from './auto.guard';
-import { PrismaModule } from 'src/db/prisma.module';
 
 @Module({
   imports: [PrismaModule, PassportModule],
