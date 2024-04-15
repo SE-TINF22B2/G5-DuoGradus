@@ -9,7 +9,8 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
-
+    environment: Tests
+    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
