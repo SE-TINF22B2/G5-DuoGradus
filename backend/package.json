@@ -88,6 +88,6 @@
     ]
   },
   "prisma": {
-      "seed": "ts-node src/db/prisma.seed.ts"
+    "seed": "ts-node src/db/prisma.seed.ts"
   }
 }

@@ -5,9 +5,9 @@ info:
     👟 DuoGradus
 
     “DuoGradus” ist eine innovative Anwendung, die dir hilft, deine Fitness-Ziele zu erreichen. Dazu bieten wir dir ein innovatives Konzept, welches auf Gamification und Regelmäßigkeit setzt, sodass du dein Ziel auch langfristig erreichen kannst.
-    
+
     Mithilfe von vielen spannenden Challenges ermutigen wir dich Schritte zu sammeln, Fahrrad zu fahren oder im Fitness-Studio zu trainieren. Manchmal geben wir dir auch zusätzliche Herausforderungen (z.B. Schritte im Regen), die dann mit Abzeichen und anderen Erfolgen belohnt werden.
-    
+
     Damit dir nicht langweilig wird, kannst du dich zusätzlich mit deinen Freunden, aber auch in der globalen Rangliste vergleichen, sodass du immer die Motivation hast, Punkte zu sammeln.
   version: 1.0.0
 externalDocs:
@@ -24,7 +24,7 @@ tags:
   - name: Shop
   - name: Order
 paths:
- '/users/me':
+  '/users/me':
     get:
       summary: Displays the current users settings
       operationId: getUser
@@ -38,126 +38,126 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
         '401':
-            description: User not authenticated
+          description: User not authenticated
     patch:
-        summary: Changes a user session
-        operationId: patchUser
-        tags:
-            - User
-        requestBody:
-            content:
-                application/json:
-                    schema:
-                        type: object
-                        parameters:
-                            email:
-                                type: string
-                            name:
-                                type: string
-                    example:
-                        name: Ingolf Neiße
-                        email: ingolf@neis.se
+      summary: Changes a user session
+      operationId: patchUser
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              parameters:
+                email:
+                  type: string
+                name:
+                  type: string
+            example:
+              name: Ingolf Neiße
+              email: ingolf@neis.se
 
-        responses:
-            '204':
-                description: User changed successfully
-            '400':
-                description: Invalid content
-            '403':
-                description: Not allowed to change attribute
- '/activies':
+      responses:
+        '204':
+          description: User changed successfully
+        '400':
+          description: Invalid content
+        '403':
+          description: Not allowed to change attribute
+  '/activies':
     get:
-        summary: Get a list of activities of the current user
-        operationId: listActivities
-        tags:
-            - Activity
-        responses:
-            '200':
-                description: List of activities
-                content:
-                    application/json:
-                        schema:
-                            type: array
-                            items:
-                                $ref: '#/components/schemas/Activity'
+      summary: Get a list of activities of the current user
+      operationId: listActivities
+      tags:
+        - Activity
+      responses:
+        '200':
+          description: List of activities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Activity'
     post:
-        summary: Create an activity as manual record (limits may apply)
-        operationId: recordActivity
-        tags:
-            - Activity
-        requestBody:
-            content:
-                application/json:
-                    schema:
-                        type: object
-                        properties:
-                            type:
-                                type: integer
-                            begin:
-                                type: string
-                                format: date-time
-                            end:
-                                type: string
-                                format: date-time
-                            value:
-                                type: number
-                            metric:
-                                type: integer
-                            points:
-                                type: integer
-        responses:
-            '201':
-                description: The activity was created successfully
-                content:
-                    'application/json':
-                        schema:
-                            $ref: '#/components/schemas/Activity'
-            '400':
-                description: Invalid properties / activity type not supported
-            '401':
-                description: User is not authenticated
- '/activities/{id}':
+      summary: Create an activity as manual record (limits may apply)
+      operationId: recordActivity
+      tags:
+        - Activity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: integer
+                begin:
+                  type: string
+                  format: date-time
+                end:
+                  type: string
+                  format: date-time
+                value:
+                  type: number
+                metric:
+                  type: integer
+                points:
+                  type: integer
+      responses:
+        '201':
+          description: The activity was created successfully
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Activity'
+        '400':
+          description: Invalid properties / activity type not supported
+        '401':
+          description: User is not authenticated
+  '/activities/{id}':
     get:
-        summary: Returns a single activity
-        operationId: getActivity
-        tags:
-            - Activity
-        parameters:
-            - in: path
-              name: id
+      summary: Returns a single activity
+      operationId: getActivity
+      tags:
+        - Activity
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Activity
+          content:
+            application/json:
               schema:
-                type: string
-              required: true
-        responses:
-            '200':
-                description: Activity
-                content:
-                    application/json:
-                        schema:
-                            $ref: '#/components/schemas/Activity'
-            '404':
-                description: Activity not found
-            '401':
-                description: User is not authenticated
+                $ref: '#/components/schemas/Activity'
+        '404':
+          description: Activity not found
+        '401':
+          description: User is not authenticated
     delete:
-        summary: Delete an activity
-        operationId: deleteActivity
-        tags:
-            - Activity
-        parameters:
-            - in: path
-              name: id
-              schema:
-                type: string
-              required: true
-        responses:
-            '204':
-                description: Activity deleted successfully
-            '403':
-                description: Not allowed to delete activity
-            '401':
-                description: User not authenticated
- '/achievements':
+      summary: Delete an activity
+      operationId: deleteActivity
+      tags:
+        - Activity
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '204':
+          description: Activity deleted successfully
+        '403':
+          description: Not allowed to delete activity
+        '401':
+          description: User not authenticated
+  '/achievements':
     get:
       summary: Get a list of all achievements for the current user
       operationId: getAchievements
@@ -170,7 +170,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Achievement'
- '/datasources':
+  '/datasources':
     get:
       summary: Get a list of all connected data sources
       operationId: getDatasources
@@ -183,7 +183,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Datasource'
- '/leaderboard':
+  '/leaderboard':
     get:
       summary: Get the general leaderboard
       operationId: getGeneralLeaderb
@@ -198,7 +198,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Leaderboard'
- '/leaderboards':
+  '/leaderboards':
     get:
       summary: Get a list of private leaderboards the user can access
       operationId: getLeaderboards
@@ -229,7 +229,7 @@ paths:
       responses:
         '201':
           description: Leaderboard created
- '/leaderboards/join':
+  '/leaderboards/join':
     post:
       summary: Join a private / public leaderboard
       operationId: joinLeaderboard
@@ -250,7 +250,7 @@ paths:
           description: Leaderboard does not exists
         '401':
           description: User not authorized
- '/leaderboards/{id}':
+  '/leaderboards/{id}':
     get:
       summary: Get a list of private leaderboards the user can access
       operationId: getPrivateLeaderboard
@@ -287,8 +287,7 @@ paths:
           description: Leaderboard not found / user not member
         '401':
           description: Unauthorized
-          
-                            
+
 components:
   schemas:
     User:
@@ -357,13 +356,13 @@ components:
         points:
           type: integer
     PrivateLeaderboard:
-          type: object
-          properties:
-            id:
-              type: string
-            name:
-              type: string
-            creator:
-              type: string
-            public:
-              type: boolean
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        creator:
+          type: string
+        public:
+          type: boolean
