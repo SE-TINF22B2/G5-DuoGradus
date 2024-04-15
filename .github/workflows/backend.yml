@@ -25,7 +25,7 @@ jobs:
       run: cd backend && npm install
 
     - name: Reset the database (for e2e tests)
-      run: npm run db:reset
+      run: cd backend && npm run db:reset
 
     - name: Run verify
       run: cd backend && npm run verify
