@@ -4,14 +4,13 @@ import { PrismaService } from '../prisma.service';
 
 @Injectable()
 export class UserRepository {
-  
   constructor(private prisma: PrismaService) {}
 
   /**
    * Returns a user via it's email adresss
-   * 
-   * @param email 
-   * @returns 
+   *
+   * @param email
+   * @returns
    */
   public async findByEmail(email: string): Promise<User | null> {
     return await this.prisma.user.findUnique({
@@ -23,7 +22,7 @@ export class UserRepository {
 
   /**
    * Creates a new user
-   * 
+   *
    * @param email Valid mail address, must be unique
    * @param displayName Display Name choosen by the user
    * @param password Hashed Password
@@ -45,8 +44,8 @@ export class UserRepository {
 
   /**
    * Updates a user
-   * 
-   * @param user 
+   *
+   * @param user
    * @returns Updated User
    */
   public async updateUser(user: User): Promise<User> {
@@ -60,8 +59,8 @@ export class UserRepository {
 
   /**
    * Deletes a user
-   * 
-   * @param where 
+   *
+   * @param where
    * @returns Deleted User
    */
   public async deleteUser(where: Prisma.UserWhereUniqueInput): Promise<User> {

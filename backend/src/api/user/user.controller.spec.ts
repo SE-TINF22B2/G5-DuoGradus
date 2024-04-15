@@ -18,17 +18,17 @@ describe('UserController', () => {
   });
 
   it('Should return a SanatizedUser object in a gest request', async () => {
-    const user : User = {
+    const user: User = {
       id: '1',
       displayName: 'Max Mustermann',
       email: 'max@mustermann.de',
       password: '1234',
       verified: true,
       enabled: true,
-    }
+    };
 
     const req = {
-      user
+      user,
     };
 
     const response = (await controller.me(req)) as any;

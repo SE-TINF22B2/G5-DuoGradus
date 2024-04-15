@@ -3,7 +3,6 @@ import { AuthService } from '../auth.service';
 import { DeepMockProxy, mockDeep } from 'jest-mock-extended';
 import { TestConstants } from '../../../test/lib/constants';
 import { HTTPStrategy } from './http.strategy';
-import { UnauthorizedException } from '@nestjs/common';
 
 describe('HTTPStrategy tests', () => {
   let authService: DeepMockProxy<AuthService>;
@@ -35,6 +34,8 @@ describe('HTTPStrategy tests', () => {
   it('should fail with an exception if the credentials are invalid', async () => {
     authService.validateUserPassword.mockResolvedValue(null);
 
-    expect(async () => {await cut.validate('max@example.org', '1234')}).rejects.toThrow();
+    expect(async () => {
+      await cut.validate('max@example.org', '1234');
+    }).rejects.toThrow();
   });
 });
