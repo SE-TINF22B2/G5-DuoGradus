@@ -6,7 +6,6 @@ type SanatizedUser = Omit<User, 'password'>;
 
 @Controller('user')
 export class UserController {
-
   _sanatizeUser(user: User): SanatizedUser {
     const sanatizedUser: SanatizedUser & { password?: string } = user;
 
