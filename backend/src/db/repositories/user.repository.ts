@@ -7,7 +7,7 @@ export class UserRepository {
   constructor(private prisma: PrismaService) {}
 
   /**
-   * Returns a user via it's email adresss
+   * Returns a user by his email adresss
    *
    * @param email
    * @returns

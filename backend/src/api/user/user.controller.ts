@@ -16,7 +16,7 @@ export class UserController {
   /**
    * /user/me
    *
-   * Returns information about the current User
+   * Returns information about the current user
    *
    * @param req
    * @returns
