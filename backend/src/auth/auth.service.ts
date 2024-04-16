@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { User } from '@prisma/client';
-import { compare } from 'bcrypt';
+import bcrypt from 'bcrypt';
 import { UserRepository } from '../db/repositories/user.repository';
 
 @Injectable()
