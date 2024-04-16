@@ -9,7 +9,8 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
-
+    environment: Tests
+    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -23,6 +24,9 @@ jobs:
 
     - name: Install dependencies
       run: cd backend && npm install
+
+    - name: Reset the database (for e2e tests)
+      run: cd backend && npm run db:reset
 
     - name: Run verify
       run: cd backend && npm run verify
