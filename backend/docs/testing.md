@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Since backend and frontend use the same technology, the same testing framework can be used for both. [Mocha](https://github.com/mochajs/mocha) and [Jest](https://github.com/jestjs/jest) were considered as testing frameworks. Jest was chosen, because it is more commonly used and the team was more familiar with it. NestJS, which is used as the backend framework, also uses jest for testing by default.
+[Mocha](https://github.com/mochajs/mocha) and [Jest](https://github.com/jestjs/jest) were considered as testing frameworks. Jest was chosen, because it is more commonly used and the team was more familiar with it. NestJS, which is used as the backend framework, also uses jest for testing by default.
 
 ## Getting started
 
