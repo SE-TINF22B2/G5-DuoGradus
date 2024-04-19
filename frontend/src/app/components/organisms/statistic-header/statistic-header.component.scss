@@ -6,8 +6,7 @@
   height: 20vh;
   position: fixed;
   top: 0;
- z-index: 1;
- border-bottom: 1px solid white;
+  z-index: 1;
 
   p {
     margin: 0;
@@ -30,7 +29,6 @@
     padding: 0;
     display: flex;
     justify-content: space-between;
-   
 
     .time {
       width: 30vw;
@@ -50,7 +48,6 @@
     .steps {
       width: 30vw;
       margin-left: 35px;
-    
 
       span {
         color: var(--green);
@@ -65,16 +62,16 @@
 
     .streak {
       width: 30vw;
-        display: flex;
-        justify-content: center;
-        align-items: start;
+      display: flex;
+      justify-content: center;
+      align-items: start;
       img {
         width: 25px;
         height: 25px;
         margin-right: 8px;
       }
 
-      h2{
+      h2 {
         margin: 0;
         margin-top: 7px;
         font-size: 5vw;
@@ -82,5 +79,3 @@
     }
   }
 }
-
-

@@ -1,26 +1,17 @@
-.map{
-    height: 100%;
-    padding-top: 20vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-   
-}
-
-
-
-/* Alle Buttons */
-.button {
-    /* Stelle sicher, dass der Standardabstand 0 ist */
-    margin-left: 0;
-    margin-right: 70px;
+.map {
+  height: 100%;
+  padding-top: 20vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Nur jeder zweite Button */
-.button:nth-child(odd) {
-    /* Hier kannst du den Abstand von 50px setzen */
-    margin-left: 150px;
+.button {
+  margin-right: 50px;
 }
 
-
+.button:nth-child(odd) {
+  margin-left: 100px;
+}

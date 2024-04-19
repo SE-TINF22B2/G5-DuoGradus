@@ -7,6 +7,7 @@ import { MainpageComponent } from './components/pages/mainpage/mainpage.componen
 import { StatisticHeaderComponent } from './components/organisms/statistic-header/statistic-header.component';
 import { RoadmapComponent } from './components/organisms/roadmap/roadmap.component';
 import { ChallengeButtonComponent } from './components/atoms/challenge-button/challenge-button.component';
+import { ChallengeDialogComponent } from './components/organisms/challenge-dialog/challenge-dialog.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,11 @@ import { ChallengeButtonComponent } from './components/atoms/challenge-button/ch
     MainpageComponent,
     StatisticHeaderComponent,
     RoadmapComponent,
-    ChallengeButtonComponent
+    ChallengeButtonComponent,
+    ChallengeDialogComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
