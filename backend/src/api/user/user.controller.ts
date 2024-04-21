@@ -4,7 +4,7 @@ import { AutoGuard } from '../../auth/auto.guard';
 
 type SanatizedUser = Omit<User, 'password'>;
 
-@Controller('user')
+@Controller('users')
 export class UserController {
   _sanatizeUser(user: User): SanatizedUser {
     const sanatizedUser: SanatizedUser & { password?: string } = user;
@@ -16,7 +16,7 @@ export class UserController {
   /**
    * /user/me
    *
-   * Returns information about the current user
+   * Returns information about the current User
    *
    * @param req
    * @returns
