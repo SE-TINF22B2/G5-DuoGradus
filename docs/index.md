@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Unsere Vision
-      link: /external/idea
+      link: /project/idea
     - theme: alt
       text: GitHub
       link: https://github.com/SE-TINF22B2/G5-DuoGradus

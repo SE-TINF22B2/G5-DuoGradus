@@ -8,33 +8,30 @@ export default withMermaid({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'External', link: '/external/idea' },
-      { text: 'Internal', link: '/internal' }
+      { text: 'Projekt', link: '/project/idea' },
+      { text: 'Guidelines', link: '/guidelines/project-guideline' }
     ],
 
     sidebar: {
-      '/external/': [
+      '/project/': [
         {
           text: 'Über das Projekt',
           items: [
-            { text: 'Unsere Vision', link: '/external/idea' },
+            { text: 'Unsere Vision', link: '/project/idea' },
+            { text: 'Anforderungen an das Projekt', link: '/project/requirements' },
+            { text: 'Das User Interface', link: '/project/user-interface' },
           ]
         },
-        {
-          text: 'Anforderungen',
-          items: [
-            { text: 'Anforderungsdokument', link: '/external/requirements' },
-          ]
-        }
       ],
 
-      '/internal/': [
+      '/guidelines/': [
         {
-          text: 'Internal',
+          text: 'Guidelines',
           items: [
-            { text: 'Index', link: '/config/' },
-            { text: 'Three', link: '/config/three' },
-            { text: 'Four', link: '/config/four' }
+            { text: 'Project Guideline', link: '/guidelines/project-guideline' },
+            { text: 'API', link: '/guidelines/api' },
+            { text: 'Backend Guideline', link: '/guidelines/backend' },
+            { text: 'Frontend Guideline', link: '/guidelines/frontend' }
           ]
         }
       ]
