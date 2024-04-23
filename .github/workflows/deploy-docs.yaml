@@ -26,9 +26,6 @@ concurrency:
 jobs:
   # Build job
   build:
-    defaults:
-      run:
-        working-directory: ./docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,6 +39,7 @@ jobs:
         with:
           node-version: 20
           cache: npm # or pnpm / yarn
+          cache-dependency-path: ./docs/package.json
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
@@ -55,9 +53,6 @@ jobs:
 
   # Deployment job
   deploy:
-    defaults:
-      run:
-        working-directory: ./docs
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
