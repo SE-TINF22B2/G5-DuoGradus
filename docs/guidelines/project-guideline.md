@@ -57,5 +57,3 @@ welche jeweils den Backlog verschieden gegliedert darstellen.
 ---
 
 Die Inspiration für eine Project Guideline ist von [Gruppe 4](https://github.com/SE-TINF22B2/G4-Get2Gether/discussions/14)
-
-

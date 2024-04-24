@@ -26,7 +26,7 @@ Damit dir nicht langweilig wird, kannst du dich zusätzlich mit deinen Freunden,
 ➡️ [Anforderungsliste](https://github.com/SE-TINF22B2/G5-DuoGradus/wiki/Anforderungen)
 
 ## 📚 Dokumentation
-Die Dokumentation des Projekts findet hauptsächlich über das [Wiki](https://github.com/SE-TINF22B2/G5-DuoGradus/wiki) statt. Zusätzlich befinden sich im Ordner [/docs](./docs) weitere Dokumente.
+Die Dokumentation des Projektes befindet sich im [/docs](./docs) Verzeichnis und wird unter [docs.dup-gradus.de](https://docs.duo-gradus.de) gehosted.
 
 ## 🕰️ Status
 - ✅ Neue und Erledigte Aufgaben befinden sich im ➡️ [Backlog](https://github.com/orgs/SE-TINF22B2/projects/14)
