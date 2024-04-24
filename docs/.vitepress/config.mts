@@ -9,7 +9,7 @@ export default withMermaid({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Projekt', link: '/project/idea' },
-      { text: 'Guidelines', link: '/guidelines/project-guideline' }
+      { text: 'Guidelines', link: '/guidelines/project-guideline' },
     ],
 
     sidebar: {
