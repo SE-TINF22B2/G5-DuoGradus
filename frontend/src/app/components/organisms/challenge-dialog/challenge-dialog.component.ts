@@ -19,11 +19,11 @@ import { ChallengeButtonComponent } from 'app/components/atoms/challenge-button/
        
       })),
       state('closed', style({
-        height: '0', // Endwert für die Höhe des Dialogs (geschlossen)
+        height: '0', 
   
       })),
       transition('open <=> closed', [
-        animate('0.3s')
+        animate('0.2s')
       ])
     ])
   ]
