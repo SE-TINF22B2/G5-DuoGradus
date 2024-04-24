@@ -1,7 +1,17 @@
-Name;Duration
-"Henry Brink";0
-"Benedict Weis";2.10
-"Henry Brink";.55
-"Henry Brink";.46
-"Ingo Neuse";1.16
-"Benedict Weis";.36
+Name;Activty;Duration;Description
+"Henry Brink";"Construction";.38;null
+"Justin Hubert";"Construction";5.20;null
+"Justin Hubert";"Construction";1.10;null
+"Ingo Neuse";"Construction";.78;"Logging-Konfiguration https://github.com/SE-TINF22B2/G5-DuoGradus/issues/92"
+"Benedict Weis";"Construction";.78;"Bug fixing"
+"Justin Hubert";"Construction";1.68;null
+"Benedict Weis";"Project Management";.90;"Minor nits"
+"Ingo Neuse";"Construction";.96;"Logging-Konfiguration https://github.com/SE-TINF22B2/G5-DuoGradus/issues/92"
+"Benedict Weis";"Construction";2.00;"Logging Framework"
+"Benedict Weis";"Project Management";.70;"Github Project geupdated"
+"Henry Brink";"Construction";1.08;null
+"Benedict Weis";"Project Management";2.10;"Automatisches generieren der time tracking graphen"
+"Henry Brink";"Construction";.55;null
+"Henry Brink";"Construction";.46;null
+"Ingo Neuse";"Construction";1.16;"Prettier- / ES-Lint-Konfiguration"
+"Benedict Weis";"Project Management";.36;"Issues anlegen"
