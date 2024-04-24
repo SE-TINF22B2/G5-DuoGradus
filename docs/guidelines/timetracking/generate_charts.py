@@ -18,7 +18,7 @@ def csv_to_bar_chart(csv_file, x_column, y_column, save_path):
 
     file_name = os.path.splitext(os.path.basename(csv_file))[0]
 
-    plt.xlabel("Benutzer")
+    plt.xlabel("Personen")
     plt.ylabel("Zeit in Stunden")
     plt.title(f"Zeiterfassung {file_name}")
     plt.xticks(rotation=0)
