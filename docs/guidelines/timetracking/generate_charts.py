@@ -12,7 +12,7 @@ def csv_to_bar_chart(csv_file, x_column, y_column, save_path):
         print(f"Error: Column '{x_column}' or '{y_column}' not found in {csv_file}")
         return
 
-    grouped_data = data.groupby(['Name', 'Activty'])['Duration'].sum()
+    grouped_data = data.groupby(['Name', 'Activity'])['Duration'].sum()
         
     grouped_data.unstack().plot(kind='bar', colormap='Set1', stacked=True)
 
