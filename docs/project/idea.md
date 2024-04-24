@@ -10,7 +10,7 @@ Damit dir nicht langweilig wird, kannst du dich zusätzlich mit deinen Freunden,
 
 Da Fitness dir besonders hilft, wenn du sie regelmäßig ausführst, belohnen wir dich für jeden aufeinanderfolgenden Tag, an dem du Punkte sammelst. Und falls du an einem Tag mal keine Punkte sammelst, werden wir dich abends erinnern!
 
-# Was bietet dir unser Produkt?
+## Was bietet dir unser Produkt?
 
 - Integration von Drittanbietern für Fitness-Daten, z.B. Fitbit
 - Challenges die du mithilfe von Fitness-Aktivitäten erledigen kannst
@@ -19,7 +19,7 @@ Da Fitness dir besonders hilft, wenn du sie regelmäßig ausführst, belohnen wi
 - Erfolge und Abzeichen
 - Tagespunkte, für jeden aufeinanderfolgenden Tag, an dem du Challenges absolvierst oder Ziele erreichst
 
-# Wie funktioniert unsere Anwendung
+## Wie funktioniert unsere Anwendung
 
 Die Anwendung ist webbasiert, du musst dich nur anmelden und kannst loslegen. Damit wir Daten zu deinen Schritten erhalten, musst du erstmalig einen Drittanbieter verbinden, z.B. Fitbit. DuoGradus sammelt selbst keine Daten direkt von Wearables.
 
