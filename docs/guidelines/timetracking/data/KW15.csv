@@ -1,10 +1,10 @@
-Name;Duration
-"Benedict Weis";1.00
-"Justin Hubert";2.00
-"Henry Brink";1.93
-"Henry Brink";1.36
-"Henry Brink";.23
-"Justin Hubert";3.51
-"Justin Hubert";1.66
-"Luis Bernhardt";1.66
-"Benedict Weis";.33
+Name;Activty;Duration;Description
+"Benedict Weis";"Project Management";1.00;"Status report and project maintenance"
+"Justin Hubert";"Construction";2.00;null
+"Henry Brink";"Construction";1.93;"Austausch des ORMs zu TypeORM"
+"Henry Brink";"Construction";1.36;"Konfiguration der Authentifizierung"
+"Henry Brink";"Project Management";.23;"Issues erstellen / überarbeiten"
+"Justin Hubert";"Construction";3.51;null
+"Justin Hubert";"Construction";1.66;null
+"Luis Bernhardt";"Construction";1.66;"Frontend Construction+Issues Erstellen"
+"Benedict Weis";"Project Management";.33;"Issues anlegen"
