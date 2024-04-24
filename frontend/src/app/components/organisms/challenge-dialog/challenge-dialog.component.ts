@@ -15,20 +15,7 @@ import { ChallengeButtonComponent } from 'app/components/atoms/challenge-button/
   animations: [
     trigger('openClose', [
       state('open', style({
-        height: '100%',
-      
-      })),
-      state('closed', style({
-        height: '0', // Endwert für die Höhe des Dialogs (geschlossen)
-  
-      })),
-      transition('open <=> closed', [
-        animate('0.3s')
-      ])
-    ]),
-    trigger('openClose2', [
-      state('open', style({
-        height: '50vh',
+        height: '45vh',
        
       })),
       state('closed', style({
@@ -36,7 +23,7 @@ import { ChallengeButtonComponent } from 'app/components/atoms/challenge-button/
   
       })),
       transition('open <=> closed', [
-        animate('0.4s')
+        animate('0.3s')
       ])
     ])
   ]
