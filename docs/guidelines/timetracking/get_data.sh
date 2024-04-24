@@ -26,7 +26,7 @@ for WEEK in $WEEKS; do
 
     FILE="$OUTPUT_FOLDER/KW$WEEK.csv"
 
-    echo "Name;Activty;Duration;Description" > "$FILE"
+    echo "Name;Activity;Duration;Description" > "$FILE"
     
     echo "$TIMES" | jq -c '.[]' | while read -r ENTRY; do
         NAME=$(jq '.user.alias' <<< "$ENTRY")

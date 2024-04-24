@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 def csv_to_bar_chart(csv_file, x_column, y_column, save_path):
     # Read CSV file into a DataFrame
@@ -10,28 +11,19 @@ def csv_to_bar_chart(csv_file, x_column, y_column, save_path):
     if x_column not in data.columns or y_column not in data.columns:
         print(f"Error: Column '{x_column}' or '{y_column}' not found in {csv_file}")
         return
-    
-    # Extract data for x and y axis
-    x_data = data[x_column]
-    y_data = data[y_column]
-    
-    # Extract filename without extension for title
+
+    grouped_data = data.groupby(['Name', 'Activity'])['Duration'].sum()
+        
+    grouped_data.unstack().plot(kind='bar', colormap='Set1', stacked=True)
+
     file_name = os.path.splitext(os.path.basename(csv_file))[0]
-    
-    # Plotting
-    plt.figure(figsize=(10, 6))
-    plt.bar(x_data, y_data, color='skyblue')
-    
-    # Customize the chart
-    plt.title(file_name)
-    plt.xlabel(x_column)
-    plt.ylabel(y_column)
-    plt.xticks(rotation=45, ha='right')  # Rotate x-axis labels for better visibility
-    
-    # Save plot as PNG file
-    plt.tight_layout()
-    plt.savefig(save_path, dpi=300)
-    plt.close()
+
+    plt.xlabel("Personen")
+    plt.ylabel("Zeit in Stunden")
+    plt.title(f"Zeiterfassung {file_name}")
+    plt.xticks(rotation=0)
+    plt.legend()
+    plt.savefig(save_path, dpi=180)
 
 def plot_all_csv_files_in_folder(folder_path, x_column, y_column, output_folder):
     # Create output folder if it does not exist
