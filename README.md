@@ -1,7 +1,3 @@
-![GitHub Workflow Status Backend](https://img.shields.io/github/actions/workflow/status/SE-TINF22B2/DuoGradus/backend.yml?style=flat-square&label=Backend)
-![GitHub Workflow Status Frontend](https://img.shields.io/github/actions/workflow/status/SE-TINF22B2/DuoGradus/frontend.yml?style=flat-square&label=Frontend)
-![Version](https://img.shields.io/badge/version-v0.0.1-blue?style=flat-square)
-
 > **Disclaimer**: DuoGradus is is a project for the lecture "Software Engineering" held in the Baden-Württemberg Cooperative State University. **This is not a real world application.**
 
 <p align="center">
@@ -16,6 +12,7 @@ Damit dir nicht langweilig wird, kannst du dich zusätzlich mit deinen Freunden,
 ➡️ [Mehr erfahren](https://github.com/SE-TINF22B2/G5-DuoGradus/wiki/Idee)
 
 ## 📄 Funktionsumfang
+
 - Integration von Drittanbietern für Fitness-Daten, z.B. Fitbit
 - Challenges die du mithilfe von Fitness-Aktivitäten erledigen kannst
 - Ranglisten zum Vergleich mit Freunden, sowie anderen Nutzern
@@ -26,12 +23,15 @@ Damit dir nicht langweilig wird, kannst du dich zusätzlich mit deinen Freunden,
 ➡️ [Anforderungsliste](https://github.com/SE-TINF22B2/G5-DuoGradus/wiki/Anforderungen)
 
 ## 📚 Dokumentation
+
 Die Dokumentation des Projektes befindet sich im [/docs](./docs) Verzeichnis und wird unter [docs.dup-gradus.de](https://docs.duo-gradus.de) gehosted.
 
 ## 🕰️ Status
+
 - ✅ Neue und Erledigte Aufgaben befinden sich im ➡️ [Backlog](https://github.com/orgs/SE-TINF22B2/projects/14)
 - ⏺️ Aktuelle Aufgaben werden zudem in Issues repliziert, in denen zudem der Zwischenstand dokumentiert wird. ➡️ [Issues](https://github.com/SE-TINF22B2/G5-DuoGradus/issues)
-- 📜 Status Reports werden wöchentlich als Discussion angelegt ➡️ [Status Reports](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions/categories/statusberichte)
+- 📜 Status Reports werden wöchentlich als Discussion angelegt ➡️ [Statusberichte](http://docs.duo-gradus.de/reports/reports.html)
 
 ## ⚙️ Technische Planung
+
 Weitere Details über Technische Entscheidungen finden sich im Wiki ➡️ [Technische Planung](https://github.com/SE-TINF22B2/G5-DuoGradus/wiki/Technische%20Planung)
