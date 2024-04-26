@@ -8,11 +8,12 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { Prisma, User } from '@prisma/client';
-import { AutoGuard } from '../../auth/auto.guard';
-import { PathUserDTO } from './patch.user.dto';
-import { AuthService } from 'src/auth/auth.service';
 import { Response } from 'express';
-import { UserRepository } from 'src/db/repositories/user.repository';
+import { AutoGuard } from '../../auth/auto.guard';
+import { PatchUserDTO } from './patch.user.dto';
+import { AuthService } from '../../auth/auth.service';
+import { UserRepository } from '../../db/repositories/user.repository';
+import { NestRequest } from '../../types/request.type';
 
 type SanatizedUser = Omit<User, 'password'>;
 
@@ -47,8 +48,8 @@ export class UserController {
   @Patch('/me')
   @UseGuards(AutoGuard)
   async patchMe(
-    @Req() req: Request & { user: { id: string } },
-    @Body() userPatch: PathUserDTO,
+    @Req() req: NestRequest,
+    @Body() userPatch: PatchUserDTO,
     @Res() res: Response,
   ) {
     const userChanges: Prisma.UserUpdateInput = {};
@@ -66,18 +67,22 @@ export class UserController {
       userChanges.verified = false;
     }
 
+    if (userPatch.displayName) {
+      userChanges.displayName = userPatch.displayName;
+    }
+
     if (Object.keys(userChanges).length > 0) {
       const user = await this.userRepository.updateUser(
         req.user.id,
         userChanges,
       );
 
-      return user;
+      res.status(200).json(this._sanatizeUser(user));
     } else {
-      res.statusCode = 400;
-      return {
+      res.status(400).json({
         error: 'Nothing was changed',
-      };
+        statusCode: 400,
+      });
     }
   }
 }
