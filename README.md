@@ -5,11 +5,11 @@
 </p>
 “DuoGradus” ist eine innovative Anwendung, die dir hilft, deine Fitness-Ziele zu erreichen. Dazu bieten wir dir ein innovatives Konzept, welches auf Gamification und Regelmäßigkeit setzt, sodass du dein Ziel auch langfristig erreichen kannst.  
 
-Mithilfe von vielen spannenden Challenges ermutigen wir dich Schritte zu sammeln, Fahrrad zu fahren oder im Fitness-Studio zu trainieren. Manchmal geben wir dir auch zusätzliche Herausforderungen (z.B. Schritte im Regen), die dann mit Abzeichen und anderen Erfolgen belohnt werden. 
+Mithilfe von vielen spannenden Challenges ermutigen wir dich Schritte zu sammeln, Fahrrad zu fahren oder im Fitness-Studio zu trainieren. Manchmal geben wir dir auch zusätzliche Herausforderungen (z.B. Schritte im Regen), die dann mit Abzeichen und anderen Erfolgen belohnt werden.
 
-Damit dir nicht langweilig wird, kannst du dich zusätzlich mit deinen Freunden, aber auch in der globalen Rangliste vergleichen, sodass du immer die Motivation hast, Punkte zu sammeln. 
+Damit dir nicht langweilig wird, kannst du dich zusätzlich mit deinen Freunden, aber auch in der globalen Rangliste vergleichen, sodass du immer die Motivation hast, Punkte zu sammeln.
 
-➡️ [Mehr erfahren](https://github.com/SE-TINF22B2/G5-DuoGradus/wiki/Idee)
+➡️ [Mehr erfahren](https://docs.duo-gradus.de/project/idea.html)
 
 ## 📄 Funktionsumfang
 
@@ -20,7 +20,7 @@ Damit dir nicht langweilig wird, kannst du dich zusätzlich mit deinen Freunden,
 - Erfolge und Abzeichen
 - Tagespunkte, für jeden aufeinanderfolgenden Tag, an dem du Challenges absolvierst oder Ziele erreichst
 
-➡️ [Anforderungsliste](https://github.com/SE-TINF22B2/G5-DuoGradus/wiki/Anforderungen)
+➡️ [Anforderungsliste](https://docs.duo-gradus.de/project/requirements.html)
 
 ## 📚 Dokumentation
 
