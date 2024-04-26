@@ -7,6 +7,7 @@ import {
   transition,
 } from '@angular/animations';
 import { ChallengeButtonComponent } from 'app/components/atoms/challenge-button/challenge-button.component';
+import { EventService } from 'app/services/event.service';
 
 @Component({
   selector: 'app-challenge-dialog',
@@ -23,7 +24,7 @@ import { ChallengeButtonComponent } from 'app/components/atoms/challenge-button/
   
       })),
       transition('open <=> closed', [
-        animate('0.2s')
+        animate('0.1s')
       ])
     ])
   ]
@@ -37,12 +38,18 @@ export class ChallengeDialogComponent {
   @Input() trigger: boolean = false; 
 
 
+  constructor(public eventservice:EventService) 
+  {
+      this.eventservice = eventservice;
+  }
 
   triggerEvent() {
-    console.log(this.trigger); 
     this.closeDialog.emit();
-    
+    this.eventservice.steps = this.steps; 
+
   }
+
+  
 
   
 }

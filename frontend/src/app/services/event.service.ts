@@ -5,6 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class EventService {
   disabled: boolean = false;
+  time: number = 0; 
+  steps: number = 0; 
   
-  constructor() {}
+  constructor() {
+
+    
+  }
 }
