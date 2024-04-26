@@ -10,6 +10,7 @@ export default withMermaid({
       { text: 'Home', link: '/' },
       { text: 'Projekt', link: '/project/idea' },
       { text: 'Guidelines', link: '/guidelines/project-guideline' },
+      { text: 'Development', link: '/development/overview',  }
     ],
 
     sidebar: {
@@ -34,6 +35,9 @@ export default withMermaid({
             { text: 'Frontend Guideline', link: '/guidelines/frontend' }
           ]
         }
+      ],
+      '/development': [
+        { text: 'Authentication', link: '/development/authentication' }
       ]
     },
 
