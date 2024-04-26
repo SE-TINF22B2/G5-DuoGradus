@@ -19,13 +19,12 @@ Das Projektmanagement dieses Projektes gliedert sich in folgende Teile:
 - Das repository [G5-DuoGradus](https://github.com/SE-TINF22B2/G5-DuoGradus) enthält den gesamten source code für die Applikation. Es ist im wesentlichen in drei Teile unterteilt
   - [frontend](https://github.com/SE-TINF22B2/G5-DuoGradus/tree/main/frontend) beinhaltet den frontend code
   - [backend](https://github.com/SE-TINF22B2/G5-DuoGradus/tree/main/backend) beinhaltet den backend code
-  - [docs](https://github.com/SE-TINF22B2/G5-DuoGradus/tree/main/docs) beinhaltet die Dokumentation betreffende Dateien, die zum Beispiel im [Wiki](https://github.com/SE-TINF22B2/G5-DuoGradus/wiki) verwendet werden
+  - [docs](https://github.com/SE-TINF22B2/G5-DuoGradus/tree/main/docs) beinhaltet die gesamte Dokumentation des Projektes und ist auf [docs.duo-gradus.de](https://docs.duo-gradus.de) öffentlich zur Verfügung gestellt
 - Die [Issues](https://github.com/SE-TINF22B2/G5-DuoGradus/issues) des repositories werden verwendet um Tasks aufzuteilen, bugs festzuhalten und (in der Zukunft) feature requests zu verwirklichen
-- Die [Pull requests](https://github.com/SE-TINF22B2/G5-DuoGradus/pulls) werden in Zukunft verwendet um größere Änderungen Issues zuzuordnen und gemeinsam über diese Änderungen zu diskutieren
+- Die [Pull requests](https://github.com/SE-TINF22B2/G5-DuoGradus/pulls) verwendet um größere Änderungen Issues zuzuordnen und gemeinsam über diese Änderungen zu diskutieren
 - Die [Discussions](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions) werden aktuell für drei Dinge verwendet:
   - Um [Anforderungen](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions/categories/anforderungen) festzuhalten, über sie abzustimmen und über sie zu diskutieren
   - Um über [generelle](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions/categories/general) Themen die das Projekt betreffen zu diskutieren
-  - Um die wöchentlichen [Statusberichte](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions/categories/statusberichte) anzulegen und als Team zu verfeinern
 
 Das Projektmanagement wird zudem über ein Github [Project](https://github.com/orgs/SE-TINF22B2/projects/14) ergänzt.
 
@@ -39,11 +38,11 @@ Der Backlog (siehe <https://en.wikipedia.org/wiki/Product_backlog>) wird verwend
 
 ### Timeline
 
-Die Timeline zeigt den Backlog auf einer Zeitachse nach ihrer Iteration. Interationen leiten sich aus den Anforderungen der Vorlesung ab, wobei wir unsere Aufgaben anhand von Wochen darstellen sollen. Eine Iteration stellt hier also eine Woche dar.
+Die Timeline zeigt den Backlog auf einer Zeitachse nach ihrer Iteration. Iterationen leiten sich aus den Anforderungen der Vorlesung ab, wobei wir unsere Aufgaben anhand von Wochen darstellen sollen. Eine Iteration stellt hier also eine Woche dar.
 
 ### Aufgabenstatus
 
-Der Aufgabenstatus zeigt ein Kaban board mit dem Backlog. Es gibt die Kategorien Todo, In progress und Done. Das den Task bearbeitende Gruppenmitglied ist dafür verantwortlich, dass sich sein Task immer in der korrekten Kategorie befindet.
+Der Aufgabenstatus zeigt ein Kanban board mit dem Backlog. Es gibt die Kategorien Todo, In progress und Done. Das den Task bearbeitende Gruppenmitglied ist dafür verantwortlich, dass sich sein Task immer in der korrekten Kategorie befindet.
 
 ### Sonstige
 
@@ -53,6 +52,16 @@ Hinzu kommen noch die folgenden 2 unterstützenden Ansichten:
 - Backlog nach Iteration
 
 welche jeweils den Backlog verschieden gegliedert darstellen.
+
+## Verwendete (gesprochene)  Sprachen
+
+Um das Projekt zu einheitlich zu halten und Diskussionen möglichst zu vereinfache besteht die folgende Guideline für gesprochene Sprachen.
+
+- **Code** wird komplett auf Englisch geschrieben, auch die direkt im Code enthaltene Dokumentation wie z.B. Kommentare oder Beispiele
+- **Discussions und Issues** werden auf Deutsch verfasst
+- **Pull Requests** werden auf Englisch verfasst, da sie oftmals sehr verwachsen mit dem Code sind
+- **README sowie docs** werden auf Deutsch verfasst, da "Zielgruppe" (Vorlesung an der Hochschule) Deutsch spricht
+- **Commit messages** sind egal da nur noch squash merges möglich sind, und somit nur der Titel des Pull Requests erscheint
 
 ---
 
