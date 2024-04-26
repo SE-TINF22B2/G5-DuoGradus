@@ -27,4 +27,14 @@ export class AuthService {
 
     return null;
   }
+
+  /**
+   * Hashes a password using the preferred hash algorithm.
+   * @param password Plaintext password
+   * @returns Hashe password
+   */
+  async hashPassword(password: string): Promise<string> {
+    return await bcrypt.hash(password, 12);
+  }
+
 }
