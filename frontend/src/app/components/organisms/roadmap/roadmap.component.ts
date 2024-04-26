@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EventService } from 'app/services/event.service';
 
 @Component({
   selector: 'app-roadmap',
@@ -6,8 +7,16 @@ import { Component } from '@angular/core';
   styleUrl: './roadmap.component.scss',
 })
 export class RoadmapComponent {
+
+  constructor(public eventservice:EventService) 
+  {
+      this.eventservice = eventservice;
+  }
+
+
+
   activityList = [
-    { steps: 500, time: 1000 },
+    { steps: 500, time: 10 },
     { steps: 1000, time: 2000 },
     { steps: 1500, time: 3000 },
     { steps: 2000, time: 4000 },

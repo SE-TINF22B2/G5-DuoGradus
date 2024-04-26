@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding, ViewChild } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { EventService } from 'app/services/event.service';
 
 
@@ -12,6 +12,7 @@ export class ChallengeButtonComponent {
   @Input() num: number = 1;
   @Input() steps: number = 0;
   @Input() time: number = 0;
+  @Output() toggleStopButton = new EventEmitter<void>();
   buttonIsclicked: boolean = false;
   
   

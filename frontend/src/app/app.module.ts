@@ -10,6 +10,10 @@ import { StatisticHeaderComponent } from './components/organisms/statistic-heade
 import { RoadmapComponent } from './components/organisms/roadmap/roadmap.component';
 import { ChallengeButtonComponent } from './components/atoms/challenge-button/challenge-button.component';
 import { ChallengeDialogComponent } from './components/organisms/challenge-dialog/challenge-dialog.component';
+import { TimerComponent } from './components/atoms/timer/timer.component';
+import { TimerPipe } from './pipes/timer.pipe';
+import { StopbuttonComponent } from './components/atoms/stopbutton/stopbutton.component';
+import { ToastComponent } from './components/atoms/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { ChallengeDialogComponent } from './components/organisms/challenge-dialo
     RoadmapComponent,
     ChallengeButtonComponent,
     ChallengeDialogComponent,
+    TimerComponent,
+    TimerPipe,
+    StopbuttonComponent,
+    ToastComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [provideAnimations()],

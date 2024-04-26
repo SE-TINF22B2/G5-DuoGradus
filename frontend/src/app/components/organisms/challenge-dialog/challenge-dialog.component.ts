@@ -8,6 +8,7 @@ import {
 } from '@angular/animations';
 import { ChallengeButtonComponent } from 'app/components/atoms/challenge-button/challenge-button.component';
 import { EventService } from 'app/services/event.service';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-challenge-dialog',
@@ -45,9 +46,29 @@ export class ChallengeDialogComponent {
 
   triggerEvent() {
     this.closeDialog.emit();
+  }
+
+  startEvent()
+  {
+    this.closeDialog.emit();
     this.eventservice.steps = this.steps; 
+    this.eventservice.time = this.time; 
+    this.eventservice.disabled = true;
+    this.eventservice.reduceTimer(); 
+    this.eventservice.toggleStopButton = true;
+    this.eventservice.snackbarText = "Training has started"
+    this.eventservice.snackbarBackgroundColor = "#04b02f"
+    this.eventservice.classNameToast = "show"
+    setTimeout(
+      () =>
+        {
+          this.eventservice.classNameToast = "";
+        }
+      , 2900);
 
   }
+
+
 
   
 
