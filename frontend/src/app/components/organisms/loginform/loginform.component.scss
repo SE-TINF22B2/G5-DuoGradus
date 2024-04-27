@@ -1,0 +1,58 @@
+.login-container
+{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: var(--black-2);
+    padding: 30px;
+    border-radius: 12px;
+
+    .button
+    {
+        width: 200px;
+        align-self: center;
+        margin-top: 20px;
+        height: 40px;
+        background-color: var(--green);
+        border: none;
+        border-radius: 12px;
+        font-weight: bold;
+
+    }
+
+    p.create-account{
+        font-size: 12px;
+        text-align: center;
+        margin-top: 50px;
+
+        a{
+            font-weight: bold;
+            color: var(--white);
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+
+    p.toggle-password{
+        margin-left: 10px;
+        margin-bottom: 0;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+
+        img{
+            filter: invert(100%);
+            width: 16px;
+            height: auto;
+        }
+
+        .eyeimg:hover {
+            transform: scale(1.1); /* Vergrößere das Bild um 10% */
+            transition: transform 0.3s ease; /* Füge eine Transition hinzu */
+          }
+    }
+    
+}

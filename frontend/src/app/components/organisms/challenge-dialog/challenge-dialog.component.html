@@ -1,0 +1,26 @@
+<div class="main"     >
+  <div class="window"  [@openClose]=" trigger ? 'open' : 'closed'"   >
+    <div class="square">&nbsp;</div>
+    <div class="dialog-header">
+      <h3>Training {{ num }}</h3>
+      <button class="done-button" (click)="triggerEvent()">Fertig</button>
+    </div>
+    <div class="training-infos">
+      <ul>
+        <li class="steps"><span class="span-1">Steps:</span></li>
+        <li class="time"><span class="span-1">Time:</span></li>
+        <li class="points"><span class="span-1">Points:</span></li>
+      </ul>
+      <ul>
+        <li>{{ steps }}</li>
+        <li>{{ time }}</li>
+        <li>{{ points }}</li>
+      </ul>
+    </div>
+    <button class="start-button" (click)="startEvent()">
+      Start Training
+    </button>
+  </div>
+</div>
+
+
