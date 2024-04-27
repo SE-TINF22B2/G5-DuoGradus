@@ -1,0 +1,20 @@
+.textfield
+{
+    display: flex;
+    flex-direction: column;
+
+    .label
+    {
+        
+        font-weight: bold;
+    }
+
+    .input
+    {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        height: 40px;
+        border-radius: 8px;
+        text-indent: 10px;
+    }
+}

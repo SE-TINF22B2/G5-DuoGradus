@@ -14,6 +14,9 @@ import { TimerComponent } from './components/atoms/timer/timer.component';
 import { TimerPipe } from './pipes/timer.pipe';
 import { StopbuttonComponent } from './components/atoms/stopbutton/stopbutton.component';
 import { ToastComponent } from './components/atoms/toast/toast.component';
+import { AuthenticationpageComponent } from './components/pages/authenticationpage/authenticationpage.component';
+import { LoginformComponent } from './components/organisms/loginform/loginform.component';
+import { InputfieldComponent } from './components/atoms/inputfield/inputfield.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { ToastComponent } from './components/atoms/toast/toast.component';
     TimerPipe,
     StopbuttonComponent,
     ToastComponent,
+    AuthenticationpageComponent,
+    LoginformComponent,
+    InputfieldComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [provideAnimations()],
