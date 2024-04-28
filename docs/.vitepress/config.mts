@@ -9,6 +9,7 @@ export default withMermaid({
       { text: 'Projekt', link: '/project/idea' },
       { text: 'Statusberichte', link: '/reports/reports'},
       { text: 'Guidelines', link: '/guidelines/project-guideline' },
+      { text: 'Development', link: '/development/overview',  }
     ],
 
     sidebar: {
@@ -53,6 +54,9 @@ export default withMermaid({
           ]
         }
       ],
+      '/development': [
+        { text: 'Authentication', link: '/development/authentication' }
+      ]
     },
 
     socialLinks: [
