@@ -1,11 +1,13 @@
-import { ConsoleLogger, Controller, Get } from '@nestjs/common';
+import { Controller, Get, Inject } from '@nestjs/common';
 import { AppService } from './app.service';
+import { LOGGER_SERVICE, LoggerService } from './logger/logger.service';
 
 @Controller()
 export class AppController {
   constructor(
     private readonly appService: AppService,
-    private readonly logger: ConsoleLogger,
+    @Inject(LOGGER_SERVICE)
+    private readonly loggerService: LoggerService,
   ) {}
 
   /**
@@ -14,7 +16,7 @@ export class AppController {
    */
   @Get('/ping')
   getPing(): string {
-    this.logger.log('ping');
+    this.loggerService.log('ping');
     return this.appService.getPing();
   }
 }
