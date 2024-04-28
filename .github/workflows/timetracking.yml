@@ -8,9 +8,12 @@ on:
 jobs:
   generate:
     runs-on: [self-hosted]
+    permissions:
+      pull-requests: write
+      contents: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
       - name: Fetch the current timetracking data
         run: cd docs/guidelines/timetracking && ./get_data.sh
       - name: Install Python
