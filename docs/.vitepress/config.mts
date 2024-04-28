@@ -55,8 +55,20 @@ export default withMermaid({
         }
       ],
       '/development': [
-        { text: 'Authentication', link: '/development/authentication' },
-        { text: 'Logging', link: '/development/logging' }
+        { 
+          text: 'Configuration & Standards', 
+          items: [
+            { text: 'Authentication', link: '/development/authentication' },
+            { text: 'Logging', link: '/development/logging' },
+          ] 
+        },
+        {
+          text: 'Testing',
+          items: [
+            { text: 'Backend', link: '/development/testing/backend' },
+            { text: 'Frontend', link: '/development/testing/frontend' }
+          ]
+        }
       ]
     },
 
