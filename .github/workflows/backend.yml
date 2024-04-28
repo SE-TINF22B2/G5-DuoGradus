@@ -8,9 +8,8 @@ on:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
-    environment: Tests
-    
+    runs-on: [self-hosted]
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -26,7 +25,11 @@ jobs:
       run: cd backend && npm install
 
     - name: Reset the database (for e2e tests)
+      env:
+        DATABASE_URL: file:./database.dev.sqlite
       run: cd backend && npm run db:reset
-
+      
     - name: Run verify
-      run: cd backend && npm run verify
+      env:
+        DATABASE_URL: 'file:./database.dev.sqlite'
+      run: cd backend && npm run verify 
