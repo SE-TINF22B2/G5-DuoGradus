@@ -48,12 +48,15 @@ export class UserRepository {
    * @param user
    * @returns Updated User
    */
-  public async updateUser(user: User): Promise<User> {
+  public async updateUser(
+    id: string,
+    update: Prisma.UserUpdateInput,
+  ): Promise<User> {
     return await this.prisma.user.update({
       where: {
-        id: user.id,
+        id: id,
       },
-      data: user,
+      data: update,
     });
   }
 

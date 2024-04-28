@@ -57,7 +57,7 @@ describe('UserRepository tests', () => {
   it('should be able to modify a user', async () => {
     prisma.user.update.mockResolvedValue(exampleUser);
 
-    const user = await userRepository.updateUser(exampleUser);
+    const user = await userRepository.updateUser(exampleUser.id, exampleUser);
     expect(user).toEqual(exampleUser);
   });
 });
