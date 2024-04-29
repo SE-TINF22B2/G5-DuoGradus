@@ -15,7 +15,7 @@ import { AuthService } from '../../auth/auth.service';
 import { UserRepository } from '../../db/repositories/user.repository';
 import { NestRequest } from '../../types/request.type';
 
-type SanatizedUser = Omit<User, 'password'>;
+type SanitizedUser = Omit<User, 'password'>;
 
 @Controller('user')
 export class UserController {
@@ -24,11 +24,11 @@ export class UserController {
     private userRepository: UserRepository,
   ) {}
 
-  _sanatizeUser(user: User): SanatizedUser {
-    const sanatizedUser: SanatizedUser & { password?: string } = user;
+  _sanitizeUser(user: User): SanitizedUser {
+    const sanitizedUser: SanitizedUser & { password?: string } = user;
 
-    delete sanatizedUser.password;
-    return sanatizedUser;
+    delete sanitizedUser.password;
+    return sanitizedUser;
   }
 
   /**
@@ -42,7 +42,7 @@ export class UserController {
   @Get('/me')
   @UseGuards(AutoGuard)
   async getMe(@Req() req) {
-    return this._sanatizeUser(req.user);
+    return this._sanitizeUser(req.user);
   }
 
   @Patch('/me')
@@ -77,7 +77,7 @@ export class UserController {
         userChanges,
       );
 
-      res.status(200).json(this._sanatizeUser(user));
+      res.status(200).json(this._sanitizeUser(user));
     } else {
       res.status(400).json({
         error: 'Nothing was changed',
