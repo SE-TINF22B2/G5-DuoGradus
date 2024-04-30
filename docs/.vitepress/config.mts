@@ -7,9 +7,8 @@ export default withMermaid({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Projekt', link: '/project/idea' },
-      { text: 'Statusberichte', link: '/reports/reports'},
-      { text: 'Guidelines', link: '/guidelines/project-guideline' },
-      { text: 'Development', link: '/development/overview',  }
+      { text: 'Statusberichte', link: '/reports/reports' },
+      { text: 'Development', link: '/development/project-guideline' }
     ],
 
     sidebar: {
@@ -43,32 +42,21 @@ export default withMermaid({
         }
       ],
 
-      '/guidelines/': [
-        {
-          text: 'Guidelines',
-          items: [
-            { text: 'Project Guideline', link: '/guidelines/project-guideline' },
-            { text: 'API', link: '/guidelines/api' },
-            { text: 'Backend Guideline', link: '/guidelines/backend' },
-            { text: 'Frontend Guideline', link: '/guidelines/frontend' }
-          ]
-        }
-      ],
       '/development': [
-        { 
-          text: 'Configuration & Standards', 
-          items: [
-            { text: 'Authentication', link: '/development/authentication' },
-            { text: 'Logging', link: '/development/logging' },
-          ] 
+        { text: "Project Guideline", link: "/development/project-guideline" },
+        { text: "API", link: "/development/api" },
+        {
+          text: "Backend", link: "/development/backend/overview", items: [
+            { text: 'Authentication', link: '/development/backend/authentication' },
+            { text: 'Logging', link: '/development/backend/logging' },
+            { text: 'Testing', link: '/development/backend/testing' },
+          ]
         },
         {
-          text: 'Testing',
-          items: [
-            { text: 'Backend', link: '/development/testing/backend' },
-            { text: 'Frontend', link: '/development/testing/frontend' }
+          text: "Frontend", link: "/development/frontend/overview", items: [
+            { text: 'Testing', link: '/development/frontend/testing' },
           ]
-        }
+        },
       ]
     },
 

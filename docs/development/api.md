@@ -50,4 +50,3 @@ Es gibt Protokolle die auf dem REST-Protokoll aufbauen und dieses um weitere Fun
 ## API Spezifikation
 
 Unsere aktuelle API Spezifikation findet sich <a href="/api/client.html">hier</a>.
-
