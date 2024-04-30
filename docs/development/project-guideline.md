@@ -53,7 +53,7 @@ Hinzu kommen noch die folgenden 2 unterstützenden Ansichten:
 
 welche jeweils den Backlog verschieden gegliedert darstellen.
 
-## Verwendete (gesprochene)  Sprachen
+## Verwendete (gesprochene) Sprachen
 
 Um das Projekt zu einheitlich zu halten und Diskussionen möglichst zu vereinfache besteht die folgende Guideline für gesprochene Sprachen.
 
