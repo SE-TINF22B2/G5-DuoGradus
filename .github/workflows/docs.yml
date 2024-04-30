@@ -16,4 +16,4 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Run check format
-        run: npm run check:format
+        run: cd docs && npm run check:format
