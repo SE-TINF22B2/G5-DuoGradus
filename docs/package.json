@@ -7,6 +7,8 @@
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "format": "prettier --write \"**/!(*node_modules)/*.{css,ts,mts,md,html,yaml,json}\"",
+    "check:format": "prettier --check \"**/!(*node_modules)/*.{css,ts,mts,md,html,yaml,json}\""
   }
 }

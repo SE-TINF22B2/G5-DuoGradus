@@ -15,7 +15,7 @@ externalDocs:
   url: https://github.com/SE-TINF22B2/G5-DuoGradus
 tags:
   - name: User
-    description: Enpoints related to the user, his account and other personal configurations
+    description: Endpoints related to the user, his account and other personal configurations
   - name: Activity
     description: Activities of the current user
   - name: Achievements
@@ -65,7 +65,7 @@ paths:
           description: Invalid content
         '403':
           description: Not allowed to change attribute
-  '/activies':
+  '/activities':
     get:
       summary: Get a list of activities of the current user
       operationId: listActivities
@@ -212,7 +212,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Leaderboard'
     post:
-      summary: Create a private leaderborad
+      summary: Create a private leaderboard
       operationId: createLeaderboard
       tags:
         - Leaderboard

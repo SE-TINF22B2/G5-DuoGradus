@@ -2,7 +2,7 @@ name: Export timetracking statistics
 
 on:
   schedule:
-    - cron: "0 23 * * 2"
+    - cron: '0 23 * * 2'
   workflow_dispatch:
 
 jobs:

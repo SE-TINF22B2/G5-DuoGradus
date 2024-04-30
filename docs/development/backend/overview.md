@@ -6,13 +6,13 @@ Diese Seite enthält Informationen über den grundlegenden Aufbau des Backends, 
 
 ### Framework
 
-Die Entwicklung des Backends erfolgt mithilfe des Frameworks "NestJS". Die Entscheidung auf dieses Framework ist durch einen Vergleich etablierter Backend-Frameworks für NodeJS gefallen. Da NodeJS bereits von den Entwicklern verwendet wurde, war die Wahl der Umgebung bereits entschieden. NestJS bot die größtmögliche Flexbilität - aus Sicht der Entwickler.
+Die Entwicklung des Backends erfolgt mithilfe des Frameworks "NestJS". Die Entscheidung auf dieses Framework ist durch einen Vergleich etablierter Backend-Frameworks für NodeJS gefallen. Da NodeJS bereits von den Entwicklern verwendet wurde, war die Wahl der Umgebung bereits entschieden. NestJS bot die größtmögliche Flexibilität - aus Sicht der Entwickler.
 
 ### ORM
 
 Eine Anforderung an ein gutes Software-Design ist die Kapselung verschiedener Aufgaben in einzelne Komponenten. Dabei sollten Komponenten möglichst nur einem Zweck dienen, sowie jeweils in ihrem Zweck beschränkt sein. Dadurch sollen Komponenten möglichst austauschbar bleiben.
 
-Um dieses Prinzip für die Datenbank umzusetzen, soll die Anwendung nicht direkt auf die Datenbank zugreifen, sondern stattdessen auf eine Zwischen-Komponente setzen. Die Eigen-Entwicklung einer solchen Komponente ist nicht sinnvoll, da es bereits viele Software-Bibliotheken gibt, die eine deartige Funktionalität bereitstellen. ORMs sind eine Methode auf Datenbanksysteme zuzugreifen.
+Um dieses Prinzip für die Datenbank umzusetzen, soll die Anwendung nicht direkt auf die Datenbank zugreifen, sondern stattdessen auf eine Zwischen-Komponente setzen. Die Eigen-Entwicklung einer solchen Komponente ist nicht sinnvoll, da es bereits viele Software-Bibliotheken gibt, die eine derartige Funktionalität bereitstellen. ORMs sind eine Methode auf Datenbanksysteme zuzugreifen.
 
 Innerhalb des Projekts wird `TypeORM` verwendet, da dieses bereits eine gute Integration in NestJS bietet.
 

@@ -10,8 +10,8 @@ On the other hand, Protractor is tailored to the needs of Angular applications a
 
 ## Getting Started
 
-Jasmin: <https://jasmine.github.io/>
-Potractor: <https://www.protractortest.org/#/>
+Jasmine: <https://jasmine.github.io/>
+Protractor: <https://www.protractortest.org/#/>
 
 ## Conventions
 

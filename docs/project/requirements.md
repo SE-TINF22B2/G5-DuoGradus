@@ -16,7 +16,7 @@ flowchart TD
   discussion --> teamdis
   teamdis --> add
   add --> prio
-  prio --> refine 
+  prio --> refine
 ```
 
 Der Aktuelle Status der Anforderungen wird [hier](https://github.com/orgs/SE-TINF22B2/projects/19/views/1) festgehalten.
@@ -26,9 +26,9 @@ Der Aktuelle Status der Anforderungen wird [hier](https://github.com/orgs/SE-TIN
 Das Produkt soll Schritt- und eventuell Aktivitätsdaten von externen Anbietern erfassen. Diese Anforderung ergibt sich aus der Grundfunktionalität der Anwendung, sowie der Anforderung des Auftraggebers.
 Folgende Anbieter werden für die Implementierung herangezogen:
 
-+ Fitbit
-+ Google Health
-+ Samsung Fit
+- Fitbit
+- Google Health
+- Samsung Fit
 
 Mindestens erforderlich ist die Integration eines einzigen Anbieters, aufgrund der vergleichsweise simplen Schnittstelle wird Fitbit für eine erste Implementierung empfohlen.
 
@@ -36,7 +36,7 @@ Mindestens erforderlich ist die Integration eines einzigen Anbieters, aufgrund d
 
 Für die Integration mit Drittanbietern ist es notwendig, dass diese eine Schnittstelle anbieten, auf die wir zugreifen können. Wir möchten für diese Anwendung nur offizielle Schnittstellen verwenden. Da wir keine Anwendung auf den Endgeräten planen müssen wir uns auf Web-APIs beschränken.
 
-FitBit bietet eine Rest-API an, die sich für diesen Zweck eignen könnte. Für die Nutzung dieser ist lediglich ein FitBit-Account notwendig. 
+FitBit bietet eine Rest-API an, die sich für diesen Zweck eignen könnte. Für die Nutzung dieser ist lediglich ein FitBit-Account notwendig.
 
 Die Daten müssen durch das Backend von der API abgerufen werden, dafür ist bei den meisten APIs eine Zustimmung des Nutzers über das OAuth2-Verfahren notwendig. Der Nutzer muss die Anwendung einmalig berechtigen und kann dabei auch Berechtigungen festlegen.
 
@@ -54,7 +54,7 @@ Zudem sollen Ziele sinnvolle Namen erhalten.
 
 Weitere optionale Felder sind:
 
-+ Wetter
+- Wetter
 
 Falls möglich, sollen neben Schrittzielen zusätzlich Aktivitätsziele definiert werden.
 
@@ -87,7 +87,7 @@ Die Wetter-Daten sollen für personalisierte Aufgaben verwendet werden (z.B. "Ma
 
 ## Integration eines Shops [PM-7]
 
-Die Anwendung soll dem Nutzer die Möglichkeit bieten in Aktivitäten gesammelte Punkte für virtuelle Gegenstände auszugeben. Denkbar wäre z.B. ein spezielles Design der Anwendung oder eine Wiederherstellung verlorengegangener Tagespunkte. 
+Die Anwendung soll dem Nutzer die Möglichkeit bieten in Aktivitäten gesammelte Punkte für virtuelle Gegenstände auszugeben. Denkbar wäre z.B. ein spezielles Design der Anwendung oder eine Wiederherstellung verlorengegangener Tagespunkte.
 
 ## Kalorienverbrauch [PM-8]
 
