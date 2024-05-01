@@ -1,7 +1,20 @@
-<div class="login-container">
-    <app-inputfield [labeltext]="'Username'" [typetext]="'text'" [placeholder]="'Enter Username'"></app-inputfield>
-    <app-inputfield [labeltext]="'Password'" [typetext]=" passwordFieldType" [placeholder]="'Enter Password'"></app-inputfield>
-    <p class="toggle-password"><a class="eyeimg" (click)="toggleType()" ><img class="img" [src]="img"></a></p>
-    <button class="button">Login In</button>
-    <p class="create-account">Don´t have an account? <br> <br> <a href="../sign/">Sign on for free?</a></p>
-</div>
+
+    <div class="login">
+     
+		<div class="center">
+			<h2 class="form-title" id="login">Login</h2>
+			<div class="form-holder">
+			    <app-inputfield [labeltext]="'Username'" [typetext]="'text'" [placeholder]="'Enter Username'"></app-inputfield>
+                <div class="password">
+                    <app-inputfield [labeltext]="'Password'" [typetext]=" passwordFieldType" [placeholder]="'Enter Password'"> </app-inputfield>
+                    <span class="eyeimg" (click)="toggleType()" ><img class="img" [src]="img"></span>
+                </div>
+			</div>
+          
+            <button (click)="login()" class="button">Login</button>
+            <p class="create-account">Don´t have an account? <a href="../auth/signup/">Sign on for free?</a></p>
+		</div>
+      
+       
+	</div>
+
