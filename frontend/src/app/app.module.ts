@@ -17,6 +17,7 @@ import { ToastComponent } from './components/atoms/toast/toast.component';
 import { AuthenticationpageComponent } from './components/pages/authenticationpage/authenticationpage.component';
 import { LoginformComponent } from './components/organisms/loginform/loginform.component';
 import { InputfieldComponent } from './components/atoms/inputfield/inputfield.component';
+import { SignupformComponent } from './components/organisms/signupform/signupform.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { InputfieldComponent } from './components/atoms/inputfield/inputfield.co
     AuthenticationpageComponent,
     LoginformComponent,
     InputfieldComponent,
+    SignupformComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [provideAnimations()],

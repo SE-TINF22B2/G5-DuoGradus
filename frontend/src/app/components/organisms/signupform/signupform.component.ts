@@ -1,20 +1,15 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-loginform',
-  templateUrl: './loginform.component.html',
-  styleUrl: './loginform.component.scss',
+  selector: 'app-signupform',
+  templateUrl: './signupform.component.html',
+  styleUrl: './signupform.component.scss'
 })
-export class LoginformComponent {
+export class SignupformComponent {
+
   passwordFieldType: string = 'password';
   img: string = '../../../assets/ausblenden.png';
   showPassword: boolean = false;
-
-  constructor( private router: Router) {
-    
-    this.router = router;
-  }
 
   toggleType() {
     this.showPassword = !this.showPassword;
@@ -23,10 +18,4 @@ export class LoginformComponent {
       ? '../../../assets/ausblenden.png'
       : '../../../assets/aussicht.png';
   }
-
-  login()
-  {
-    this.router.navigate(['/main']);
-  }
-
 }

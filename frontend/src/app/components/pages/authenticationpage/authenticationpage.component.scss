@@ -1,13 +1,20 @@
+
+
 .main{
     width: 100%;
     height: 100vh;
-    background-color: var(--background-black);
+	background-color: var(--black-2);
+	background-image: url(../../../../assets/logo/Logo_2_black.svg);
+	background-repeat: repeat;
+	background-position: center top; /* Horizontale und vertikale Zentrierung */
+	background-size: auto;
     margin: 0;
     padding: 0;
     top: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
+	
 
     .logo-contaier
     {
@@ -28,4 +35,9 @@
         margin-bottom: 0;
       }
  
+      .logo
+      {
+        filter: invert(100%);
+        margin-top: 50px;
+      }
 }

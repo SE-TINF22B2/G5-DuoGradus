@@ -1,20 +1,19 @@
-.textfield
-{
-    display: flex;
-    flex-direction: column;
+.input {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+    width: 80%;
+    font-size: 12px;
 
-    .label
-    {
-        
-        font-weight: bold;
+    &:last-child {
+        border-bottom: 0;
     }
-
-    .input
-    {
-        margin-top: 12px;
-        margin-bottom: 12px;
-        height: 40px;
-        border-radius: 8px;
-        text-indent: 10px;
+    &::-webkit-input-placeholder {
+        color: rgba(0,0,0,0.4);
     }
 }
