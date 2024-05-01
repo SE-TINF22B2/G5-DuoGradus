@@ -18,6 +18,7 @@ import { AuthenticationpageComponent } from './components/pages/authenticationpa
 import { LoginformComponent } from './components/organisms/loginform/loginform.component';
 import { InputfieldComponent } from './components/atoms/inputfield/inputfield.component';
 import { SignupformComponent } from './components/organisms/signupform/signupform.component';
+import { LoaderComponent } from './components/atoms/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SignupformComponent } from './components/organisms/signupform/signupfor
     LoginformComponent,
     InputfieldComponent,
     SignupformComponent,
+    LoaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [provideAnimations()],
