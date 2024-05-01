@@ -19,6 +19,7 @@ import { LoginformComponent } from './components/organisms/loginform/loginform.c
 import { InputfieldComponent } from './components/atoms/inputfield/inputfield.component';
 import { SignupformComponent } from './components/organisms/signupform/signupform.component';
 import { LoaderComponent } from './components/atoms/loader/loader.component';
+import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { LoaderComponent } from './components/atoms/loader/loader.component';
     InputfieldComponent,
     SignupformComponent,
     LoaderComponent,
+    LandingpageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [provideAnimations()],
