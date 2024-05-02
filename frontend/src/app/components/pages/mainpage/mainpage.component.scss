@@ -1,13 +1,13 @@
-.main{
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-black);
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-black);
+  margin: 0;
+  padding: 0;
+  top: 0;
+
+  p {
     margin: 0;
     padding: 0;
-    top: 0;
-
-    p{
-        margin: 0;
-        padding: 0;
-    }
+  }
 }

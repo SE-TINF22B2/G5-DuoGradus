@@ -1,5 +1,5 @@
-<div class="main"     >
-  <div class="window"  [@openClose]=" trigger ? 'open' : 'closed'"   >
+<div class="main">
+  <div class="window" [@openClose]="trigger ? 'open' : 'closed'">
     <div class="square">&nbsp;</div>
     <div class="dialog-header">
       <h3>Training {{ num }}</h3>
@@ -17,10 +17,6 @@
         <li>{{ points }}</li>
       </ul>
     </div>
-    <button class="start-button" (click)="startEvent()">
-      Start Training
-    </button>
+    <button class="start-button" (click)="startEvent()">Start Training</button>
   </div>
 </div>
-
-

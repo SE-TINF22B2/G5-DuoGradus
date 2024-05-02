@@ -13,9 +13,16 @@
         [placeholder]="'Enter Email'"
       ></app-inputfield>
       <div class="password">
-		<app-inputfield [labeltext]="'Password'" [typetext]=" passwordFieldType" [placeholder]="'Enter Password'"> </app-inputfield>
-		<span class="eyeimg" (click)="toggleType()" ><img class="img" [src]="img"></span>
-	</div>
+        <app-inputfield
+          [labeltext]="'Password'"
+          [typetext]="passwordFieldType"
+          [placeholder]="'Enter Password'"
+        >
+        </app-inputfield>
+        <span class="eyeimg" (click)="toggleType()"
+          ><img class="img" [src]="img"
+        /></span>
+      </div>
     </div>
     <button class="button">Sign up</button>
     <p class="create-account">

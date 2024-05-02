@@ -7,18 +7,22 @@ import { SignupformComponent } from './components/organisms/signupform/signupfor
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, 
-  {path:"home", component: LandingpageComponent},
-  {path:"main", component: MainpageComponent},
-  {path:"auth", component : AuthenticationpageComponent, children : [
-    {path: "signup", component: SignupformComponent},
-    {path: "login", component: LoginformComponent}
-  ]},
-  { path: '**', redirectTo: '/home' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: LandingpageComponent },
+  { path: 'main', component: MainpageComponent },
+  {
+    path: 'auth',
+    component: AuthenticationpageComponent,
+    children: [
+      { path: 'signup', component: SignupformComponent },
+      { path: 'login', component: LoginformComponent },
+    ],
+  },
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
