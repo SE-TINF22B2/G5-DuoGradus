@@ -5,11 +5,15 @@ USER node
 WORKDIR /usr/src/app
 
 COPY package*.json ./
+COPY prisma ./prisma/
 
 RUN npm ci
 
 COPY --chown=node:node . .
 
+ENV NODE_ENV production
+
 RUN npm run build
 
-CMD [ "node", "dist/main.js" ]
+EXPOSE 3000
+CMD [ "npm", "start", "prod" ]
