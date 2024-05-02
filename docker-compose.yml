@@ -4,25 +4,26 @@ services:
     ports:
       - "8080:3000"
     environment:
-      DATABASE_URL: "postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-development_only}@postgres:5432/duogradus?schema=public"
+      # DATABASE_URL: "postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-development_only}@postgres:5432/duogradus?schema=public"
+      DATABASE_URL: "file:./database.dev.sqlite"
     networks:
       - backend
-  postgres:
-    image: postgres
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-development_only}
-      POSTGRES_DB: duogradus
-      PGDATA: /data/postgres
-    volumes:
-      - postgres:/data/postgres
-    networks:
-      - backend
-    restart: always
+  # postgres:
+  #   image: postgres
+  #   environment:
+  #     POSTGRES_USER: ${POSTGRES_USER:-postgres}
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-development_only}
+  #     POSTGRES_DB: duogradus
+  #     PGDATA: /data/postgres
+  #   volumes:
+  #     - postgres:/data/postgres
+  #   networks:
+  #     - backend
+  #   restart: always
 
 
-networks:
-  backend:
+# networks:
+#   backend:
 
-volumes:
-  postgres:
+# volumes:
+#   postgres:
