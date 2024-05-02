@@ -50,6 +50,7 @@ export default withMermaid({
       '/development': [
         { text: 'Project Guideline', link: '/development/project-guideline' },
         { text: 'API', link: '/development/api' },
+        { text: 'Deployment', link: '/development/deployment' },
         {
           text: 'Backend',
           link: '/development/backend/overview',
