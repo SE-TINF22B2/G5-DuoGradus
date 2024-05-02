@@ -1,0 +1,12 @@
+:8000 {
+    route {
+        handle_path /api/* {
+            reverse_proxy http://backend:3000
+        }
+
+        root * /usr/dist
+        encode gzip
+        try_files {path} /index.html
+        file_server
+    }
+}
