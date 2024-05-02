@@ -1,15 +1,15 @@
-import { withMermaid } from "vitepress-plugin-mermaid";
+import { withMermaid } from 'vitepress-plugin-mermaid';
 
 export default withMermaid({
-  title: "Duogradus",
-  description: "Sammle Schritte, Tritt gegen Freunde an und steig in deiner Liga auf!",
+  title: 'Duogradus',
+  description:
+    'Sammle Schritte, Tritt gegen Freunde an und steig in deiner Liga auf!',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Projekt', link: '/project/idea' },
-      { text: 'Statusberichte', link: '/reports/reports'},
-      { text: 'Guidelines', link: '/guidelines/project-guideline' },
-      { text: 'Development', link: '/development/overview',  }
+      { text: 'Statusberichte', link: '/reports/reports' },
+      { text: 'Development', link: '/development/project-guideline' },
     ],
 
     sidebar: {
@@ -18,9 +18,12 @@ export default withMermaid({
           text: 'Über das Projekt',
           items: [
             { text: 'Unsere Vision', link: '/project/idea' },
-            { text: 'Anforderungen an das Projekt', link: '/project/requirements' },
+            {
+              text: 'Anforderungen an das Projekt',
+              link: '/project/requirements',
+            },
             { text: 'Das User Interface', link: '/project/user-interface' },
-          ]
+          ],
         },
       ],
 
@@ -39,41 +42,36 @@ export default withMermaid({
             { text: '2023 - KW48', link: '/reports/2023-kw48.md' },
             { text: '2024 - KW15', link: '/reports/2024-kw15.md' },
             { text: '2024 - KW16', link: '/reports/2024-kw16.md' },
-          ]
-        }
+            { text: '2024 - KW17', link: '/reports/2024-kw17.md' },
+          ],
+        },
       ],
 
-      '/guidelines/': [
-        {
-          text: 'Guidelines',
-          items: [
-            { text: 'Project Guideline', link: '/guidelines/project-guideline' },
-            { text: 'API', link: '/guidelines/api' },
-            { text: 'Backend Guideline', link: '/guidelines/backend' },
-            { text: 'Frontend Guideline', link: '/guidelines/frontend' }
-          ]
-        }
-      ],
       '/development': [
-        { 
-          text: 'Configuration & Standards', 
+        { text: 'Project Guideline', link: '/development/project-guideline' },
+        { text: 'API', link: '/development/api' },
+        {
+          text: 'Backend',
+          link: '/development/backend/overview',
           items: [
-            { text: 'Authentication', link: '/development/authentication' },
-            { text: 'Logging', link: '/development/logging' },
-          ] 
+            {
+              text: 'Authentication',
+              link: '/development/backend/authentication',
+            },
+            { text: 'Logging', link: '/development/backend/logging' },
+            { text: 'Testing', link: '/development/backend/testing' },
+          ],
         },
         {
-          text: 'Testing',
-          items: [
-            { text: 'Backend', link: '/development/testing/backend' },
-            { text: 'Frontend', link: '/development/testing/frontend' }
-          ]
-        }
-      ]
+          text: 'Frontend',
+          link: '/development/frontend/overview',
+          items: [{ text: 'Testing', link: '/development/frontend/testing' }],
+        },
+      ],
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/SE-TINF22B2/G5-DuoGradus' }
-    ]
-  }
-})
+      { icon: 'github', link: 'https://github.com/SE-TINF22B2/G5-DuoGradus' },
+    ],
+  },
+});

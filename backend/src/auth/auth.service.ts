@@ -8,7 +8,7 @@ export class AuthService {
   constructor(private userRepository: UserRepository) {}
 
   /**
-   * Valides a user with a supplied password. This will return a user if both the username
+   * Validates a user with a supplied password. This will return a user if both the username
    * and the email is valid. If not, this will return null.
    *
    * @param username
@@ -31,7 +31,7 @@ export class AuthService {
   /**
    * Hashes a password using the preferred hash algorithm.
    * @param password Plaintext password
-   * @returns Hashe password
+   * @returns Hashed password
    */
   async hashPassword(password: string): Promise<string> {
     return await bcrypt.hash(password, 12);

@@ -34,11 +34,11 @@ Das Frontend folgt dem Atomic Design-Prinzip, das die Website-Komponenten in ver
 
 Zusätzlich sollten separate Ordner für Services, Pipes usw. sowie für die E2E-Tests angelegt werden.
 
-## Technolgien
+## Technologien
 
 Für die Entwicklung des Frontends wurde die Auswahl zwischen zwei Frameworks in Betracht gezogen: React und Angular. Obwohl React während einer Vorlesung behandelt wurde, konnten keine weiteren Erfahrungen damit gesammelt werden . Im Gegensatz dazu wurde Angular während der praktischen Phase intensiver verwendet, was zu einem besseren Verständnis dieses Frameworks führte. Daher wurde Angular als das Framework für das Projekt ausgewählt.
 
-## Richtlinine
+## Richtlinien
 
 ### Branches
 

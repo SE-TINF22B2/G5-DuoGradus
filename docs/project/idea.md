@@ -1,8 +1,8 @@
 # Unsere Vision
 
-> Disclaimer: DuoGradus ist eine Anwendung, die im Rahmen unseres Studiums entsteht. Wir planen keine Produktiv-Veröffentlichung! 
+> Disclaimer: DuoGradus ist eine Anwendung, die im Rahmen unseres Studiums entsteht. Wir planen keine Produktiv-Veröffentlichung!
 
-“DuoGradus” ist eine innovative Anwendung, die dir hilft, deine Fitness-Ziele zu erreichen. Dazu bieten wir dir ein innovatives Konzept, welches auf Gamification und Regelmäßigkeit setzt, sodass du dein Ziel auch langfristig erreichen kannst.  
+“DuoGradus” ist eine innovative Anwendung, die dir hilft, deine Fitness-Ziele zu erreichen. Dazu bieten wir dir ein innovatives Konzept, welches auf Gamification und Regelmäßigkeit setzt, sodass du dein Ziel auch langfristig erreichen kannst.
 
 Mithilfe von vielen spannenden Challenges ermutigen wir dich Schritte zu sammeln, Fahrrad zu fahren oder im Fitness-Studio zu trainieren. Manchmal geben wir dir auch zusätzliche Herausforderungen (z.B. Schritte im Regen), die dann mit Abzeichen und anderen Erfolgen belohnt werden.
 

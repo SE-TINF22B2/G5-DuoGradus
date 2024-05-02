@@ -1,21 +1,21 @@
 # Woche XX (2024 KW XX, XX.XX.24-XX.XX.24) - ...
 
-### Aktueller Status:  🟩
+## Aktueller Status: 🟩
 
 ...
 
-### ✅ Was ist diese Woche passiert?
+## ✅ Was ist diese Woche passiert?
 
-- 
+-
 
-### 👣 Was sind die nächsten Schritte?
+## 👣 Was sind die nächsten Schritte?
 
-- 
+-
 
-### 🤺 Was waren/sind eventuelle Hindernisse?
+## 🤺 Was waren/sind eventuelle Hindernisse?
 
-- 
+-
 
-### 💡 Was waren die Erkenntnisse dieser Woche?
+## 💡 Was waren die Erkenntnisse dieser Woche?
 
-- 
+-

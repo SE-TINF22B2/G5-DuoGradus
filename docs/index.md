@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "Duogradus"
-  text: "Sammle Schritte, Tritt gegen Freunde an und steig in deiner Liga auf!"
-  tagline: "DuoGradus ist eine innovative Anwendung, die dir hilft, deine Fitness-Ziele zu erreichen. Dazu bieten wir dir ein innovatives Konzept, welches auf Gamification und Regelmäßigkeit setzt, sodass du dein Ziel auch langfristig erreichen kannst."
+  name: 'Duogradus'
+  text: 'Sammle Schritte, Tritt gegen Freunde an und steig in deiner Liga auf!'
+  tagline: 'DuoGradus ist eine innovative Anwendung, die dir hilft, deine Fitness-Ziele zu erreichen. Dazu bieten wir dir ein innovatives Konzept, welches auf Gamification und Regelmäßigkeit setzt, sodass du dein Ziel auch langfristig erreichen kannst.'
   image:
     light: /logos/Logo_1_black.svg
     dark: /logos/Logo_1_white.svg

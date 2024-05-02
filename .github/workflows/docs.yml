@@ -1,4 +1,4 @@
-name: Backend
+name: Docs
 
 on:
   pull_request_target:
@@ -21,14 +21,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: cd backend && npm install
+        run: cd docs && npm install
 
-      - name: Reset the database (for e2e tests)
-        env:
-          DATABASE_URL: file:./database.dev.sqlite
-        run: cd backend && npm run db:reset
-
-      - name: Run verify
-        env:
-          DATABASE_URL: 'file:./database.dev.sqlite'
-        run: cd backend && npm run verify
+      - name: Run check format
+        run: cd docs && npm run check:format

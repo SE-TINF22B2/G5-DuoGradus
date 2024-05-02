@@ -10,10 +10,10 @@ Für APIs gibt es verschiedene, sich stark unterscheidende Standards und Protoko
 
 Es gibt verschiedene Standards für Web-APIs, die relevantesten sind
 
-* REST (Beispiele: FitBit API, diverse Google-APIs)
-* GraphQL (Beispiele: neue Facebook-API, GitHub API)
-* (XML/JSON)-RPC (Beispiel: Web Untis)
-* SOAP (Beispiel: <kasapi.kasserver.com>)
+- REST (Beispiele: FitBit API, diverse Google-APIs)
+- GraphQL (Beispiele: neue Facebook-API, GitHub API)
+- (XML/JSON)-RPC (Beispiel: Web Untis)
+- SOAP (Beispiel: <kasapi.kasserver.com>)
 
 Bei näherer Betrachtung fallen SOAP und RPC für unsere Fälle raus, da beide in moderneren Anwendungen vermehrt durch REST und GraphQL abgelöst wurden und die Unterstützung durch Frameworks und Bibliotheken deutlich geringer ist. Zudem hat das SOAP-Protokoll einen deutlichen Overhead, RPC-ähnliche Schnittstellen sind vielen Entwicklern unbekannt und deswegen ebenfalls unhandlich zu nutzen.
 
@@ -50,4 +50,3 @@ Es gibt Protokolle die auf dem REST-Protokoll aufbauen und dieses um weitere Fun
 ## API Spezifikation
 
 Unsere aktuelle API Spezifikation findet sich <a href="/api/client.html">hier</a>.
-
