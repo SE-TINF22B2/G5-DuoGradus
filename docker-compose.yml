@@ -8,6 +8,12 @@ services:
       DATABASE_URL: "file:./database.dev.sqlite"
     networks:
       - backend
+  webserver:
+    build: ./frontend
+    ports:
+      - "8000:8000"
+    networks:
+      - backend
   # postgres:
   #   image: postgres
   #   environment:
@@ -22,8 +28,8 @@ services:
   #   restart: always
 
 
-# networks:
-#   backend:
+networks:
+   backend:
 
 # volumes:
 #   postgres:
