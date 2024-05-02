@@ -5,21 +5,25 @@ Um dies zu erreichen gibt es im Backend ein "Dockerfile", welches spezifische Bu
 Mithilfe der "docker-compose.yml" im Wurzelverzeichnis der Anwendung kann das ganze Projekt gestartet werden.
 
 **Befehl zum starten der Anwendung**:
+
 ```bash
 docker compose up -d
 ```
 
 **Befehl zum "Neubauen" der Anwendung (bei Änderungen des Codes)**:
+
 ```bash
 docker compose build
 ```
 
 **Anwendung stoppen**:
+
 ```bash
 docker compose down
 ```
 
 **Nutzdaten löschen**:
+
 ```bash
 docker compose rm
 ```
