@@ -22,6 +22,7 @@ import { LoaderComponent } from './components/atoms/loader/loader.component';
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
 import { FriendpageComponent } from './components/pages/friendpage/friendpage.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { FriendpageComponent } from './components/pages/friendpage/friendpage.co
     LoaderComponent,
     LandingpageComponent,
     FriendpageComponent,
+
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [provideAnimations()],

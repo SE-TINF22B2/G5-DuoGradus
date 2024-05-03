@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {path: 'friends', component: FriendpageComponent},
   { path: '**', redirectTo: '/home' },
-];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
