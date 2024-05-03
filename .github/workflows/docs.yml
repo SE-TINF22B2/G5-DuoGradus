@@ -25,3 +25,6 @@ jobs:
 
       - name: Run check format
         run: cd docs && npm run check:format
+
+      - name: Run build
+        run: cd docs && npm run docs:build
