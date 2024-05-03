@@ -21,6 +21,8 @@ import { SignupformComponent } from './components/organisms/signupform/signupfor
 import { LoaderComponent } from './components/atoms/loader/loader.component';
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
 import { FriendpageComponent } from './components/pages/friendpage/friendpage.component';
+import { HeaderComponent } from './components/atoms/header/header.component';
+import { SearchbarComponent } from './components/atoms/searchbar/searchbar.component';
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { FriendpageComponent } from './components/pages/friendpage/friendpage.co
     LoaderComponent,
     LandingpageComponent,
     FriendpageComponent,
+    HeaderComponent,
+    SearchbarComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],

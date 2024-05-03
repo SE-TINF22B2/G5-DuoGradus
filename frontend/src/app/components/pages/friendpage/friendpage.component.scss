@@ -2,5 +2,57 @@
   width: 100%;
   height: 100vh;
   background-color: var(--background-black);
-  display: flex;
+
+  hr {
+    background-color: var(--white);
+    margin-top: 1.5rem;
+    width: 93vw;
+  }
+
+  .btn-search-container {
+    display: flex;
+    justify-content: space-between;
+
+    .searchbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      background-color: var(--white);
+      width: 75vw;
+      border-radius: 12px;
+      gap: 1rem;
+      margin-left: 10px;
+    }
+
+    .img-container {
+      margin-top: 2px;
+      margin-left: 0.5rem;
+      filter: invert(100%);
+    }
+    
+    i.img-container2
+    {
+      margin-top: 2px;
+      filter: invert(100%);
+    }
+
+    .addfriends-button
+    {
+      background-color: var(--green);
+      color: var(--white);
+      width: 40px;
+      height: auto;
+      border: none;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-right: 0.6rem;
+      margin-top: 1.5rem;
+      &:hover {
+        
+      }
+    }
+  }
 }
