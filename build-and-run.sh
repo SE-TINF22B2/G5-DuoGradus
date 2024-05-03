@@ -1,3 +1,6 @@
+# Set the working directory
+cd /services/duogradus/
+
 # Stop the current docker compose server
 docker compose down
 
