@@ -8,10 +8,9 @@ describe('InputfieldComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InputfieldComponent]
-    })
-    .compileComponents();
-    
+      declarations: [InputfieldComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(InputfieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

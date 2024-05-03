@@ -1,12 +1,10 @@
-import { Component, Input, Output, EventEmitter} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { EventService } from 'app/services/event.service';
-
 
 @Component({
   selector: 'app-challenge-button',
   templateUrl: './challenge-button.component.html',
   styleUrl: './challenge-button.component.scss',
-  
 })
 export class ChallengeButtonComponent {
   @Input() num: number = 1;
@@ -14,11 +12,9 @@ export class ChallengeButtonComponent {
   @Input() time: number = 0;
   @Output() toggleStopButton = new EventEmitter<void>();
   buttonIsclicked: boolean = false;
-  
-  
-  constructor(public eventService:EventService)
-  {
-      this.eventService = eventService;
+
+  constructor(public eventService: EventService) {
+    this.eventService = eventService;
   }
 
   challengeButtonIsClicked() {
