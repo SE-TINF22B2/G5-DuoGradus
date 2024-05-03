@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: [self-hosted]
+    environment: staging
     steps:
       - name: Execute the build and run script on the server
         uses: appleboy/ssh-action@v0.1.7
