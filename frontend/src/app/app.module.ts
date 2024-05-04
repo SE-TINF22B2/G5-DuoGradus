@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {provideAnimations} from '@angular/platform-browser/animations'
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,9 @@ import { LandingpageComponent } from './components/pages/landingpage/landingpage
 import { FriendpageComponent } from './components/pages/friendpage/friendpage.component';
 import { HeaderComponent } from './components/atoms/header/header.component';
 import { SearchbarComponent } from './components/atoms/searchbar/searchbar.component';
+import { UsercardComponent } from './components/atoms/usercard/usercard.component';
+import { UserfilterPipe } from './pipes/userfilter.pipe';
+import { AddfriendpageComponent } from './components/pages/addfriendpage/addfriendpage.component';
 
 
 @NgModule({
@@ -46,9 +50,12 @@ import { SearchbarComponent } from './components/atoms/searchbar/searchbar.compo
     FriendpageComponent,
     HeaderComponent,
     SearchbarComponent,
+    UsercardComponent,
+    UserfilterPipe,
+    AddfriendpageComponent,
 
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, FormsModule],
   providers: [provideAnimations()],
   bootstrap: [AppComponent],
 })

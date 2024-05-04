@@ -6,6 +6,7 @@ import { LoginformComponent } from './components/organisms/loginform/loginform.c
 import { SignupformComponent } from './components/organisms/signupform/signupform.component';
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
 import { FriendpageComponent } from './components/pages/friendpage/friendpage.component';
+import { AddfriendpageComponent } from './components/pages/addfriendpage/addfriendpage.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
     ],
   },
   {path: 'friends', component: FriendpageComponent},
+  { path: 'addfriend', component: AddfriendpageComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
