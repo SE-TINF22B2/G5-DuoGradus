@@ -9,7 +9,7 @@ docker compose down
 # Download the current code main branch from github
 git fetch --all
 # Yes, this is the desired option!
-git reset --hard origin/master
+git reset --hard origin/main
 
 # Rebuild the images with the new code
 docker compose build
