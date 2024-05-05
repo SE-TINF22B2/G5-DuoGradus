@@ -17,4 +17,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: "/services/duogradus/build-and-run.sh"
+          script: "sh /services/duogradus/build-and-run.sh"
