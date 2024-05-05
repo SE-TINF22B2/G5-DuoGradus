@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Set the working directory
 cd /services/duogradus/
 
