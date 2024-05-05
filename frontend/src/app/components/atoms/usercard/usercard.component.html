@@ -5,5 +5,7 @@
         </span>
         <h3>{{name}}</h3>
     </div>
-    <button class="remove-button">Remove</button>
+    <button (click)="toggleRemove()" class="remove-button">Remove</button>
 </div>
+
+<app-deletedialog [name]="name" *ngIf="removeIsPressed" (closeRemoveDialog)="toggleRemove()"></app-deletedialog>

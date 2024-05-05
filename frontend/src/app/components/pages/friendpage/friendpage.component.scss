@@ -15,13 +15,13 @@
 
     .searchbar-container {
       display: flex;
-      justify-content: space-between;
+      justify-content: start;
       align-items: center;
       margin-top: 1.5rem;
       background-color: var(--white);
-      width: 75vw;
+      width: 80vw;
       border-radius: 12px;
-      gap: 1rem;
+      gap: 0.5rem;
       margin-left: 10px;
     }
 

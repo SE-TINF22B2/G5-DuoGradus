@@ -27,6 +27,7 @@ import { SearchbarComponent } from './components/atoms/searchbar/searchbar.compo
 import { UsercardComponent } from './components/atoms/usercard/usercard.component';
 import { UserfilterPipe } from './pipes/userfilter.pipe';
 import { AddfriendpageComponent } from './components/pages/addfriendpage/addfriendpage.component';
+import { DeletedialogComponent } from './components/organisms/deletedialog/deletedialog.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { AddfriendpageComponent } from './components/pages/addfriendpage/addfrie
     UsercardComponent,
     UserfilterPipe,
     AddfriendpageComponent,
+    DeletedialogComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, FormsModule],

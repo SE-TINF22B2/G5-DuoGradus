@@ -12,7 +12,7 @@
     .btn-search-container {
       display: flex;
       justify-content: space-between;
-  
+      width: 97vw;
       .searchbar-container {
         display: flex;
         align-items: center;
@@ -25,18 +25,19 @@
       }
   
       .img-container {
-        margin-top: 2px;
+        margin-top: 5px;
         margin-left: 0.5rem;
         filter: invert(100%);
       }
       
       i.img-container2
       {
-        margin-top: 2px;
+        margin-top: 20px;
+        margin-right: 1rem;
         filter: invert(100%);
       }
   
-      .addfriends-button
+      .return-button
       {
         background-color: var(--green);
         color: var(--white);
@@ -47,7 +48,7 @@
         font-size: 1rem;
         cursor: pointer;
         transition: 0.3s;
-        margin-right: 0.6rem;
+        margin-left: 0.6rem;
         margin-top: 1.5rem;
         transition: background-color 0.1s ease; /* Übergangseigenschaft für die Hintergrundfarbe */
   
