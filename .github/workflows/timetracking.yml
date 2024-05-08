@@ -44,7 +44,7 @@ jobs:
         with:
           ref: 'actions/new-timetracking-data'
       - name: 'Create a new Pull Request'
-        run: gh pr create -a benedictweis -B main --title "Update timetracking data" --body "Automated PR"
+        run: gh pr create -a benedictweis -B main -H "actions/timetracking-${{ github.run_id }}" --title "Update timetracking data" --body "Automated PR"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.html_url }}
