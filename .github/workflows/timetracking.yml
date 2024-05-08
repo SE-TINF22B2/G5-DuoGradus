@@ -17,6 +17,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Fetch the current timetracking data
         run: cd docs/project/timetracking && ./get_data.sh
+        env:
+          KIMAI_API_TOKEN: ${{ secrets.KIMAI_API_TOKEN }}
       - name: Install Python
         uses: actions/setup-python@v5
         with:
