@@ -16,15 +16,13 @@ externalDocs:
 tags:
   - name: User
     description: Endpoints related to the user, his account and other personal configurations
-  - name: Activity
-    description: Activities of the current user
-  - name: Achievements
-  - name: Datasources
+  - name: Datasource
+    description: Thirdparty data sources, like FitBit
   - name: Leaderboard
-  - name: Shop
-  - name: Order
+  - name: Goal
+    description: User and system defined Goals
 paths:
-  '/users/me':
+  '/user/me':
     get:
       summary: Displays the current users settings
       operationId: getUser
@@ -49,10 +47,10 @@ paths:
           application/json:
             schema:
               type: object
-              parameters:
+              properties:
                 email:
                   type: string
-                name:
+                displayName:
                   type: string
             example:
               name: Ingolf Neiße
@@ -65,117 +63,12 @@ paths:
           description: Invalid content
         '403':
           description: Not allowed to change attribute
-  '/activities':
+  '/datasource':
     get:
-      summary: Get a list of activities of the current user
-      operationId: listActivities
-      tags:
-        - Activity
-      responses:
-        '200':
-          description: List of activities
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Activity'
-    post:
-      summary: Create an activity as manual record (limits may apply)
-      operationId: recordActivity
-      tags:
-        - Activity
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                type:
-                  type: integer
-                begin:
-                  type: string
-                  format: date-time
-                end:
-                  type: string
-                  format: date-time
-                value:
-                  type: number
-                metric:
-                  type: integer
-                points:
-                  type: integer
-      responses:
-        '201':
-          description: The activity was created successfully
-          content:
-            'application/json':
-              schema:
-                $ref: '#/components/schemas/Activity'
-        '400':
-          description: Invalid properties / activity type not supported
-        '401':
-          description: User is not authenticated
-  '/activities/{id}':
-    get:
-      summary: Returns a single activity
-      operationId: getActivity
-      tags:
-        - Activity
-      parameters:
-        - in: path
-          name: id
-          schema:
-            type: string
-          required: true
-      responses:
-        '200':
-          description: Activity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Activity'
-        '404':
-          description: Activity not found
-        '401':
-          description: User is not authenticated
-    delete:
-      summary: Delete an activity
-      operationId: deleteActivity
-      tags:
-        - Activity
-      parameters:
-        - in: path
-          name: id
-          schema:
-            type: string
-          required: true
-      responses:
-        '204':
-          description: Activity deleted successfully
-        '403':
-          description: Not allowed to delete activity
-        '401':
-          description: User not authenticated
-  '/achievements':
-    get:
-      summary: Get a list of all achievements for the current user
-      operationId: getAchievements
-      tags:
-        - Achievements
-      responses:
-        '200':
-          description: List of Achievements
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Achievement'
-  '/datasources':
-    get:
-      summary: Get a list of all connected data sources
+      summary: Get a list of all connected data sources for the current user
       operationId: getDatasources
       tags:
-        - Datasources
+        - Datasource
       responses:
         '200':
           description: List of connected data sources of the current user
@@ -183,10 +76,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Datasource'
-  '/leaderboard':
+  '/datasource/{id}':
     get:
-      summary: Get the general leaderboard
-      operationId: getGeneralLeaderb
+      summary: Return information about this specific datasource
+      operationId: getDatasource
+      tags:
+        - Datasource
+      responses:
+        '200':
+          description: Datasource information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Datasource'
+    delete:
+      summary: Removes the connection to a specific datasource. The datasource will be still available after that.
+      operationId: deleteDatasource
+      tags:
+        - Datasource
+      responses:
+        '204':
+          description: 'Datasource removed'
+        '400':
+          description: 'Datasource does not exists or removal is not possible at this time.'
+  '/datasource/{id}/authorize':
+    get:
+      summary: Returns the authorize URL used to authorize a datasource.
+      operationId: authorizeDatasource
+      tags:
+        - Datasource
+      responses:
+        '200':
+          description: Authorize URL
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  authorizeURL:
+                    type: string
+
+  '/leaderboard/global':
+    get:
+      summary: Get the global leaderboard
+      operationId: getPublicLeaderboard
       tags:
         - Leaderboard
       responses:
@@ -198,96 +131,172 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Leaderboard'
-  '/leaderboards':
+  '/leaderboard/friends':
     get:
-      summary: Get a list of private leaderboards the user can access
-      operationId: getLeaderboards
-      tags:
-        - Leaderboard
-      responses:
-        '200':
-          description: Return a single leaderboard
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Leaderboard'
-    post:
-      summary: Create a private leaderboard
-      operationId: createLeaderboard
-      tags:
-        - Leaderboard
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                public:
-                  type: boolean
-      responses:
-        '201':
-          description: Leaderboard created
-  '/leaderboards/join':
-    post:
-      summary: Join a private / public leaderboard
-      operationId: joinLeaderboard
-      tags:
-        - Leaderboard
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                id:
-                  type: string
-      responses:
-        '204':
-          description: Joined leaderboard successfully
-        '404':
-          description: Leaderboard does not exists
-        '401':
-          description: User not authorized
-  '/leaderboards/{id}':
-    get:
-      summary: Get a list of private leaderboards the user can access
+      summary: Get the private leaderboard which only contains friends
       operationId: getPrivateLeaderboard
       tags:
         - Leaderboard
-      parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: string
       responses:
         '200':
-          description: Return a single leaderboard
+          description: List of users
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Leaderboard'
-    delete:
-      summary: Leave a leaderboard. If the user is the only user left, delete the leaderboard
-      operationId: leaveOrDeleteLeaderboard
+                type: array
+                items:
+                  $ref: '#/components/schemas/Leaderboard'
+  '/friend':
+    get:
+      summary: Returns a list of all friends of the current user
+      operationId: getFriends
       tags:
-        - Leaderboard
+        - Friend
+      responses:
+        '200':
+          description: List of friends
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Friend'
+    post:
+      summary: Creates a new friend request
+      operationId: addFriend
+      tags:
+        - Friend
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                friend:
+                  type: string
+                  default: user id
+      responses:
+        '201':
+          description: Friend request created
+        '400':
+          description: Friend request not possible
+  '/friend/{id}':
+    put:
+      summary: Accept / Reject a friend request
+      operationId: editFriendRequest
+      tags:
+        - Friend
+      description: >
+        This endpoint allows editing a friend request, both the requests created by
+        the current user and also requests to the current user.
+
+        
+        The following options can be used for requests owned by the authenticated user:
+        - accept
+        - reject
+
+        For own requests only the "delete" operation can be used.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [accept, reject, delete]
+      responses:
+        '200':
+          description: 'Modification was successful'
+        '400':
+          description: 'Request not found / not successful'
+
+    delete:
+      summary: Removes a friend from the friendlist
+      operationId: deleteFriend
+      tags:
+        - Friend
       parameters:
         - in: path
-          required: true
+          name: id
           schema:
             type: string
-          name: id
+          required: true
       responses:
         '204':
-          description: Left the leaderboard / deleted the leaderboard
-        '404':
-          description: Leaderboard not found / user not member
-        '401':
-          description: Unauthorized
-
+          description: Friend was removed
+        '400':
+          description: User has not been a friend or cannot be removed
+  '/goal':
+    get:
+      summary: All user and system defined goals for the current user
+      operationId: getGoals
+      tags:
+        - Goal
+      responses:
+        '200':
+          description: List of all goals
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Goal'
+  '/task':
+    get:
+      summary: A list of available tasks
+      operationId: getTasks
+      tags:
+        - Task
+      responses:
+        '200':
+          description: A list of available tasks
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+  '/task/{id}':
+    get:
+      summary: A list of available tasks
+      operationId: getTask
+      tags:
+        - Task
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: A list of available tasks
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+    put:
+      summary: Begin / Stop a task
+      operationId: modifyTask
+      tags:
+        - Task
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [start, stop, reset]
+      responses:
+        '204':
+          description: Activity was modified
+        '400':
+          description: Modification not allowed / not possible
 components:
   schemas:
     User:
@@ -299,43 +308,55 @@ components:
         email:
           type: string
           format: email
-        name:
+        displayName:
           type: string
         verified:
           type: boolean
-    Activity:
+    Goal:
       type: object
       properties:
         id:
           type: string
-          format: uuid
         type:
-          type: integer
-        begin:
           type: string
-          format: date-time
-        end:
+          enum: [steps, distance]
+        creator:
           type: string
-          format: date-time
+          enum: [system, user]
+        target:
+          type: number
         value:
           type: number
         metric:
-          type: integer
-        datasource:
           type: string
-          format: uuid
-        points:
-          type: integer
-    Achievement:
+          enum: [count, kilometers]
+    Task:
       type: object
       properties:
         id:
           type: string
-          format: uuid
-        type:
-          type: integer
-        achieved:
-          type: boolean
+        level:
+          type: number
+        title:
+          type: string
+        description:
+          type: string
+        condtions:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+              color:
+                type: string
+              icon:
+                type: string
+        status:
+          type: string
+          enum: [available, unavailable, fulfilled, started]
     Datasource:
       type: object
     ShopItem:
@@ -344,6 +365,16 @@ components:
       type: object
     Order:
       type: object
+    Friend:
+      type: object
+      properties:
+        id:
+          type: string
+        displayName:
+          type: string
+        state:
+          type: string
+          enum: [request, friend, pending]
     Leaderboard:
       type: object
       properties:
@@ -355,14 +386,3 @@ components:
           type: string
         points:
           type: integer
-    PrivateLeaderboard:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        creator:
-          type: string
-        public:
-          type: boolean
