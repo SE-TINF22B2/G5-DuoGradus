@@ -5,7 +5,7 @@ import { AuthenticationpageComponent } from './components/pages/authenticationpa
 import { LoginformComponent } from './components/organisms/loginform/loginform.component';
 import { SignupformComponent } from './components/organisms/signupform/signupform.component';
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
-import { FriendpageComponent } from './components/pages/friendpage/friendpage.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,9 +19,8 @@ const routes: Routes = [
       { path: 'login', component: LoginformComponent },
     ],
   },
-  {path: 'friends', component: FriendpageComponent},
   { path: '**', redirectTo: '/home' },
-
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
