@@ -39,7 +39,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: 'actions/new-timetracking-data'
-          sha: 'main'
+          sha: '${{ github.event.pull_request.head.sha }}'
       - name: 'Checkout the new branch'
         uses: actions/checkout@v4
         with:
