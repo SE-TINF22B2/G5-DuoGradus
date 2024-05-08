@@ -18,3 +18,11 @@ model User {
   enabled     Boolean @default(true)
   verified    Boolean @default(false)
 }
+
+model FitnessProvider {
+  id  String @id @default(uuid())
+  type String
+  refreshToken String
+  owner String
+  enabled Boolean
+}
