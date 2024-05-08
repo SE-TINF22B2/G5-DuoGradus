@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Fetch the current timetracking data
-        run: cd docs/guidelines/timetracking && ./get_data.sh
+        run: cd docs/project/timetracking && ./get_data.sh
       - name: Install Python
         uses: actions/setup-python@v5
         with:
