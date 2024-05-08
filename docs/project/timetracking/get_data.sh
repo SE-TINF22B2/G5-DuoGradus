@@ -7,7 +7,7 @@ PROJECT_ID="1"
 WEEKS=$(seq 15 26)
 OUTPUT_FOLDER=./data
 
-export "$(cat .env | xargs)"
+# export "$(cat .env | xargs)"
 
 mkdir -p "$OUTPUT_FOLDER"
 
