@@ -1,4 +1,3 @@
-
 name: Frontend
 
 on:
@@ -8,21 +7,21 @@ on:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.sha }}
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
 
-    - name: Install dependencies
-      run: cd frontend && npm install
+      - name: Install dependencies
+        run: cd frontend && npm install
 
-    - name: Run tests
-      run: cd frontend && npm run test
+      - name: Run tests
+        run: cd frontend && npm run test

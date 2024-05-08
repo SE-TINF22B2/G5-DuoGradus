@@ -1,4 +1,3 @@
-
 name: Backend
 
 on:
@@ -8,25 +7,28 @@ on:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
-    environment: Tests
-    
+    runs-on: [self-hosted]
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.sha }}
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
 
-    - name: Install dependencies
-      run: cd backend && npm install
+      - name: Install dependencies
+        run: cd backend && npm install
 
-    - name: Reset the database (for e2e tests)
-      run: cd backend && npm run db:reset
+      - name: Reset the database (for e2e tests)
+        env:
+          DATABASE_URL: file:./database.dev.sqlite
+        run: cd backend && npm run db:reset
 
-    - name: Run verify
-      run: cd backend && npm run verify
+      - name: Run verify
+        env:
+          DATABASE_URL: 'file:./database.dev.sqlite'
+        run: cd backend && npm run verify

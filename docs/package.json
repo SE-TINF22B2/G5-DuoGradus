@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "mermaid": "^10.9.0",
+    "prettier": "^3.2.5",
+    "vitepress": "^1.1.3",
+    "vitepress-plugin-mermaid": "^2.0.16"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview",
+    "format": "prettier --write \"**/!(*node_modules)/*.{css,ts,mts,md,html,yaml,json}\"",
+    "check:format": "prettier --check \"**/!(*node_modules)/*.{css,ts,mts,md,html,yaml,json}\""
+  }
+}

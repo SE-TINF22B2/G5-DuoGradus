@@ -8,5 +8,6 @@ import { AutoGuard } from './auto.guard';
 @Module({
   imports: [PrismaModule, PassportModule],
   providers: [AuthService, HTTPStrategy, AutoGuard],
+  exports: [AuthService],
 })
 export class AuthModule {}

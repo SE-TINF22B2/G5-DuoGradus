@@ -7,7 +7,7 @@ export class UserRepository {
   constructor(private prisma: PrismaService) {}
 
   /**
-   * Returns a user by his email adresss
+   * Returns a user by his email address
    *
    * @param email
    * @returns
@@ -24,7 +24,7 @@ export class UserRepository {
    * Creates a new user
    *
    * @param email Valid mail address, must be unique
-   * @param displayName Display Name choosen by the user
+   * @param displayName Display Name chosen by the user
    * @param password Hashed Password
    * @returns User
    */
@@ -48,12 +48,15 @@ export class UserRepository {
    * @param user
    * @returns Updated User
    */
-  public async updateUser(user: User): Promise<User> {
+  public async updateUser(
+    id: string,
+    update: Prisma.UserUpdateInput,
+  ): Promise<User> {
     return await this.prisma.user.update({
       where: {
-        id: user.id,
+        id: id,
       },
-      data: user,
+      data: update,
     });
   }
 
