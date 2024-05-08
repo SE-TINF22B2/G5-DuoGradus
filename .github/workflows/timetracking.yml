@@ -20,8 +20,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: 'actions/timetracking-${{ github.run_id	 }}'
+          branch: 'actions/timetracking-${{ github.run_id	}}'
           sha: '${{ github.event.pull_request.head.sha }}'
+      - name: Checkout new branch
+        run: git checkout actions/timetracking-${{ github.run_id }}
       - name: Fetch the current timetracking data
         run: cd docs/project/timetracking && ./get_data.sh
         env:
