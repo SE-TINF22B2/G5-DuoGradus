@@ -16,7 +16,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Checkout new branch
-        run: git checkout -b actions/timetracking-${{ github.run_id }}
+        run: |
+          git checkout -b actions/timetracking-${{ github.run_id }}
+          git push --set-upstream origin actions/timetracking-${{ github.run_id }}
       - name: Fetch the current timetracking data
         run: cd docs/project/timetracking && ./get_data.sh
         env:
