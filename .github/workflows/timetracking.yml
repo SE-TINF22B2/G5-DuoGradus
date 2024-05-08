@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.10'
       - name: Generate the desired charts
-        run: cd docs/guidelines/timetracking && python generate_charts.py
+        run: cd docs/project/timetracking && python generate_charts.py
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
