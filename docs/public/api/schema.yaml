@@ -15,7 +15,7 @@ externalDocs:
   url: https://github.com/SE-TINF22B2/G5-DuoGradus
 tags:
   - name: User
-    description: Endpoints related to the user, his account and other personal configurations
+    description: Endpoints relatexd to the user, his account and other personal configurations
   - name: Datasource
     description: Thirdparty data sources, like FitBit
   - name: Leaderboard
@@ -239,7 +239,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Goal'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Goal'
   '/task':
     get:
       summary: A list of available tasks
@@ -252,10 +254,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Task'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
   '/task/{id}':
     get:
-      summary: A list of available tasks
+      summary: Retrieve information about a single task
       operationId: getTask
       tags:
         - Task
@@ -267,7 +271,7 @@ paths:
           required: true
       responses:
         '200':
-          description: A list of available tasks
+          description: A single task
           content:
             application/json:
               schema:
