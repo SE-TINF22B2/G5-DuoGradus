@@ -190,7 +190,7 @@ paths:
         This endpoint allows editing a friend request, both the requests created by
         the current user and also requests to the current user.
 
-        
+
         The following options can be used for requests owned by the authenticated user:
         - accept
         - reject
