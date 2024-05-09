@@ -1,0 +1,11 @@
+<div class="map">
+  <ng-container *ngFor="let a of activityList; let i = index">
+    <app-challenge-button
+      class="button"
+      [num]="i + 1"
+      [steps]="a.steps"
+      [time]="a.time"
+    ></app-challenge-button>
+  </ng-container>
+  <app-stopbutton *ngIf="eventservice.toggleStopButton"></app-stopbutton>
+</div>

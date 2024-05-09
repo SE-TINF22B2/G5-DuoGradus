@@ -1,0 +1,17 @@
+.map {
+  height: 100%;
+  padding-top: 20vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Nur jeder zweite Button */
+.button {
+  margin-right: 50px;
+}
+
+.button:nth-child(odd) {
+  margin-left: 100px;
+}

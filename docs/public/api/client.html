@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>API Documentation</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css"
+    />
+    <style>
+      /* lexend-regular - latin */
+      @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 400;
+        src: url('/assets/lexend-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      }
+
+      * {
+        font-family: 'Lexend', Arial, sans-serif;
+      }
+
+      header {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: calc(100% - 100px);
+        background-color: #1d1d1f;
+        color: white;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        z-index: 10;
+        align-items: center;
+        font-family: 'Arial';
+        font-weight: bold;
+        color: #38d879;
+      }
+
+      header > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      header > ul > li > a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      #swagger-ui {
+        margin-top: 70px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <span>DuoGradus</span>
+
+      <ul>
+        <li><a href="https://docs.duo-gradus.de">Dokumentation</a></li>
+      </ul>
+    </header>
+
+    <div id="swagger-ui"></div>
+  </body>
+
+  <script
+    src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-standalone-preset.js"
+    crossorigin
+  ></script>
+  <script>
+    window.onload = () => {
+      window.ui = SwaggerUIBundle({
+        url: '/api/schema.yaml',
+        dom_id: '#swagger-ui',
+        presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+        layout: 'BaseLayout',
+      });
+    };
+  </script>
+</html>

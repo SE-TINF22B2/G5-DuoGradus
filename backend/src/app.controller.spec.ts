@@ -1,13 +1,17 @@
+import { ConsoleLogger } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { LoggerService } from './logger/logger.service';
 
 describe('AppController', () => {
   let appController: AppController;
+  let loggerService: LoggerService;
   let appService: AppService;
 
   beforeEach(async () => {
     appService = new AppService();
-    appController = new AppController(appService);
+    loggerService = new ConsoleLogger();
+    appController = new AppController(appService, loggerService);
   });
 
   describe('getPing', () => {

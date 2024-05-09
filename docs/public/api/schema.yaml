@@ -1,0 +1,392 @@
+openapi: 3.0.3
+info:
+  title: DuoGradus - API Spezifikation
+  description: |-
+    👟 DuoGradus
+
+    “DuoGradus” ist eine innovative Anwendung, die dir hilft, deine Fitness-Ziele zu erreichen. Dazu bieten wir dir ein innovatives Konzept, welches auf Gamification und Regelmäßigkeit setzt, sodass du dein Ziel auch langfristig erreichen kannst.
+
+    Mithilfe von vielen spannenden Challenges ermutigen wir dich Schritte zu sammeln, Fahrrad zu fahren oder im Fitness-Studio zu trainieren. Manchmal geben wir dir auch zusätzliche Herausforderungen (z.B. Schritte im Regen), die dann mit Abzeichen und anderen Erfolgen belohnt werden.
+
+    Damit dir nicht langweilig wird, kannst du dich zusätzlich mit deinen Freunden, aber auch in der globalen Rangliste vergleichen, sodass du immer die Motivation hast, Punkte zu sammeln.
+  version: 1.0.0
+externalDocs:
+  description: Projekt-Repository
+  url: https://github.com/SE-TINF22B2/G5-DuoGradus
+tags:
+  - name: User
+    description: Endpoints relatexd to the user, his account and other personal configurations
+  - name: Datasource
+    description: Thirdparty data sources, like FitBit
+  - name: Leaderboard
+  - name: Goal
+    description: User and system defined Goals
+paths:
+  '/user/me':
+    get:
+      summary: Displays the current users settings
+      operationId: getUser
+      tags:
+        - User
+      responses:
+        '200':
+          description: User object for the current user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: User not authenticated
+    patch:
+      summary: Changes a user session
+      operationId: patchUser
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                displayName:
+                  type: string
+            example:
+              name: Ingolf Neiße
+              email: ingolf@neis.se
+
+      responses:
+        '204':
+          description: User changed successfully
+        '400':
+          description: Invalid content
+        '403':
+          description: Not allowed to change attribute
+  '/datasource':
+    get:
+      summary: Get a list of all connected data sources for the current user
+      operationId: getDatasources
+      tags:
+        - Datasource
+      responses:
+        '200':
+          description: List of connected data sources of the current user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Datasource'
+  '/datasource/{id}':
+    get:
+      summary: Return information about this specific datasource
+      operationId: getDatasource
+      tags:
+        - Datasource
+      responses:
+        '200':
+          description: Datasource information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Datasource'
+    delete:
+      summary: Removes the connection to a specific datasource. The datasource will be still available after that.
+      operationId: deleteDatasource
+      tags:
+        - Datasource
+      responses:
+        '204':
+          description: 'Datasource removed'
+        '400':
+          description: 'Datasource does not exists or removal is not possible at this time.'
+  '/datasource/{id}/authorize':
+    get:
+      summary: Returns the authorize URL used to authorize a datasource.
+      operationId: authorizeDatasource
+      tags:
+        - Datasource
+      responses:
+        '200':
+          description: Authorize URL
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  authorizeURL:
+                    type: string
+
+  '/leaderboard/global':
+    get:
+      summary: Get the global leaderboard
+      operationId: getPublicLeaderboard
+      tags:
+        - Leaderboard
+      responses:
+        '200':
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Leaderboard'
+  '/leaderboard/friends':
+    get:
+      summary: Get the private leaderboard which only contains friends
+      operationId: getPrivateLeaderboard
+      tags:
+        - Leaderboard
+      responses:
+        '200':
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Leaderboard'
+  '/friend':
+    get:
+      summary: Returns a list of all friends of the current user
+      operationId: getFriends
+      tags:
+        - Friend
+      responses:
+        '200':
+          description: List of friends
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Friend'
+    post:
+      summary: Creates a new friend request
+      operationId: addFriend
+      tags:
+        - Friend
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                friend:
+                  type: string
+                  default: user id
+      responses:
+        '201':
+          description: Friend request created
+        '400':
+          description: Friend request not possible
+  '/friend/{id}':
+    put:
+      summary: Accept / Reject a friend request
+      operationId: editFriendRequest
+      tags:
+        - Friend
+      description: >
+        This endpoint allows editing a friend request, both the requests created by
+        the current user and also requests to the current user.
+
+
+        The following options can be used for requests owned by the authenticated user:
+        - accept
+        - reject
+
+        For own requests only the "delete" operation can be used.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [accept, reject, delete]
+      responses:
+        '200':
+          description: 'Modification was successful'
+        '400':
+          description: 'Request not found / not successful'
+
+    delete:
+      summary: Removes a friend from the friendlist
+      operationId: deleteFriend
+      tags:
+        - Friend
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '204':
+          description: Friend was removed
+        '400':
+          description: User has not been a friend or cannot be removed
+  '/goal':
+    get:
+      summary: All user and system defined goals for the current user
+      operationId: getGoals
+      tags:
+        - Goal
+      responses:
+        '200':
+          description: List of all goals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Goal'
+  '/task':
+    get:
+      summary: A list of available tasks
+      operationId: getTasks
+      tags:
+        - Task
+      responses:
+        '200':
+          description: A list of available tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+  '/task/{id}':
+    get:
+      summary: Retrieve information about a single task
+      operationId: getTask
+      tags:
+        - Task
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: A single task
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+    put:
+      summary: Begin / Stop a task
+      operationId: modifyTask
+      tags:
+        - Task
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [start, stop, reset]
+      responses:
+        '204':
+          description: Activity was modified
+        '400':
+          description: Modification not allowed / not possible
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          type: string
+          format: email
+        displayName:
+          type: string
+        verified:
+          type: boolean
+    Goal:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum: [steps, distance]
+        creator:
+          type: string
+          enum: [system, user]
+        target:
+          type: number
+        value:
+          type: number
+        metric:
+          type: string
+          enum: [count, kilometers]
+    Task:
+      type: object
+      properties:
+        id:
+          type: string
+        level:
+          type: number
+        title:
+          type: string
+        description:
+          type: string
+        condtions:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+              color:
+                type: string
+              icon:
+                type: string
+        status:
+          type: string
+          enum: [available, unavailable, fulfilled, started]
+    Datasource:
+      type: object
+    ShopItem:
+      type: object
+    OrderItem:
+      type: object
+    Order:
+      type: object
+    Friend:
+      type: object
+      properties:
+        id:
+          type: string
+        displayName:
+          type: string
+        state:
+          type: string
+          enum: [request, friend, pending]
+    Leaderboard:
+      type: object
+      properties:
+        position:
+          type: integer
+        color:
+          type: integer
+        displayname:
+          type: string
+        points:
+          type: integer

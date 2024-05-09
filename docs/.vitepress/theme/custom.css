@@ -1,0 +1,22 @@
+:root {
+  --vp-c-brand-1: #4caf50; /* Adjusted to a green shade */
+  --vp-c-brand-2: #66bb6a; /* Adjusted to a green shade */
+
+  --vp-c-gray-1: #4caf50; /* Adjusted to a green shade */
+  --vp-c-gray-2: #66bb6a; /* Adjusted to a green shade */
+  --vp-c-gray-3: #81c784; /* Adjusted to a green shade */
+
+  --vp-c-green-1: #4caf50; /* Adjusted to a green shade */
+  --vp-c-green-2: #66bb6a; /* Adjusted to a green shade */
+  --vp-c-green-3: #81c784; /* Adjusted to a green shade */
+}
+
+.dark {
+  --vp-c-gray-1: #4caf50; /* Adjusted to a green shade */
+  --vp-c-gray-2: #66bb6a; /* Adjusted to a green shade */
+  --vp-c-gray-3: #81c784; /* Adjusted to a green shade */
+
+  --vp-c-green-1: #4caf50; /* Adjusted to a green shade */
+  --vp-c-green-2: #66bb6a; /* Adjusted to a green shade */
+  --vp-c-green-3: #81c784; /* Adjusted to a green shade */
+}

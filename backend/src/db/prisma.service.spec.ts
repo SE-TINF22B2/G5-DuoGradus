@@ -1,6 +1,6 @@
 import { PrismaService } from './prisma.service';
 
-describe('PrismaServie testing', () => {
+describe('PrismaService testing', () => {
   it('should connect to the prisma service on initialization', async () => {
     const service = new PrismaService();
     service.$connect = jest.fn();
