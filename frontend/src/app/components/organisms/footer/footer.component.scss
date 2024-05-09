@@ -1,0 +1,33 @@
+#container{
+    //fix position at the bottom of the page
+    position: fixed;
+    bottom: 0;
+
+    //format + borders
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--background-black);
+    color: var(--white);
+    border-top: 1px solid;
+
+    //format navigation elements
+    .nav-element{
+        text-align: center;
+        width: 25%;
+        height: 100%;
+        
+        .icons{
+            width: 60%;
+            max-width: 4.5rem;
+            filter: brightness(0) invert(1);
+            padding-top: 5%;
+        }
+    }
+    
+    //seperate navigation elements with borders
+    #nav-main, #nav-ranked, #nav-friendlist{
+        border-right: 1px solid var(--white);
+    }
+}

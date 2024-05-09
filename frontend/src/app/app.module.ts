@@ -20,6 +20,7 @@ import { InputfieldComponent } from './components/atoms/inputfield/inputfield.co
 import { SignupformComponent } from './components/organisms/signupform/signupform.component';
 import { LoaderComponent } from './components/atoms/loader/loader.component';
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
+import { FooterComponent } from './components/organisms/footer/footer.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { LandingpageComponent } from './components/pages/landingpage/landingpage
     SignupformComponent,
     LoaderComponent,
     LandingpageComponent,
+    FooterComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
