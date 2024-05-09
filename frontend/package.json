@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.0.0",
   "scripts": {
+    "verify": "npm run build && npm run test",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
