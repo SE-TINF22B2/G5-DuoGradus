@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChallengeDialogComponent } from './challenge-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ChallengeDialogComponent', () => {
   let component: ChallengeDialogComponent;
@@ -9,6 +10,7 @@ describe('ChallengeDialogComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ChallengeDialogComponent],
+      imports: [BrowserAnimationsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChallengeDialogComponent);
