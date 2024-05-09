@@ -11,34 +11,40 @@ jobs:
     permissions:
       pull-requests: write
       contents: write
+    environment: timetracking-prod
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Checkout new branch
+        run: |
+          git checkout -b actions/timetracking-${{ github.run_id }}
+          git push --set-upstream origin actions/timetracking-${{ github.run_id }}
       - name: Fetch the current timetracking data
         run: cd docs/project/timetracking && ./get_data.sh
+        env:
+          KIMAI_API_TOKEN: ${{ secrets.KIMAI_API_TOKEN }}
       - name: Install Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy matplotlib
       - name: Generate the desired charts
-        run: cd docs/guidelines/timetracking && python generate_charts.py
+        run: cd docs/project/timetracking && python generate_charts.py
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
-      - uses: peterjgrainger/action-create-branch@v2.2.0
-        name: 'Create a new branch'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          branch: 'actions/new-timetracking-data'
-          sha: 'main'
+      - name: Push changes
+        run: git push
       - name: 'Checkout the new branch'
         uses: actions/checkout@v4
         with:
           ref: 'actions/new-timetracking-data'
       - name: 'Create a new Pull Request'
-        run: gh pr create -a benedictweis -B main --title \"Update timetracking data\""
+        run: gh pr create -a benedictweis -B main -H "actions/timetracking-${{ github.run_id }}" --title "Update timetracking data" --body "Automated PR"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.html_url }}
