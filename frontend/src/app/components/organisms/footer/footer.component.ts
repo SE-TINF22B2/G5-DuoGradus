@@ -16,4 +16,7 @@ export class FooterComponent {
   navigate(path:string){
     this.router.navigateByUrl(path);
   }
+  isOnPage(path:string):boolean{
+    return this.router.url==path;
+  }
 }

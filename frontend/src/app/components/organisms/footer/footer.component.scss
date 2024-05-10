@@ -25,6 +25,12 @@
             padding-top: 5%;
         }
     }
+    .highlight{
+        background-color: var(--white)!important;
+        .icons{
+            filter:invert(0);
+        }
+    }
     
     //seperate navigation elements with borders
     #nav-main, #nav-ranked, #nav-friendlist{
