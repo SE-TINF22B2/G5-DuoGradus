@@ -9,7 +9,9 @@ pipeline {
     }
 
     stage('Test') {
-      sh 'cd backend && npm run check && npm run test:cov && npm run test:e2e'
+      steps {
+        sh 'cd backend && npm run check && npm run test:cov && npm run test:e2e'
+      }
     }
   }
 
