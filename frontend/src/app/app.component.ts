@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'duogradus. | Sammle Schritte, Tritt gegen Freunde an und steig in der Liga auf';
 }

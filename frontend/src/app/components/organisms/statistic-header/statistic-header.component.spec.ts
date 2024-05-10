@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StatisticHeaderComponent } from './statistic-header.component';
+import { TimerComponent } from 'app/components/atoms/timer/timer.component';
+import { TimerPipe } from 'app/pipes/timer.pipe';
 
 describe('StatisticHeaderComponent', () => {
   let component: StatisticHeaderComponent;
@@ -8,7 +10,7 @@ describe('StatisticHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [StatisticHeaderComponent]
+      declarations: [StatisticHeaderComponent, TimerComponent, TimerPipe]
     })
     .compileComponents();
     
