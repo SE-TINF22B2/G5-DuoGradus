@@ -21,6 +21,10 @@ import { SignupformComponent } from './components/organisms/signupform/signupfor
 import { LoaderComponent } from './components/atoms/loader/loader.component';
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
 import { FooterComponent } from './components/organisms/footer/footer.component';
+import { UserCardComponent } from './components/atoms/user-card/user-card.component';
+import { RankingTableComponent } from './components/organisms/ranking-table/ranking-table.component';
+import { RankingPageComponent } from './components/pages/ranking-page/ranking-page.component';
+
 
 
 @NgModule({
@@ -42,6 +46,10 @@ import { FooterComponent } from './components/organisms/footer/footer.component'
     LoaderComponent,
     LandingpageComponent,
     FooterComponent,
+    UserCardComponent,
+    RankingTableComponent,
+    RankingPageComponent,
+
 
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
