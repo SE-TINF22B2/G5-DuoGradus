@@ -21,7 +21,7 @@ pipeline {
 
   post {
     success {
-      echo 'Pipeline successful!'
+      echo 'Pipeline successful!!'
     }
   }
 }
