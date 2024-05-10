@@ -1,23 +1,24 @@
 # Testing
 
-## Introduction
+## Einführung
 
-For testing the frontend, two frameworks are used: Jasmine and Protractor. Jasmine is utilized for unit testing individual components, while Protractor is specifically designed for end-to-end (E2E) testing of Angular applications. This combination provides comprehensive coverage of the various types of testing in Angular projects.
+Zum Testen des Frontends wird das Framework Jasmine eingesetzt. Jasmine wird für Unit-Tests einzelner Komponenten verwendet.
 
-Jasmine is already part of the initialization of an Angular project with the Angular CLI. It is a popular testing framework for JavaScript applications and offers a clear syntax for writing unit and integration tests.
+Jasmine ist bereits Teil der Initialisierung eines Angular-Projekts mit dem Angular CLI. Es ist ein beliebtes Testframework für JavaScript-Anwendungen und bietet eine klare Syntax zum Schreiben von Unit- und Integrationstests.
 
-On the other hand, Protractor is tailored to the needs of Angular applications and enables the writing of E2E tests.
+Aufgrund von Zeitbeschränkungen und dem damit verbundenen Aufwand wurde entschieden, für das Frontend keine End-to-End-Tests durchzuführen. Außerdem fehlt es im Frontend-Team an der nötigen Kompetenz, um solche Tests in diesem Zeitrahmen korrekt zu erstellen.
 
-## Getting Started
+## Erste Schritte
 
 Jasmine: <https://jasmine.github.io/>
-Protractor: <https://www.protractortest.org/#/>
 
-## Conventions
 
-The unit tests are placed directly within the same folder as the file being tested and have the extension `.spec.ts`. End-to-end tests are located in a `test` folder and have the extension `.e2e-spec.ts`.
+## Konventionen
 
-## Example Unit Test
+Die Unit-Tests werden direkt im gleichen Ordner wie die zu testende Datei abgelegt und haben die Erweiterung `.spec.ts`.
+
+
+## Beispiel Unit Test
 
 ```ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -46,27 +47,6 @@ describe('GreetingComponent', () => {
   it('should display the correct greeting message', () => {
     const element: HTMLElement = fixture.nativeElement;
     expect(element.textContent).toContain('Hello, World!');
-  });
-});
-```
-
-## Example E2E-Test
-
----
-
-```ts
-// Beispiel-E2E-Test: app.e2e-spec.ts
-
-import { browser, by, element } from 'protractor';
-
-describe('Greeting App', () => {
-  beforeEach(() => {
-    browser.get('/');
-  });
-
-  it('should display the correct greeting message', () => {
-    const greetingMessage = element(by.tagName('h1'));
-    expect(greetingMessage.getText()).toEqual('Hello, World!');
   });
 });
 ```
