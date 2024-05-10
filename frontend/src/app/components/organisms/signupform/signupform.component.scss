@@ -1,102 +1,5 @@
 
 p.create-account {
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 20px;
-
-  a {
-    font-weight: bold;
-    color: var(--white);
-    text-decoration: none;
-    margin-top: 20px;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-}
-
-.eyeimg {
-  justify-content: center;
-  align-self: center;
-  margin-right: 8px;
-
-  .img {
-    height: 15px;
-    width: 15px;
-  }
-}
-
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .center {
-    position: absolute;
-    top: calc(50% - 10%);
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    width: 65%;
-    z-index: 1;
-    -webkit-transition: all 0.3s ease;
-    background-color: var(--background-black);
-    padding: 15px;
-    border-radius: 16px;
-    margin-top: 14%;
-
-    .form-title {
-      color: var(--white);
-      font-size: 1.7em;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .form-holder {
-      border-radius: 15px;
-      background-color: #fff;
-      border: 1px solid #eee;
-      overflow: hidden;
-      margin-top: 50px;
-      opacity: 1;
-      visibility: visible;
-      -webkit-transition: all 0.3s ease;
-    }
-
-    .button {
-      background-color: var(--green);
-      color: var(--font);
-      border: 0;
-      font-weight: bolder;
-      border-radius: 15px;
-      display: block;
-      margin: 15px auto;
-      margin-top: 10px;
-      padding: 15px 45px;
-      width: 100%;
-      font-size: 13px;
-      cursor: pointer;
-      opacity: 1;
-      visibility: visible;
-      -webkit-transition: all 0.3s ease;
-
-      &:hover {
-        transition: all 0.1s ease;
-        background-color: var(--white);
-        color: var(--font);
-      }
-    }
-  }
-
-  .password {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
-
-
-p.create-account {
     font-size: 0.8rem;
     text-align: center;
     margin-top: 20px;
@@ -116,6 +19,7 @@ p.create-account {
     justify-content: center;
     align-self: center;
     margin-right: 8px;
+    margin-top: 8px;
   
     .img {
       height: 15px;
@@ -136,6 +40,7 @@ p.create-account {
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         width: 65%;
+        max-width: 400px;
         z-index: 5;
         -webkit-transition: all .3s ease;
         background-color: var(--background-black);
@@ -197,4 +102,20 @@ p.create-account {
       }
 }
 
+@media screen and (min-width: 429px) {
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .center {
+      width: 65%;
+      max-width: 300px;
+      z-index: 1;
+      background-color: var(--background-black);
+      padding: 15px;
+      border-radius: 16px;
+      margin-top: 0;
+    }
+  }
+}
 
