@@ -1,4 +1,5 @@
 <router-outlet></router-outlet>
+<app-footer *ngIf="hasFooter()"></app-footer>
 <!--TODO: set visible for the laoding progress-->
 <app-loader *ngIf="isLoading" ></app-loader>
 <app-toast></app-toast>
