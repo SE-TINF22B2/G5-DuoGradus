@@ -5,6 +5,7 @@ import { AuthenticationpageComponent } from './components/pages/authenticationpa
 import { LoginformComponent } from './components/organisms/loginform/loginform.component';
 import { SignupformComponent } from './components/organisms/signupform/signupform.component';
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
+import { RankingPageComponent } from './components/pages/ranking-page/ranking-page.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
     ],
   },
   { path: '**', redirectTo: '/home' },
+  { path: 'ranking', component: RankingPageComponent}
 ]
 
 @NgModule({

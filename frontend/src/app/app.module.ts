@@ -20,6 +20,9 @@ import { InputfieldComponent } from './components/atoms/inputfield/inputfield.co
 import { SignupformComponent } from './components/organisms/signupform/signupform.component';
 import { LoaderComponent } from './components/atoms/loader/loader.component';
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
+import { UserCardComponent } from './components/atoms/user-card/user-card.component';
+import { RankingTableComponent } from './components/organisms/ranking-table/ranking-table.component';
+import { RankingPageComponent } from './components/pages/ranking-page/ranking-page.component';
 
 
 @NgModule({
@@ -40,6 +43,9 @@ import { LandingpageComponent } from './components/pages/landingpage/landingpage
     SignupformComponent,
     LoaderComponent,
     LandingpageComponent,
+    UserCardComponent,
+    RankingTableComponent,
+    RankingPageComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
