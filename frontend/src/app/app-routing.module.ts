@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: LandingpageComponent },
   { path: 'main', component: MainpageComponent },
+  { path: 'ranking', component: RankingPageComponent},
   {
     path: 'auth',
     component: AuthenticationpageComponent,
@@ -21,7 +22,6 @@ const routes: Routes = [
     ],
   },
   { path: '**', redirectTo: '/home' },
-  { path: 'ranking', component: RankingPageComponent}
 ]
 
 @NgModule({
