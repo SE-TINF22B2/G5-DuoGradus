@@ -17,7 +17,7 @@ export class MainpageComponent implements OnInit{
     //Simulate a html request
     setTimeout(() => {
       this.LoaderService.hide();
-    }, 2000);
+    }, 1000);
   }
 
 }
