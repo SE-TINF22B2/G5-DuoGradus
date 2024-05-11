@@ -1,5 +1,4 @@
-# Authentication
-
+## Authentication
 > [!WARNING]
 > The currently used authentication mechanism is subject to changes and only intended for development purposes.
 
