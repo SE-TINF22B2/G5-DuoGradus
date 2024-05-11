@@ -1,10 +1,14 @@
 pipeline {
   agent any
+
+  environment {
+    DATABASE_URL = 'file:./database.dev.sqlite'
+  }
   
   stages {
     stage('Build') {
       steps {
-        sh 'cd backend && npm install && npm run build && cp .env.example .env'
+        sh 'cd backend && npm install && npm run build'
         sh 'cd frontend && npm install && npm run build'
       }
     }
