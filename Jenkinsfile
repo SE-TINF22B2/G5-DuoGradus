@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'cd backend && npm install && npm run build && cp .env.example .env'
+        sh 'cd backend && npm install && npm run build && cp .env.example .env && ls -la'
       }
     }
 
