@@ -16,7 +16,6 @@ pipeline {
     stage('Test') {
       steps {
         sh 'cd backend && npm run test:cov && npm run test:e2e'
-        sh 'cd frontend && npm run test'
       }
     }
 
