@@ -10,7 +10,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'cd backend && npm run check'
+        sh 'cd backend && npm run check && npm run test:cov && npm run test:e2e'
         sh 'cd docs && npm run check:format'
       }
     }
