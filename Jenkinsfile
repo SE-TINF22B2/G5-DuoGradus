@@ -11,6 +11,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'cd backend && npm run check'
+        sh 'cd docs && npm run check:format'
       }
     }
   }
