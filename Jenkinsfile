@@ -4,13 +4,21 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'cd backend && npm install && npm run build && cp .env.example .env && ls -la'
+        sh 'cd backend && npm install && npm run build && cp .env.example .env'
+        sh 'cd frontend && npm install && npm run build'
       }
     }
 
     stage('Test') {
       steps {
-        sh 'cd backend && npm run check && npm run test:cov && npm run test:e2e'
+        sh 'cd backend && npm run test:cov && npm run test:e2e'
+        sh 'cd frontend && npm run test'
+      }
+    }
+
+    stage('Formatting') {
+      steps {
+        sh 'cd backend && npm run check'
         sh 'cd docs && npm run check:format'
       }
     }
