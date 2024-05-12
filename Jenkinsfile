@@ -1,7 +1,21 @@
 pipeline {
   agent {
     kubernetes {
-      defaultContainer 'node'
+      yaml '''
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          labels:
+            some-label: some-label-value
+        spec:
+          containers:
+          - name: node
+            image: node-20:alpine
+            command:
+            - cat
+            tty: true
+        '''
+      retries 2
     }
   }
 
