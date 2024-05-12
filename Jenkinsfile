@@ -44,6 +44,7 @@ pipeline {
     stage('Formatting') {
       steps {
         container('node') {
+          sh 'cd backend && npm install'
           sh 'cd backend && npm run check'
           sh 'cd docs && npm run check:format'
         }
