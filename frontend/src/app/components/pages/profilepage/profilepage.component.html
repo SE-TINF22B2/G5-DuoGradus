@@ -9,5 +9,11 @@
     </div>
     <div id="statistics" class="pf-section">
         <h2>Statistiken</h2>
-    </div>
+        <div id="entrys-wrapper">
+            <app-statistic-entry class="entry"
+            *ngFor="let statistic of statistics"
+            [name]="statistic.name"
+            [value]="statistic.value"/>
+        </div>
+    </div>   
 </div>
