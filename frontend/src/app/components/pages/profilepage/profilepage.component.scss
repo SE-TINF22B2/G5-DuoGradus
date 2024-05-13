@@ -18,16 +18,22 @@
     background-color: var(--font);
     border-radius: 2em;
     margin: 1em;
-} 
-#data{
-    height: 20vh;
+}
+
+@mixin section{
     text-indent: 1em;
     h2{
         padding-top: 1em;
     }
 }
+ 
+#data{
+    height: 20vh;
+    @include section;
+}
 #statistics{
     min-height: 30vh;
+    @include section;
 }
 #avatar-svg{
     height: 100%;
