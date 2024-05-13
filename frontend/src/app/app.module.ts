@@ -24,6 +24,7 @@ import { FooterComponent } from './components/organisms/footer/footer.component'
 import { UserCardComponent } from './components/atoms/user-card/user-card.component';
 import { RankingTableComponent } from './components/organisms/ranking-table/ranking-table.component';
 import { RankingPageComponent } from './components/pages/ranking-page/ranking-page.component';
+import { ProfilepageComponent } from './components/pages/profilepage/profilepage.component';
 
 
 
@@ -49,6 +50,7 @@ import { RankingPageComponent } from './components/pages/ranking-page/ranking-pa
     UserCardComponent,
     RankingTableComponent,
     RankingPageComponent,
+    ProfilepageComponent,
 
 
   ],
