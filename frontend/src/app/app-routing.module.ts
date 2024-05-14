@@ -7,6 +7,7 @@ import { SignupformComponent } from './components/organisms/signupform/signupfor
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
 import { RankingPageComponent } from './components/pages/ranking-page/ranking-page.component';
 import { ProfilepageComponent } from './components/pages/profilepage/profilepage.component';
+import { SettingspageComponent } from './components/pages/settingspage/settingspage.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'main', component: MainpageComponent },
   { path: 'ranking', component: RankingPageComponent},
   { path: 'profile', component: ProfilepageComponent},
+  { path: 'settings', component: SettingspageComponent},
   {
     path: 'auth',
     component: AuthenticationpageComponent,
