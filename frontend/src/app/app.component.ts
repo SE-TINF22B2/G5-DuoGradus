@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
   }
   
     hasFooter() {
-    const footerPages: string[] = ['/main', '/ranking'];
+    const footerPages: string[] = ['/main', '/ranking', '/profile'];
     return footerPages.includes(window.location.pathname);
     }
 

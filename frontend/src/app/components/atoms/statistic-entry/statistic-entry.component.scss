@@ -1,0 +1,20 @@
+#wrapper{
+    background-color: var(--white);
+    text-align: center;
+    height: 6em;
+    color: var(--font);
+    text-indent: 0em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    min-width: 8em;
+    padding: 0.5em;
+    div{
+        height: 40%;
+        width: 100%;
+    }
+}
+#name{
+    padding-top: 1em;
+    font-weight: bold;
+}

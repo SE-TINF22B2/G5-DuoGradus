@@ -6,6 +6,7 @@ import { LoginformComponent } from './components/organisms/loginform/loginform.c
 import { SignupformComponent } from './components/organisms/signupform/signupform.component';
 import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
 import { RankingPageComponent } from './components/pages/ranking-page/ranking-page.component';
+import { ProfilepageComponent } from './components/pages/profilepage/profilepage.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: LandingpageComponent },
   { path: 'main', component: MainpageComponent },
   { path: 'ranking', component: RankingPageComponent},
+  { path: 'profile', component: ProfilepageComponent},
   {
     path: 'auth',
     component: AuthenticationpageComponent,

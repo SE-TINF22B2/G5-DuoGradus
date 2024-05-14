@@ -10,7 +10,7 @@ export class FooterComponent {
   router: Router;
 
   constructor(router:Router){
-    this.router=router
+    this.router=router;
   }
 
   navigate(path:string){
