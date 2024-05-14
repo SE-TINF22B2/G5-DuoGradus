@@ -27,6 +27,7 @@ import { RankingPageComponent } from './components/pages/ranking-page/ranking-pa
 import { ProfilepageComponent } from './components/pages/profilepage/profilepage.component';
 import { StatisticEntryComponent } from './components/atoms/statistic-entry/statistic-entry.component';
 import { SettingspageComponent } from './components/pages/settingspage/settingspage.component';
+import { SettingsentryComponent } from './components/atoms/settingsentry/settingsentry.component';
 
 
 
@@ -55,6 +56,7 @@ import { SettingspageComponent } from './components/pages/settingspage/settingsp
     ProfilepageComponent,
     StatisticEntryComponent,
     SettingspageComponent,
+    SettingsentryComponent,
 
 
   ],

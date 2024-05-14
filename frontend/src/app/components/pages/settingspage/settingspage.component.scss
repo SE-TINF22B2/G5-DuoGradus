@@ -1,5 +1,9 @@
+#wrapper{
+    background-color: var(--background-black);
+    height: 100vh;
+}
 #header{
-    height: 6em;
+    height: 4em;
     background-color: var(--font);
     display: flex;
     flex: 1 2 auto;
@@ -24,4 +28,37 @@
     font-size: 1.5em;
     color: var(--green);
     text-align: right;
+}
+#avatar{
+    height: 30vh;
+    text-align: center;
+    padding-top: 1em;
+    margin: 1em 1em 1em 1em;
+    background-color: var(--font);
+    border-radius: 1em;
+}
+#avatar-img{
+    height: 70%;
+}
+#change-avatar{
+    margin-top: 0.5em;
+    font-size: 1.5em;
+}
+@media (height <= 400px) {
+    #change-avatar{
+        font-size: 0.5em;
+    }
+}
+#logout{
+    text-align: center;
+}
+#logout-bt{
+    background-color: var(--green);
+    color: var(--black-2);
+    border-radius: 1em;
+    border-width: 0em;
+    height: 1.7em;
+    width: 6em;
+    font-size: 1.5em;
+    font-weight: bold;
 }

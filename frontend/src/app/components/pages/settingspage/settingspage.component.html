@@ -1,11 +1,30 @@
 <div id="wrapper">
     <div id="header">
-        <img id="close-settings" src="../../../../assets/icons/close-settings.svg" alt="close-svg">
+        <img id="close-settings" src="../../../../assets/icons/close-settings.svg" alt="close-svg"
+        (click)="goBack()">
         <div id="headline">
             SETTINGS
         </div>    
-        <div id="save">
+        <div id="save"
+        (click)="goBack()">
             SAVE
         </div>
+    </div>
+    <div id="avatar">
+        <img id="avatar-img" src="../../../../assets/icons/avatar.svg" alt="avatar-svg">
+        <div id="change-avatar">
+            CHANGE AVATAR
+        </div>
+    </div>
+    <div id="settings">
+        <app-settingsentry
+        *ngFor="let setting of settings"
+        [name]="setting.name"
+        [value]="setting.value"/>
+    </div>
+    <div id="logout">
+        <button (click)="logout()" id="logout-bt">
+            Logout
+        </button>
     </div>
 </div>
