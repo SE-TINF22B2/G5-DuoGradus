@@ -11,18 +11,22 @@ datasource db {
 }
 
 model User {
-  id          String  @id @default(uuid())
+  id          String            @id @default(uuid())
   displayName String
-  email       String  @unique
+  email       String            @unique
   password    String
-  enabled     Boolean @default(true)
-  verified    Boolean @default(false)
+  enabled     Boolean           @default(true)
+  verified    Boolean           @default(false)
+  providers   FitnessProvider[]
 }
 
 model FitnessProvider {
-  id  String @id @default(uuid())
-  type String
-  refreshToken String
-  owner String
-  enabled Boolean
+  id                 String   @id @default(uuid())
+  type               String
+  refreshToken       String
+  accessToken        String
+  accessTokenExpires DateTime
+  owner              User     @relation(fields: [userId], references: [id])
+  userId             String
+  enabled            Boolean
 }
