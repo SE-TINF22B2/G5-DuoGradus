@@ -7,7 +7,7 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background-color: lighten($color: #0f0f0f, $amount: 5%);
+  background-color: var(--background-black);
 
   .main {
     width: 100%;
