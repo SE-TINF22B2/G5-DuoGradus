@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddfriendpageComponent } from './addfriendpage.component';
+import { HeaderComponent } from 'app/components/atoms/header/header.component';
+import { SearchbarComponent } from 'app/components/atoms/searchbar/searchbar.component';
+import { FormsModule } from '@angular/forms';
 
 describe('AddfriendpageComponent', () => {
   let component: AddfriendpageComponent;
@@ -8,7 +11,8 @@ describe('AddfriendpageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AddfriendpageComponent]
+      declarations: [AddfriendpageComponent, HeaderComponent, SearchbarComponent],
+      imports: [FormsModule]
     })
     .compileComponents();
     

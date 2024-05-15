@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+
 import { SearchbarComponent } from './searchbar.component';
+import { UserfilterPipe } from 'app/pipes/userfilter.pipe';
+import { FormsModule } from '@angular/forms';
 
 describe('SearchbarComponent', () => {
   let component: SearchbarComponent;
@@ -8,7 +11,9 @@ describe('SearchbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SearchbarComponent]
+      declarations: [SearchbarComponent, UserfilterPipe],
+      imports: [FormsModule]
+      
     })
     .compileComponents();
     
