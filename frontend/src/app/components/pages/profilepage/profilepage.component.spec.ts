@@ -14,7 +14,7 @@ describe('ProfilepageComponent', () => {
       ]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ProfilepageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

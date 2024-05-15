@@ -15,7 +15,7 @@ export class SignupformComponent {
     this.showPassword = !this.showPassword;
     this.passwordFieldType = this.showPassword ? 'text' : 'password';
     this.img = this.showPassword
-      ? '../../../assets/ausblenden.png'
-      : '../../../assets/aussicht.png';
+      ? '../../../assets/icons/ausblenden.png'
+      : '../../../assets/icons/aussicht.png';
   }
 }

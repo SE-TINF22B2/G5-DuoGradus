@@ -2,11 +2,13 @@
   "name": "frontend",
   "version": "0.0.0",
   "scripts": {
+    "verify": "npm run build && npm run test:ci",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test:ci": "npm run test -- --configuration=ci"
   },
   "private": true,
   "dependencies": {
