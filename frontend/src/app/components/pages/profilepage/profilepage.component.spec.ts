@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfilepageComponent } from './profilepage.component';
-import { StatisticEntryComponent } from 'app/components/atoms/statistic-entry/statistic-entry.component';
+import { StatisticEntryComponent } from '../../atoms/statistic-entry/statistic-entry.component';
 
 describe('ProfilepageComponent', () => {
   let component: ProfilepageComponent;
@@ -9,7 +9,9 @@ describe('ProfilepageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProfilepageComponent, StatisticEntryComponent]
+      declarations: [ProfilepageComponent,
+                    StatisticEntryComponent
+      ]
     })
     .compileComponents();
 
