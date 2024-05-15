@@ -8,6 +8,8 @@ import { LandingpageComponent } from './components/pages/landingpage/landingpage
 import { RankingPageComponent } from './components/pages/ranking-page/ranking-page.component';
 import { ProfilepageComponent } from './components/pages/profilepage/profilepage.component';
 import { SettingspageComponent } from './components/pages/settingspage/settingspage.component';
+import { AddfriendpageComponent } from './components/pages/addfriendpage/addfriendpage.component';
+import { FriendpageComponent } from './components/pages/friendpage/friendpage.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'ranking', component: RankingPageComponent},
   { path: 'profile', component: ProfilepageComponent},
   { path: 'settings', component: SettingspageComponent},
+  { path: 'friends', component: FriendpageComponent},
+  { path: 'addfriend', component: AddfriendpageComponent},
   {
     path: 'auth',
     component: AuthenticationpageComponent,
