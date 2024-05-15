@@ -12,11 +12,9 @@ Aufgrund von Zeitbeschränkungen und dem damit verbundenen Aufwand wurde entschi
 
 Jasmine: <https://jasmine.github.io/>
 
-
 ## Konventionen
 
 Die Unit-Tests werden direkt im gleichen Ordner wie die zu testende Datei abgelegt und haben die Erweiterung `.spec.ts`.
-
 
 ## Beispiel Unit Test
 
