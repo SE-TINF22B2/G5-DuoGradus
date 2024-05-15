@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {provideAnimations} from '@angular/platform-browser/animations'
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,8 +29,13 @@ import { ProfilepageComponent } from './components/pages/profilepage/profilepage
 import { StatisticEntryComponent } from './components/atoms/statistic-entry/statistic-entry.component';
 import { SettingspageComponent } from './components/pages/settingspage/settingspage.component';
 import { SettingsentryComponent } from './components/atoms/settingsentry/settingsentry.component';
-
-
+import { FriendpageComponent } from './components/pages/friendpage/friendpage.component';
+import { AddfriendpageComponent } from './components/pages/addfriendpage/addfriendpage.component';
+import { HeaderComponent } from './components/atoms/header/header.component';
+import { SearchbarComponent } from './components/atoms/searchbar/searchbar.component';
+import { FriendCardComponent } from './components/atoms/friend-card/friend-card.component';
+import { DeleteDialogComponent } from './components/organisms/delete-dialog/delete-dialog.component';
+import { UserfilterPipe } from './pipes/userfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -57,10 +63,20 @@ import { SettingsentryComponent } from './components/atoms/settingsentry/setting
     StatisticEntryComponent,
     SettingspageComponent,
     SettingsentryComponent,
-
-
+    FriendpageComponent,
+    AddfriendpageComponent,
+    HeaderComponent,
+    SearchbarComponent,
+    FriendCardComponent,
+    DeleteDialogComponent,
+    UserfilterPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+  ],
   providers: [provideAnimations()],
   bootstrap: [AppComponent],
 })

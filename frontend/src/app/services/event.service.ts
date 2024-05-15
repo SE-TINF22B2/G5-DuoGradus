@@ -12,6 +12,7 @@ export class EventService {
   classNameToast: string = '';
   snackbarBackgroundColor: string = '';
   snackbarText: string = '';
+  query: string = '';
 
   reduceTimer() {
     this.interval = setInterval(() => {
