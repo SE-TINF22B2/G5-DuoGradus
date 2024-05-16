@@ -20,6 +20,9 @@ export class AppComponent implements OnInit{
     return footerPages.includes(window.location.pathname);
     }
 
+  /**
+   * This function subscribes to the isLoading BehaviorSubject and sets the isLoading variable to the value of the BehaviorSubject
+   */  
   ngOnInit(): void {
      this.loaderService.isLoading.subscribe((value) => {
       this.isLoading = value;

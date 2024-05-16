@@ -6,20 +6,24 @@ import { Router } from '@angular/router';
   templateUrl: './landingpage.component.html',
   styleUrl: './landingpage.component.scss'
 })
+
 export class LandingpageComponent {
 
-  constructor( private router: Router) {
-    
+  constructor(private router: Router) {
     this.router = router;
   }
 
-  login()
-  {
+  /**
+   * Navigates to the login page.
+   */
+  login() {
     this.router.navigate(['/auth/login']);
   }
 
-  signup()
-  {
+  /**
+   * Navigates to the signup page.
+   */
+  signup() {
     this.router.navigate(['/auth/signup']);
   }
 }

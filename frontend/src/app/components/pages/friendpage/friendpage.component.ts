@@ -13,6 +13,10 @@ export class FriendpageComponent {
     this.router = router;
   }
 
+  /*
+  * Mockdatas for the friends list
+  * todo: replace with actual data from the backend 
+  */
   users = [
     { id: 3, name: 'Alice Smith' },
     { id: 4, name: 'Bob Johnson' },
@@ -26,6 +30,9 @@ export class FriendpageComponent {
     { id: 12, name: 'Alexander Garcia' },
   ];
 
+  /*
+  * Function navigate to the add friend page
+  */
   addFriend() {
     console.log('add friend');
     this.router.navigate(['/addfriend']);

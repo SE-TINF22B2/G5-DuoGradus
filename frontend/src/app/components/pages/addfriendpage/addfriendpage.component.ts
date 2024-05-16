@@ -13,6 +13,7 @@ export class AddfriendpageComponent {
     this.router = router;
   }
 
+  // Function to navigate to the friends page
   returnToFriends() {
     this.router.navigate(['/friends']);
   }

@@ -9,6 +9,9 @@
     width: 93vw;
   }
 
+  /*
+  * Container thats contains the searchbar and the add friends button.
+  */
   .btn-search-container {
     display: flex;
     justify-content: space-between;
@@ -50,13 +53,13 @@
       transition: 0.3s;
       margin-right: 0.6rem;
       margin-top: 1.5rem;
-      transition: background-color 0.1s ease; /* Übergangseigenschaft für die Hintergrundfarbe */
+      transition: background-color 0.1s ease; /* Transition for the background color */
 
       
     }
 
     .addfriends-button:active {
-      background-color: lighten(#00ff7f, 30%); /* Die Hintergrundfarbe wird beim Klicken um 20% aufgehellt */
+      background-color: lighten(#00ff7f, 30%); /* Lighten the Background color by 30%  */
   }
   }
 

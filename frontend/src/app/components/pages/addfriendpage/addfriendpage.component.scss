@@ -9,10 +9,13 @@
       width: 93vw;
     }
   
+    
     .btn-search-container {
       display: flex;
       justify-content: space-between;
       width: 97vw;
+      
+     
       .searchbar-container {
         display: flex;
         align-items: center;
@@ -24,12 +27,14 @@
         margin-left: 10px;
       }
   
+      
       .img-container {
         margin-top: 5px;
         margin-left: 0.5rem;
-        filter: invert(100%);
+        filter: invert(100%); // Inverts the color of the image
       }
       
+    
       i.img-container2
       {
         margin-top: 20px;
@@ -37,6 +42,9 @@
         filter: invert(100%);
       }
   
+      /**
+       * Styles for the return button.
+       */
       .return-button
       {
         background-color: var(--green);
@@ -50,16 +58,16 @@
         transition: 0.3s;
         margin-left: 0.6rem;
         margin-top: 1.5rem;
-        transition: background-color 0.1s ease; /* Übergangseigenschaft für die Hintergrundfarbe */
-  
-        
+        transition: background-color 0.1s ease; /* Transition property for background color */
       }
   
+   
       .addfriends-button:active {
-        background-color: lighten(#00ff7f, 30%); /* Die Hintergrundfarbe wird beim Klicken um 20% aufgehellt */
+        background-color: lighten(#00ff7f, 30%); /* Lightens the background color by 30% when clicked */
     }
     }
   
+   
     .users-container {
       display: flex;
       flex-direction: column;
@@ -71,4 +79,3 @@
       overflow-y: auto;
     }
   }
-  
