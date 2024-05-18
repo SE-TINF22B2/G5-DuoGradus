@@ -9,7 +9,7 @@ export class FitnessRepository {
   ): Promise<FitnessProvider | null> {
     return await this.prisma.fitnessProvider.findFirst({
       where: {
-        owner: userId,
+        userId,
       },
     });
   }
@@ -22,9 +22,13 @@ export class FitnessRepository {
     return await this.prisma.fitnessProvider.delete(provider);
   }
 
-  public async updateProvider(provider: Prisma.FitnessProviderUpdateInput) {
+  public async updateProvider(
+    type: string,
+    user: string,
+    provider: Prisma.FitnessProviderUpdateInput,
+  ) {
     return await this.prisma.fitnessProvider.update({
-      where: { id: provider.id as string },
+      where: { type, userId: user },
       data: provider,
     });
   }

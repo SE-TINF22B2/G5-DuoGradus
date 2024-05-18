@@ -21,12 +21,12 @@ model User {
 }
 
 model FitnessProvider {
-  id                 String   @id @default(uuid())
-  type               String
+  type               String   @unique
   refreshToken       String
   accessToken        String
   accessTokenExpires DateTime
   owner              User     @relation(fields: [userId], references: [id])
-  userId             String
+  userId             String   @unique
   enabled            Boolean
+  providerUserId     String
 }

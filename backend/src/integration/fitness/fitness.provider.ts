@@ -1,5 +1,5 @@
 import { FitnessData } from './fitness.data';
 
 export interface FitnessProvider {
-  getFitnessData(start: Date, end: Date): Promise<FitnessData>;
+  getFitnessData(user: string, start: Date, end: Date): Promise<FitnessData>;
 }

@@ -1,7 +1,6 @@
-import { User } from '@prisma/client';
-import { UserRepository } from '../../db/repositories/user.repository';
 import { FitnessProvider } from './fitness.provider';
 import { FitnessRepository } from '../../db/repositories/fitness.repository';
+import { FitBitProvider } from './providers/fitbit.provider';
 
 export class FitnessService {
   constructor(private fitnessRepository: FitnessRepository) {}
