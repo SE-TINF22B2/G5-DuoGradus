@@ -1,16 +1,30 @@
 import { FitnessProvider, Prisma } from '@prisma/client';
 import { PrismaService } from '../prisma.service';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class FitnessRepository {
   constructor(private prisma: PrismaService) {}
 
-  public async getProviderForUser(
+  public async getProvidersForUser(
     userId: string,
-  ): Promise<FitnessProvider | null> {
-    return await this.prisma.fitnessProvider.findFirst({
+  ): Promise<FitnessProvider[] | null> {
+    return await this.prisma.fitnessProvider.findMany({
       where: {
         userId,
       },
+    });
+  }
+
+  public async getProviderForUserById(
+    userId: string,
+    provider: string
+  ) {
+    return await this.prisma.fitnessProvider.findFirst({
+      where: {
+        userId,
+        type: provider
+      }
     });
   }
 

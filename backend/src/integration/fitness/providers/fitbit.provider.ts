@@ -1,6 +1,5 @@
 import { ConfigService } from '@nestjs/config';
 import { FitnessRepository } from '../../../db/repositories/fitness.repository';
-import { FitnessProvider } from '../fitness.provider';
 import { FitnessData } from '../fitness.data';
 import { FitnessGoal } from '../fitness.goal';
 
@@ -9,7 +8,7 @@ type FitbitCredentials = {
   userId: string;
 };
 
-export class FitBitProvider implements FitnessProvider {
+export class FitBitProvider {
   private FITBIT_API = 'https://api.fitbit.com';
   private FITBIT_API_AUTH = 'https://www.fitbit.com';
   private FITBIT_TYPE = 'fitbit';
@@ -81,7 +80,7 @@ export class FitBitProvider implements FitnessProvider {
    * @returns api credentials
    */
   private async getAccessToken(user: string): Promise<FitbitCredentials> {
-    const credentials = await this.fitnessRepository.getProviderForUser(user);
+    const credentials = await this.fitnessRepository.getProviderForUserById(user, 'fitbit');
 
     if (!credentials) throw new Error('No credentials found for user');
 
@@ -188,4 +187,11 @@ export class FitBitProvider implements FitnessProvider {
       goals: await this.getDailyGoals(credentials),
     };
   }
+
+  public getAuthorizeURL(): string {
+    const client_id = this.configService.get<string>('providers.fitbit.client_id')!;
+
+    return `https://www.fitbit.com/oauth2/authorize?client_id=${client_id}&response_type=code&scope=activity`
+  }
+
 }
