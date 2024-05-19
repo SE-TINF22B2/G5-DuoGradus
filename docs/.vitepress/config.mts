@@ -63,6 +63,10 @@ export default withMermaid({
             },
             { text: 'Logging', link: '/development/backend/logging' },
             { text: 'Testing', link: '/development/backend/testing' },
+            {
+              text: 'Fitness Datenquellen',
+              link: '/development/backend/fitness.providers',
+            },
           ],
         },
         {
