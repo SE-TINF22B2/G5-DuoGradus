@@ -8,6 +8,7 @@ import { LOGGER_SERVICE } from './logger/logger.service';
 import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
 import { DatasourceController } from './api/datasource/datasource.controller';
+import FitnessModule from './integration/fitness/fitness.module';
 
 @Module({
   imports: [
@@ -16,8 +17,9 @@ import { DatasourceController } from './api/datasource/datasource.controller';
     ConfigModule.forRoot({
       load: [configuration],
     }),
+    FitnessModule,
   ],
-  controllers: [AppController, UserController, DatasourceController],
+  controllers: [AppController, UserController],
   providers: [
     AppService,
     {

@@ -1,4 +1,4 @@
-import { FitnessProvider, Prisma } from '@prisma/client';
+import { FitnessProviderCredential, Prisma } from '@prisma/client';
 import { PrismaService } from '../prisma.service';
 import { Injectable } from '@nestjs/common';
 
@@ -8,40 +8,43 @@ export class FitnessRepository {
 
   public async getProvidersForUser(
     userId: string,
-  ): Promise<FitnessProvider[] | null> {
-    return await this.prisma.fitnessProvider.findMany({
+  ): Promise<FitnessProviderCredential[] | null> {
+    return await this.prisma.fitnessProviderCredential.findMany({
       where: {
         userId,
       },
     });
   }
 
-  public async getProviderForUserById(
-    userId: string,
-    provider: string
-  ) {
-    return await this.prisma.fitnessProvider.findFirst({
+  public async getProviderForUserById(userId: string, provider: string) {
+    return await this.prisma.fitnessProviderCredential.findFirst({
       where: {
         userId,
-        type: provider
-      }
+        type: provider,
+      },
     });
   }
 
-  public async createProvider(provider: Prisma.FitnessProviderCreateArgs) {
-    return await this.prisma.fitnessProvider.create(provider);
+  public async createProvider(
+    provider: Prisma.FitnessProviderCredentialCreateInput,
+  ) {
+    return await this.prisma.fitnessProviderCredential.create({
+      data: provider,
+    });
   }
 
-  public async deleteProvider(provider: Prisma.FitnessProviderDeleteArgs) {
-    return await this.prisma.fitnessProvider.delete(provider);
+  public async deleteProvider(
+    provider: Prisma.FitnessProviderCredentialDeleteArgs,
+  ) {
+    return await this.prisma.fitnessProviderCredential.delete(provider);
   }
 
   public async updateProvider(
     type: string,
     user: string,
-    provider: Prisma.FitnessProviderUpdateInput,
+    provider: Prisma.FitnessProviderCredentialUpdateInput,
   ) {
-    return await this.prisma.fitnessProvider.update({
+    return await this.prisma.fitnessProviderCredential.update({
       where: { type, userId: user },
       data: provider,
     });

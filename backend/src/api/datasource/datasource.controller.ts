@@ -23,11 +23,11 @@ export class DatasourceController {
   @Get()
   @UseGuards(AutoGuard)
   public async getDatasourcesForUser(@Req() request: NestRequest) {
-    const datasourcesForUser = await this.fitnessRepository.getProvidersForUser(
+    const datasourcesForUser = await this.fitnessService.getDatasourcesForUser(
       request.user.id,
     );
 
-    return datasourcesForUser;
+    return datasourcesForUser.map((provider) => provider.getInfo());
   }
 
   @Get('/:id')
@@ -62,6 +62,7 @@ export class DatasourceController {
       res.status(400).json({
         error: 'Datasource was not enabled',
       });
+      return;
     }
 
     await this.fitnessRepository.deleteProvider({
@@ -76,7 +77,59 @@ export class DatasourceController {
   public async getAuthorizeURL(
     @Req() request: NestRequest,
     @Param() params: any,
+    @Res() response: Response,
   ) {
-    return this.fitnessService.getFitbitProvider().getAuthorizeURL();
+    const providers = await this.fitnessService.getDatasourcesForUser(
+      request.user.id,
+    );
+
+    const responsibleProvider = providers.find(
+      (provider) => provider.getInfo().name == params.id,
+    );
+
+    if (!responsibleProvider) {
+      response.status(400).json({
+        error: 'Provider not available',
+      });
+      return;
+    }
+
+    response.status(200).json({
+      url: responsibleProvider.getAuthorizeURL(),
+    });
+  }
+
+  @Get('/:id/redirect')
+  @UseGuards(AutoGuard)
+  public async redirect(
+    @Req() request: NestRequest,
+    @Param('id') id: string,
+    @Res() response: Response,
+  ) {
+    const responsibleProvider =
+      await this.fitnessService.getProviderForUserById(request.user.id, id);
+
+    if (!responsibleProvider) {
+      response.status(400).json({
+        error: 'Provider not available',
+      });
+      return;
+    }
+
+    const code = (request.query.code as string).split('#_=_')[0];
+
+    const result = await responsibleProvider.getAccessTokenFromCode(
+      request.user.id,
+      code,
+    );
+
+    if (!result) {
+      response.status(400).json({
+        error: 'Token was not accepted',
+      });
+      return;
+    }
+
+    response.status(200).json(responsibleProvider.getInfo());
   }
 }

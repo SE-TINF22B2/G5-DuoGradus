@@ -11,16 +11,16 @@ datasource db {
 }
 
 model User {
-  id          String            @id @default(uuid())
+  id          String                      @id @default(uuid())
   displayName String
-  email       String            @unique
+  email       String                      @unique
   password    String
-  enabled     Boolean           @default(true)
-  verified    Boolean           @default(false)
-  providers   FitnessProvider[]
+  enabled     Boolean                     @default(true)
+  verified    Boolean                     @default(false)
+  providers   FitnessProviderCredential[]
 }
 
-model FitnessProvider {
+model FitnessProviderCredential {
   type               String   @unique
   refreshToken       String
   accessToken        String
