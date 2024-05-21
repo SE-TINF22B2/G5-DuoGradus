@@ -1,0 +1,20 @@
+Name;Activity;Duration;Description
+"Henry Brink";"Construction";1.45;null
+"Henry Brink";"Construction";1.13;null
+"Henry Brink";"Design";.53;null
+"Henry Brink";"Construction";.66;null
+"Henry Brink";"Construction";.31;null
+"Henry Brink";"Construction";.25;null
+"Justin Hubert";"Construction";0;null
+"Benedict Weis";"Project Management";.95;"Issue creation and general improvements"
+"Benedict Weis";"Construction";.85;"Storybook"
+"Henry Brink";"Construction";.93;null
+"Luis Bernhardt";"Project Management";.33;null
+"Justin Hubert";"Project Management";.33;null
+"Benedict Weis";"Construction";.50;"Unify GitHub Actions"
+"Benedict Weis";"Construction";.50;"Fix Frontend Github Action"
+"Henry Brink";"Construction";1.76;null
+"Justin Hubert";"Construction";2.38;null
+"Luis Bernhardt";"Construction";2.00;null
+"Benedict Weis";"Project Management";1.00;"Weekly Report"
+"Luis Bernhardt";"Construction";3.00;null
