@@ -45,6 +45,7 @@ export default withMermaid({
             { text: '2024 - KW17', link: '/reports/2024-kw17.md' },
             { text: '2024 - KW18', link: '/reports/2024-kw18.md' },
             { text: '2024 - KW19', link: '/reports/2024-kw19.md' },
+            { text: '2024 - KW20', link: '/reports/2024-kw20.md' },
           ],
         },
       ],
