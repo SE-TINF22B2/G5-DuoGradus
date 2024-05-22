@@ -1,0 +1,60 @@
+# Code Dokumentation
+
+**Code Dokumentation beschreibt wie der Code genutzt wird. Kommentare beschreiben wie der Code funktioniert.** Im regelfall sollte sich auf die Dokumentation fokussiert werden, an manchen stellen sind aber Kommentare ein sinnvolles Werkzeug. Im folgenden findet sich eine Guideline wie und wann man Kommentare und Dokumentation in diesem Projekt verfassen sollte.
+
+Wem ein Youtube Video zum "einlesen" in dieses Thema lieber ist wird auf <https://youtu.be/Bf7vDBBOBUA> fündig.
+
+## Kommentare
+
+Kommentare können helfen Code verständlicher zu machen. Sie können zudem helfen wenn man sich neu in eine Codebase einarbeiten will und verstehen will, was die vielen Funktionen tun. Nicht jeder Kommentar ist jedoch sinnvoll oder automatisch gut. Daher findet sich hier eine Guideline wie Kommentare in diesem Projekt verfasst werden sollten.
+
+### Sprache von Kommentaren
+
+Der Übersichtlichkeit halber sollten Kommentare immer in der Sprache verfasst werden in der auch der Code verfasst wird. In unserem Fall also Englisch, da auch der Code in Englisch geschrieben wird (siehe [Project Guideline](./project-guideline)).
+
+### Unnötige Kommentare
+
+Beim verfassen von Kommentaren innerhalb von Funktionen sollte sich immer gefragt werden ob ein Kommentar hier der richtige weg ist. Betrachte folgendes beispiel:
+
+```js
+// activity 6 represents a walking activity
+if (fitbit.activity == 6) {
+  return duogradus.entry.walking();
+}
+```
+
+Hier wurde ein Kommentar verwendet um eine Konstante zu erklären, viel besser wäre es die Konstante einfach als solche in einer Variable zu speichern und dann zu verwenden.
+
+```js
+const WALKING_ACTIVITY = 6;
+if (fitbit.activity == WALKING_ACTIVITY) {
+  return duogradus.entry.walking();
+}
+```
+
+Damit wurde der Kommentar erklärt und der Code erklärt sich sozusagen von selbst. Dieses Beispiel dient nur als exemplar aber im allgemeinen sollte man bevor man einen Kommentar innerhalb einer Methode verfasst versuchen den Code so zu schreiben, dass er sich selbst erklärt.
+
+## Dokumentation
+
+Code Dokumentation ist im allgemeinen Kommentaren vorgezogen. Die Dokumentation beschreibt high-level wie der Code genutzt wird bzw. genutzt werden kann. Für dieses Prpjekt soll [JSDoc](https://jsdoc.app) verwendet werden. Alternativen die betrachtet wuerden sind [documentation.js](http://documentation.js.org) und [esdoc](https://esdoc.org). JSDoc wurde gewählt da es der Industriestandard ist und alle Projektmitglieder bereits damit gearbeitet haben.
+
+Auf <https://jsdoc.app> findet sich ein Einstieg in das Dokumentation schreiben mit JSDoc.
+
+Im folgenden findet sich ein Beispiel.
+
+```js
+/**
+* Hashes a password using the preferred hash algorithm.
+* @param password Plaintext password
+* @returns Hashed password
+*/
+async hashPassword(password: string): Promise<string> {
+    return await bcrypt.hash(password, 12);
+}
+```
+
+Bedenke: **Code Dokumentation sagt etwas darüber aus WAS eine Funktion oder Klasse tut, NICHT WIE sie es tut. Das sollte sich durch den Code selbst oder im Notfall durch Kommentare erklären!**
+
+## Nachwort
+
+Im allgemeinen sollte lieber besserer Code als viel Dokumentation oder Kommentare geschrieben werden. Dokumentation und besonders Kommentare werden schnell ungültig oder sogar falsch, da sie nicht den vielen Strikten Prüfungen unterliegen wie dem Linter oder Compiler o.ä.
