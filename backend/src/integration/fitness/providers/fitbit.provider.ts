@@ -8,6 +8,7 @@ import {
   ProviderStatus,
 } from './provider.interface';
 import * as dayjs from 'dayjs';
+import { CredentialService } from 'src/integration/credentials/credential.service';
 
 type FitbitCredentials = {
   accessToken: string;
@@ -24,6 +25,7 @@ export class FitBitProvider implements FitnessProvider {
 
   constructor(
     private fitnessRepository: FitnessRepository,
+    private credentialStore: CredentialService,
     private client_id: string,
     private client_secret: string,
   ) {}
@@ -111,6 +113,12 @@ export class FitBitProvider implements FitnessProvider {
    * @returns api credentials
    */
   private async getAccessToken(user: string): Promise<FitbitCredentials> {
+    // First check, whether the access token is still cached
+    const credentialsCache = this.getCredentialsFromCache(user);
+    if (credentialsCache) {
+      return credentialsCache;
+    }
+
     const credentials = await this.fitnessRepository.getProviderForUserById(
       user,
       'fitbit',
@@ -119,32 +127,40 @@ export class FitBitProvider implements FitnessProvider {
     if (!credentials) throw new Error('No credentials found for user');
 
     // Construct the URL
-    const authorizeURL = new URL(`${this.FITBIT_API_AUTH}/oauth2/token`);
-    authorizeURL.searchParams.append('client_id', this.client_id);
-    authorizeURL.searchParams.append(
-      'refresh_token',
-      credentials?.refreshToken,
-    );
-    authorizeURL.searchParams.append('grant_type', 'authorization_code');
+    const searchParams = new URLSearchParams();
+    searchParams.append('client_id', this.client_id);
+    searchParams.append('refresh_token', credentials.refreshToken);
+    searchParams.append('grant_type', 'refresh_token');
 
     // Retrieve the access token from the server
-    const response = await fetch(authorizeURL.toString(), {
+    const response = await fetch(`${this.FITBIT_API}/oauth2/token`, {
+      method: 'POST',
       headers: {
-        Authorization: btoa(`${this.client_id}:${this.client_secret}`),
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Basic ${Buffer.from(
+          `${this.client_id}:${this.client_secret}`,
+        ).toString('base64')}`,
       },
+      body: searchParams.toString(),
     });
 
-    if (!response.ok) throw new Error('No access token received from server');
+    if (!response.ok) {
+      console.log(await response.text());
+      throw new Error('No access token received from server');
+    }
 
     const { access_token, refresh_token, expires_in } = await response.json();
 
     // Persist the access token in the background, to make the request faster
     setTimeout(async () => {
+      // Save the credentials in the local cache
+      this.saveCredentials(user, credentials);
+
       // Update provider
       await this.fitnessRepository.updateProvider(this.FITBIT_TYPE, user, {
         accessToken: access_token,
         refreshToken: refresh_token,
-        accessTokenExpires: expires_in,
+        accessTokenExpires: dayjs().add(expires_in, 'seconds').toDate(),
       });
     });
 
@@ -161,24 +177,29 @@ export class FitBitProvider implements FitnessProvider {
   private async getDailyGoals(
     credentials: FitbitCredentials,
   ): Promise<FitnessGoal[]> {
+    const currentDay = dayjs().format('YYYY-MM-DD');
+
     const response = await fetch(
-      `${this.FITBIT_API}/1/user/${credentials.userId}/activities/goals/daily.json`,
+      `${this.FITBIT_API}/1/user/${credentials.userId}/activities/date/${currentDay}.json`,
       {
         headers: {
-          Authentication: `Bearer ${credentials.userId}`,
+          Authorization: `Bearer ${credentials.accessToken}`,
         },
       },
     );
 
-    if (!response.ok) throw new Error('Invalid response received from FitBit');
+    if (!response.ok) {
+      console.log(await response.text());
+      throw new Error('Invalid response received from FitBit');
+    }
 
     const json = await response.json();
 
     const goals: FitnessGoal[] = [
       {
         type: 'steps',
-        goal: json['goal']['steps'],
-        value: 0,
+        goal: json['goals']['steps'],
+        value: json['summary']['steps'],
         unit: 0,
       },
     ];
@@ -212,7 +233,20 @@ export class FitBitProvider implements FitnessProvider {
     };
   }
 
+  private saveCredentials(user: string, credentials: FitbitCredentials) {
+    this.credentialStore.saveCredential(
+      `fitbit-credential-${user}`,
+      credentials,
+    );
+  }
+
+  private getCredentialsFromCache(user: string): FitbitCredentials | null {
+    return this.credentialStore.getCredential(
+      `fitbit-credential-${user}`,
+    ) as FitbitCredentials | null;
+  }
+
   public getAuthorizeURL(): string {
-    return `https://www.fitbit.com/oauth2/authorize?client_id=${this.client_id}&response_type=code&scope=activity`;
+    return `https://www.fitbit.com/oauth2/authorize?client_id=${this.client_id}&response_type=code&scope=activity%20profile&20settings`;
   }
 }

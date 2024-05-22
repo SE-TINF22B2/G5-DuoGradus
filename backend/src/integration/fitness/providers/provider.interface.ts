@@ -1,4 +1,5 @@
 import { FitnessProviderCredential } from '@prisma/client';
+import { FitnessGoal } from '../fitness.goal';
 
 export type ProviderStatus = 'enabled' | 'disabled' | 'error' | 'unknown';
 

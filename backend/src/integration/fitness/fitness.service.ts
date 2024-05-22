@@ -3,12 +3,14 @@ import { FitnessRepository } from '../../db/repositories/fitness.repository';
 import { FitBitProvider } from './providers/fitbit.provider';
 import { FitnessProvider, ProviderInfo } from './providers/provider.interface';
 import { Injectable } from '@nestjs/common';
+import { CredentialService } from '../credentials/credential.service';
 
 @Injectable()
 export class FitnessService {
   constructor(
     private fitnessRepository: FitnessRepository,
     private configService: ConfigService,
+    private credentialService: CredentialService,
   ) {}
 
   // public async syncUser(userId: string): Promise<void> {}
@@ -34,6 +36,7 @@ export class FitnessService {
       providers.push(
         new FitBitProvider(
           this.fitnessRepository,
+          this.credentialService,
           fitbit_client_id,
           fitbit_client_secret,
         ),

@@ -12,6 +12,8 @@ import { NestRequest } from '../../types/request.type';
 import { AutoGuard } from '../../auth/auto.guard';
 import { Response } from 'express';
 import { FitnessService } from 'src/integration/fitness/fitness.service';
+import { FitBitProvider } from 'src/integration/fitness/providers/fitbit.provider';
+import * as dayjs from 'dayjs';
 
 @Controller('datasource')
 export class DatasourceController {
@@ -131,5 +133,38 @@ export class DatasourceController {
     }
 
     response.status(200).json(responsibleProvider.getInfo());
+  }
+
+  /**
+   * This endpoint returns the fitness goals set in fitbit.
+   * It is designed as a simple check if the API is working correctly and thus not documented in the API scheme.
+   */
+  @Get('/:id/daily')
+  @UseGuards(AutoGuard)
+  public async getGoals(
+    @Req() request: NestRequest,
+    @Param('id') id: string,
+    @Res() response: Response,
+  ) {
+    const responsibleProvider =
+      (await this.fitnessService.getProviderForUserById(
+        request.user.id,
+        id,
+      )) as FitBitProvider | null;
+
+    if (!responsibleProvider) {
+      response.status(400).json({
+        error: 'Provider not available',
+      });
+      return;
+    }
+
+    const goals = await responsibleProvider.getFitnessData(
+      request.user.id,
+      new Date(),
+      new Date(),
+    );
+
+    response.status(200).json(goals);
   }
 }
