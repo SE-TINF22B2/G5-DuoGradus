@@ -7,9 +7,16 @@ import { EventService } from 'app/services/event.service';
   styleUrl: './challenge-button.component.scss',
 })
 export class ChallengeButtonComponent {
+  /*
+  * Inputs for the challenge button from the parent component
+  */
   @Input() num: number = 1;
   @Input() steps: number = 0;
   @Input() time: number = 0;
+
+  /*
+  * Hands over the buttonIsClicked event to the parent component
+  */
   @Output() toggleStopButton = new EventEmitter<void>();
   buttonIsclicked: boolean = false;
 

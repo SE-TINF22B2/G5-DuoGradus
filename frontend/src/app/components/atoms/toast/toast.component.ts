@@ -7,8 +7,11 @@ import { EventService } from 'app/services/event.service';
   styleUrl: './toast.component.scss'
 })
 export class ToastComponent {
-
-  constructor(public eventservice:EventService) 
+  /**
+   * @constructor
+   * @param eventService Service that handles the events between components
+   */
+  constructor(public eventservice:EventService)
   {
       this.eventservice = eventservice;
   }

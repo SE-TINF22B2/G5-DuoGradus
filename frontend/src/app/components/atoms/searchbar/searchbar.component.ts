@@ -10,6 +10,12 @@ import { EventService } from 'app/services/event.service';
   styleUrl: './searchbar.component.scss'
 })
 export class SearchbarComponent {
+
+  /**
+   * @constructor
+   * @param eventService Service that handles the events between components
+   */
+
   constructor(public eventService: EventService) {
     this.eventService = eventService;
    }

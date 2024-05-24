@@ -7,6 +7,10 @@ import { EventService } from 'app/services/event.service';
   styleUrl: './timer.component.scss',
 })
 export class TimerComponent {
+  /**
+   * @constructor
+   * @param eventService Service that handles the events between components
+   */
   constructor(public eventService: EventService) {
     this.eventService = eventService;
   }

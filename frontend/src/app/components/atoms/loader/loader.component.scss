@@ -1,5 +1,5 @@
 
-
+//container for the loader to center it on the screen
 .center-container {
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@
       width: 100px;
       height: 100px;
     }
-    
+    // Styling for the loader circle
     .loader:before , .loader:after{
       content: '';
       border-radius: 50%;
@@ -36,11 +36,12 @@
       inset: 0;
       box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
     }
+
     .loader:after {
       box-shadow: 0 2px 0 var(--green) inset;
       animation: rotate 2s linear infinite;
     }
-    
+    //animation for the loader
     @keyframes rotate {
       0% {  transform: rotate(0)}
       100% { transform: rotate(360deg)}

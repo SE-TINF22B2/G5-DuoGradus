@@ -6,7 +6,16 @@ import { Component, Input } from '@angular/core';
   styleUrl: './inputfield.component.scss',
 })
 export class InputfieldComponent {
-  @Input() typetext: string = 'Hallo';
+  /**
+   * Represents the type of the input field.
+  */
+  @Input() typetext: string = '';
+  /**
+   * Represents the value of the input field.
+  */
   @Input() placeholder: string = '';
+  /**
+   * Represents the label of the input field.
+  */
   @Input() labeltext: string = '';
 }

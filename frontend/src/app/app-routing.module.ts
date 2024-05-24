@@ -1,3 +1,6 @@
+/**
+ * This file contains the routing configuration for the application.
+ */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainpageComponent } from './components/pages/mainpage/mainpage.component';
@@ -11,7 +14,9 @@ import { SettingspageComponent } from './components/pages/settingspage/settingsp
 import { AddfriendpageComponent } from './components/pages/addfriendpage/addfriendpage.component';
 import { FriendpageComponent } from './components/pages/friendpage/friendpage.component';
 
-
+/**
+ * The routes of the application. Each route is defined by a path and a component.
+ */
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: LandingpageComponent },
@@ -31,6 +36,8 @@ const routes: Routes = [
   },
   { path: '**', redirectTo: '/home' },
 ]
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

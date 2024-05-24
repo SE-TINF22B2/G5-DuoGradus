@@ -1,54 +1,56 @@
-.main-container
-{
+.main-container {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--white);
+  align-items: center;
+  width: 93vw;
+  border-radius: 12px;
+
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 1rem;
+    padding: 5px;
+    background-color: gray;
+    margin-top: 3px;
+  }
+
+  h3 {
+    margin-left: 1rem;
+    color: var(--font);
+  }
+
+  /**
+  * Styling for the remove button
+  */
+  .remove-button {
+    background-color: var(--green);
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 25px;
+    font-weight: bold;
+    align-items: end;
+    margin-right: 20px;
+    transition: background-color 0.1s ease;
+  }
+
+  /**
+  * Background color for the button 20% lighter when clicked
+  */
+  .remove-button:active {
+    background-color: lighten(
+      #00ff7f,
+      30%
+    )
+  }
+
+
+  .inner-container {
     display: flex;
     flex-direction: row;
-    background-color: var(--white);
     align-items: center;
-    width: 93vw;
-    border-radius: 12px;
-
-    img
-    {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-left: 1rem;
-        padding: 5px;
-        background-color: gray;
-        margin-top: 3px;
-        
-    }
-
-    h3
-    {
-        margin-left: 1rem;
-        color: var(--font);
-    }
-
-    .remove-button {
-        background-color: var(--green);
-        border: none;
-        cursor: pointer;
-        border-radius: 8px;
-        height: 25px;
-        font-weight: bold;
-        align-items: end;
-        margin-right: 20px;
-        transition: background-color 0.1s ease; /* Übergangseigenschaft für die Hintergrundfarbe */
-    }
-    
-
-    .remove-button:active {
-        background-color: lighten(#00ff7f, 30%); /* Die Hintergrundfarbe wird beim Klicken um 20% aufgehellt */
-    }
-
-   
-
-    .inner-container
-    {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-    }
+    width: 100%;
+  }
 }

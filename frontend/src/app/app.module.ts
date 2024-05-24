@@ -1,3 +1,6 @@
+/**
+ * This file is the main module of the application. It imports all the components, pipes and modules that are used in the application.
+ */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

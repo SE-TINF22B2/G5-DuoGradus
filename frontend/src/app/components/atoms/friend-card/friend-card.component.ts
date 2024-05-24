@@ -1,20 +1,34 @@
-
 import { Component, Input } from '@angular/core';
-
 
 @Component({
   selector: 'app-friend-card',
   templateUrl: './friend-card.component.html',
-  styleUrl: './friend-card.component.scss'
+  styleUrl: './friend-card.component.scss',
 })
-export class FriendCardComponent{
-  @Input() name: string = "";
-  @Input() picture: string = "../../../../assets/icons/avatar.svg";
+/**
+ * Represents a friend card component.
+ */
+export class FriendCardComponent {
+
+  /**
+   * The name of the friend.
+   */
+  @Input() name: string = '';
+
+  /**
+   * The picture of the friend.
+   */
+  @Input() picture: string = '../../../../assets/icons/avatar.svg';
+
+  /**
+   * Indicates whether the remove button is pressed or not.
+   */
   removeIsPressed: boolean = false;
-  
-  toggleRemove() 
-    {
-      this.removeIsPressed = !this.removeIsPressed;
-  
-    }
+
+  /**
+   * Toggles the state of the remove button.
+   */
+  toggleRemove() {
+    this.removeIsPressed = !this.removeIsPressed;
+  }
 }
