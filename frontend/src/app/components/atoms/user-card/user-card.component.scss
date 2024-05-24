@@ -6,17 +6,35 @@ $font-color: var(--font);
 .user-card {
     display: flex;
     justify-content: space-between;
-    align-items: left;
-    width: 98%;
+    align-items: center;
+    width: 93vw;
+    height: 57px;
     padding: $padding-size;
     box-sizing: border-box;
     border-radius: $border-radius-size;
     background-color: $background-color;
     color: $font-color;
+    border-collapse: collapse;
+    h3{
+      padding: 0;
+      margin: 0;
+    }
     #uc-plce, #uc-wins{
         width: auto;
+
     }
     #uc-name{
         width: 40%;
     }
+
+
 }
+
+
+
+
+
+
+
+
+

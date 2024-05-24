@@ -9,14 +9,14 @@
 
     img
     {
-        width: 30px;
-        height: 30px;
+        width: 50px;
         border-radius: 50%;
+        height: 50px;
         margin-left: 1rem;
-        padding: 5px;
-        background-color: gray;
+        padding: 0;
+        background-color: var(--white);
         margin-top: 3px;
-        
+
     }
 
     h3
@@ -36,13 +36,13 @@
         margin-right: 20px;
         transition: background-color 0.1s ease; /* Übergangseigenschaft für die Hintergrundfarbe */
     }
-    
+
 
     .remove-button:active {
         background-color: lighten(#00ff7f, 30%); /* Die Hintergrundfarbe wird beim Klicken um 20% aufgehellt */
     }
 
-   
+
 
     .inner-container
     {

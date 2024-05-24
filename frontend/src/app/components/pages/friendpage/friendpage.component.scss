@@ -30,7 +30,7 @@
       margin-left: 0.5rem;
       filter: invert(100%);
     }
-    
+
     i.img-container2
     {
       margin-top: 2px;
@@ -52,7 +52,7 @@
       margin-top: 1.5rem;
       transition: background-color 0.1s ease; /* Übergangseigenschaft für die Hintergrundfarbe */
 
-      
+
     }
 
     .addfriends-button:active {
@@ -66,8 +66,15 @@
     align-items: center;
     margin-top: 1.5rem;
     gap: 1rem;
-    height: 65vh;
-    overflow: hidden;  
+    height: 75vh;
+    overflow: hidden;
     overflow-y: auto;
   }
+
+  .usercard:last-child
+  {
+    margin-bottom: 11vh;
+  }
+
+
 }

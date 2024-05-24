@@ -12,6 +12,6 @@
     <hr>
     <div class="users-container"  >
         <!--TODO: add picture to app-usercard-->
-        <app-friend-card *ngFor="let u of users | userfilter:eventService.query" [name]="u.name"  ></app-friend-card>
+        <app-friend-card ngClass="usercard" *ngFor="let u of users | userfilter:eventService.query" [name]="u.name"  ></app-friend-card>
     </div>
 </div>
