@@ -16,6 +16,7 @@ TIME_RESPONSE=$(curl -s -X "GET" \
     -H "accept: application/json" \
     -H "Authorization: Bearer $KIMAI_API_TOKEN")
 
+echo $TIME_RESPONSE
 
 for WEEK in $WEEKS; do
     TIMES=$(jq --arg WEEK "$WEEK" '[.[] | select(.begin | strptime("%Y-%m-%dT%H:%M:%S%z") | strftime("%W") as $w|$w==$WEEK)]' <<< "$TIME_RESPONSE")

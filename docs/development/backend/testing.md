@@ -1,21 +1,19 @@
-# Testing
+# Tests
 
-## Introduction
+## Technologien
 
-[Mocha](https://github.com/mochajs/mocha) and [Jest](https://github.com/jestjs/jest) were considered as testing frameworks. Jest was chosen, because it is more commonly used and the team was more familiar with it. NestJS, which is used as the backend framework, also uses jest for testing by default.
+Als Test-Frameworks kamen [Mocha](https://github.com/mochajs/mocha) und [Jest](https://github.com/jestjs/jest) in Frage. Die Entscheidung fiel auf Jest, da es weiter verbreitet ist und die Teammitglieder damit mehr Erfahrung haben. Das Backend-Framework NestJS nutzt ebenfalls standardmäßig Jest. Für End-to-End Tests verwenden wir außerdem [supertest](https://github.com/ladjs/supertest).
 
-## Getting started
+Dokumentationen:
 
-<https://jestjs.io/docs/getting-started>
-<https://docs.nestjs.com/fundamentals/testing#unit-testing>
+- <https://jestjs.io/docs/getting-started>
+- <https://docs.nestjs.com/fundamentals/testing#unit-testing>
 
-## Conventions
+## Konventionen
 
-Tests should be defined in a `test` folder in both the frontend and backend directories. Unit test files use the file ending `.spec.ts`. End to end tests use the `.e2e-spec.ts` file ending.
+Unit Tests benutzen die Dateiendung `.spec.ts` und werden direkt im Verzeichnis der zu testenden Datei erstellt. End-to-End Tests werden im Ordner `backend/test` mit der Dateiendung `.e2e-spec.ts` angelegt.
 
-For unit tests we use the assertions provided by Jest. For end to end tests we use [`supertest`](https://github.com/ladjs/supertest).
-
-## Example Unit Test
+## Beispiel Unit Test
 
 ```ts
 import { CatsController } from './cats.controller';
@@ -41,7 +39,7 @@ describe('CatsController', () => {
 });
 ```
 
-## Example End to End Test
+## Beispiel End-to-End Test
 
 ```ts
 import * as request from 'supertest';

@@ -1,0 +1,28 @@
+$font-size:1.2em;
+#wrapper{
+    height:14vh;
+    text-align: center;
+    padding-top: 1em;
+    margin: 1em 1em 1em 1em;
+    background-color: var(--font);
+    border-radius: 1em;
+    display:flex;
+    flex-direction: column;
+
+}
+
+#value{
+    background-color: var(--white);
+    color: var(--black-2);
+    border-radius: 1em;
+    border-width: 0em;
+    width: 90%;
+    height: 50%;
+    margin:auto;
+    text-align: center;
+    font-size: $font-size;
+}
+#name{
+    font-weight: bold;
+    font-size: $font-size;
+}

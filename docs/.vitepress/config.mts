@@ -43,6 +43,8 @@ export default withMermaid({
             { text: '2024 - KW15', link: '/reports/2024-kw15.md' },
             { text: '2024 - KW16', link: '/reports/2024-kw16.md' },
             { text: '2024 - KW17', link: '/reports/2024-kw17.md' },
+            { text: '2024 - KW18', link: '/reports/2024-kw18.md' },
+            { text: '2024 - KW19', link: '/reports/2024-kw19.md' },
           ],
         },
       ],
@@ -50,6 +52,7 @@ export default withMermaid({
       '/development': [
         { text: 'Project Guideline', link: '/development/project-guideline' },
         { text: 'API', link: '/development/api' },
+        { text: 'Deployment', link: '/development/deployment' },
         {
           text: 'Backend',
           link: '/development/backend/overview',
@@ -60,6 +63,10 @@ export default withMermaid({
             },
             { text: 'Logging', link: '/development/backend/logging' },
             { text: 'Testing', link: '/development/backend/testing' },
+            {
+              text: 'Fitness Datenquellen',
+              link: '/development/backend/fitness.providers',
+            },
           ],
         },
         {

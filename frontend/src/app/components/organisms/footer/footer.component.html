@@ -1,0 +1,22 @@
+<div id="container">
+    <div id="nav-main"
+        (click)="navigate('/main')"
+        [ngClass]="isOnPage('/main')? 'nav-element highlight': 'nav-element'">
+        <img class="icons" src="../../../../assets/icons/home.svg" alt="home-svg">
+    </div>
+    <div id="nav-ranked"
+        (click)="navigate('/ranking')"
+        [ngClass]="isOnPage('/ranking')? 'nav-element highlight': 'nav-element'">
+        <img class="icons"  src="../../../../assets/icons/podium.svg" alt="podium-svg">
+    </div>
+    <div id="nav-friendlist"
+        (click)="navigate('/friends')"
+        [ngClass]="isOnPage('/friends')? 'nav-element highlight': 'nav-element'">
+        <img class="icons"  src="../../../../assets/icons/friends.svg" alt="friends-svg">
+    </div>
+    <div id="nav-profile"
+        (click)="navigate('/profile')"
+        [ngClass]="isOnPage('/profile')? 'nav-element highlight': 'nav-element'">
+        <img class="icons"  src="../../../../assets/icons/profile.svg" alt="profile-svg">
+    </div>
+</div>

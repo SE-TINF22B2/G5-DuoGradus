@@ -23,5 +23,5 @@ jobs:
       - name: Install dependencies
         run: cd docs && npm install
 
-      - name: Run check format
-        run: cd docs && npm run check:format
+      - name: Run verify
+        run: cd docs && npm run verify

@@ -1,0 +1,17 @@
+<button
+  (click)="challengeButtonIsClicked()"
+  class="button-19"
+  role="button"
+  [disabled]="eventService.disabled"
+>
+  <span id="button-top">Training</span><br /><span>{{ num }}</span>
+</button>
+
+<app-challenge-dialog
+  [trigger]="buttonIsclicked"
+  [num]="num"
+  [steps]="steps"
+  [time]="time"
+  class="wipe-up"
+  (closeDialog)="closeDialog()"
+></app-challenge-dialog>
