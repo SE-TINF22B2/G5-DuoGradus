@@ -1,8 +1,9 @@
 import { User } from '@prisma/client';
 import { createTransport, Transporter } from 'nodemailer';
+import { Notifier } from './notifier.interface';
 
-export class EmailNotifier {
-  transporter: Transporter;
+export class EmailNotifier implements Notifier {
+  private readonly transporter: Transporter;
 
   constructor() {
     this.transporter = createTransport({
@@ -15,8 +16,8 @@ export class EmailNotifier {
     });
   }
 
-  notify(user: User, title: string, content: string) {
-    this.transporter.sendMail({
+  async notify(user: User, title: string, content: string) {
+    await this.transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: user.email,
       subject: title,
