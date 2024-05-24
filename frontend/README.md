@@ -47,4 +47,4 @@ Zum Ausführen der Unit Tests, führe `ng test` in der Kommandozeile aus. Dabei 
 
 ### ❓ Support
 ---
-Bei Fragen oder Problemen, erstelle bitte ein Issue im [GitHub Repository](https://github.com/SE-TINF22B2/G5-DuoGradus) oder kontaktiere das Frontend-Entwicklerteam: @Jstn2004, @www.Luis
+Bei Fragen oder Problemen, erstelle bitte ein Issue im [GitHub Repository](https://github.com/SE-TINF22B2/G5-DuoGradus) oder kontaktiere das Frontend-Entwicklerteam: @Jstn2004, @wwwLuis
