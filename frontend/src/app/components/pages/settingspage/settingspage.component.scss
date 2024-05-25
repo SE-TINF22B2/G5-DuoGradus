@@ -4,7 +4,7 @@
 }
 #header{
     height: 4em;
-    background-color: var(--font);
+    background-color: var(--black-2);
     display: flex;
     flex: 1 2 auto;
     justify-content: space-between;
@@ -34,7 +34,7 @@
     text-align: center;
     padding-top: 1em;
     margin: 1em 1em 1em 1em;
-    background-color: var(--font);
+    background-color: var(--black-2);
     border-radius: 1em;
 }
 #avatar-img{

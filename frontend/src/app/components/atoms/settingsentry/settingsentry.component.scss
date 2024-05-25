@@ -4,7 +4,7 @@ $font-size:1.2em;
     text-align: center;
     padding-top: 1em;
     margin: 1em 1em 1em 1em;
-    background-color: var(--font);
+    background-color: var(--black-2);
     border-radius: 1em;
     display:flex;
     flex-direction: column;
@@ -17,10 +17,14 @@ $font-size:1.2em;
     border-radius: 1em;
     border-width: 0em;
     width: 90%;
-    height: 50%;
+    height: 35px;
     margin:auto;
     text-align: center;
     font-size: $font-size;
+}
+
+#value:focus{
+    border-color: var(--green);
 }
 #name{
     font-weight: bold;

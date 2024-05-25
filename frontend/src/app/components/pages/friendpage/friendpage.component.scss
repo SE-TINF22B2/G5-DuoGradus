@@ -18,7 +18,7 @@
       justify-content: start;
       align-items: center;
       margin-top: 1.5rem;
-      background-color: var(--white);
+      background-color: var(--black-2);
       width: 80vw;
       border-radius: 12px;
       gap: 0.5rem;
@@ -28,7 +28,6 @@
     .img-container {
       margin-top: 2px;
       margin-left: 0.5rem;
-      filter: invert(100%);
     }
 
     i.img-container2
@@ -48,7 +47,7 @@
       font-size: 1rem;
       cursor: pointer;
       transition: 0.3s;
-      margin-right: 0.6rem;
+      margin-right: 1rem;
       margin-top: 1.5rem;
       transition: background-color 0.1s ease; /* Übergangseigenschaft für die Hintergrundfarbe */
 
@@ -64,8 +63,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1.5rem;
-    gap: 1rem;
     height: 75vh;
     overflow: hidden;
     overflow-y: auto;

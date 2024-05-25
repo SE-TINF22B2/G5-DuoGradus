@@ -8,3 +8,10 @@ body {
     font-family: 'League Spartan', sans-serif;
     color: var(--white);
   }
+
+  main
+  {
+    display: block;
+  transition: transform 0.5s ease;
+
+  }

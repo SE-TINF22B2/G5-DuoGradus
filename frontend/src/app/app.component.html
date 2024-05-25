@@ -1,4 +1,7 @@
-<router-outlet></router-outlet>
+<main [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main >
+
 <app-footer *ngIf="hasFooter()"></app-footer>
 <!--TODO: set visible for the laoding progress-->
 <app-loader *ngIf="isLoading" ></app-loader>

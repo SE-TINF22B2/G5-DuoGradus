@@ -2,14 +2,16 @@
     <app-header [text]="'Friends'"></app-header>
     <div class="btn-search-container">
         <div class="searchbar-container">
-            <span class="img-container"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Search"><path d="M21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0z"/></svg></span>
+            <span class="img-container"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 512 512">
+              <path fill="white" d="m479.6 399.716l-81.084-81.084l-62.368-25.767A175.014 175.014 0 0 0 368 192c0-97.047-78.953-176-176-176S16 94.953 16 192s78.953 176 176 176a175.034 175.034 0 0 0 101.619-32.377l25.7 62.2l81.081 81.088a56 56 0 1 0 79.2-79.195M48 192c0-79.4 64.6-144 144-144s144 64.6 144 144s-64.6 144-144 144S48 271.4 48 192m408.971 264.284a24.028 24.028 0 0 1-33.942 0l-76.572-76.572l-23.894-57.835l57.837 23.894l76.573 76.572a24.028 24.028 0 0 1-.002 33.941" />
+            </svg></span>
             <app-searchbar ></app-searchbar>
         </div>
-        <button (click)="addFriend()" class="addfriends-button">
-            <i class="img-container2"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-PersonAdd"><circle cx="12" cy="7" r="5"/><path d="M17 22H5.266a2 2 0 0 1-1.985-2.248l.39-3.124A3 3 0 0 1 6.649 14H7"/><path d="M19 14v4"/><path d="M17 16h4"/></svg></i>
+        <button [routerLink]="['/addfriend']" class="addfriends-button">
+            <i class="img-container2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-PersonAdd"><circle cx="12" cy="7" r="5"/><path d="M17 22H5.266a2 2 0 0 1-1.985-2.248l.39-3.124A3 3 0 0 1 6.649 14H7"/><path d="M19 14v4"/><path d="M17 16h4"/></svg></i>
         </button>
     </div>
-    <hr>
+    <br>
     <div class="users-container"  >
         <!--TODO: add picture to app-usercard-->
         <app-friend-card ngClass="usercard" *ngFor="let u of users | userfilter:eventService.query" [name]="u.name"  ></app-friend-card>
