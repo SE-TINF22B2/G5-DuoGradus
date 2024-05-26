@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class LoginformComponent {
   passwordFieldType: string = 'password';
-  img: string = '../../../assets/ausblenden.png';
+  img: string = '';
   showPassword: boolean = false;
 
   constructor( private router: Router) {
-    
+
     this.router = router;
   }
 
@@ -20,8 +20,8 @@ export class LoginformComponent {
     this.showPassword = !this.showPassword;
     this.passwordFieldType = this.showPassword ? 'text' : 'password';
     this.img = this.showPassword
-      ? '../../../assets/icons/ausblenden.png'
-      : '../../../assets/icons/aussicht.png';
+      ? '../../../../assets/icons/ausblenden.png'
+      : '../../../../assets/icons/aussicht.png';
   }
 
   login()

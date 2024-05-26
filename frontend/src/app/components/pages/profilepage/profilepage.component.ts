@@ -10,10 +10,10 @@ export class ProfilepageComponent {
   name: string = "David Hasselhoff";
   email: string = "david.hasselhoff@duo-gradus.de";
   statistics: {name: string, value: string}[] = [
-    {name: 'Distanz gelaufen', value: '12.3 km'},
-    {name: 'Zeit aktiv', value: '2:34:56'},
-    {name: 'Kalorien verbrannt', value: '1234 kcal'},
-    {name: 'Schritte', value: '12345'},
+    {name: 'Distance run', value: '12.3 km'},
+    {name: 'Time active', value: '2:34:56'},
+    {name: 'Calories burned', value: '1234 kcal'},
+    {name: 'Steps', value: '12345'},
   ];
 
   router:Router;
