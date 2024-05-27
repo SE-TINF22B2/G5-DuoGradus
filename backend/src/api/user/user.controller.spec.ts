@@ -40,6 +40,7 @@ describe('UserController', () => {
       password: '1234',
       verified: true,
       enabled: true,
+      notificationMethod: 'EMAIL',
     };
 
     const req = {

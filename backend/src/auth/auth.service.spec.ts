@@ -16,6 +16,7 @@ describe('AuthService', () => {
     password: hashSync('1234', 1),
     enabled: true,
     verified: false,
+    notificationMethod: 'EMAIL',
   };
 
   beforeEach(async () => {
