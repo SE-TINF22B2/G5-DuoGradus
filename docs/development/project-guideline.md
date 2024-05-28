@@ -62,6 +62,7 @@ Um das Projekt zu einheitlich zu halten und Diskussionen möglichst zu vereinfac
 - **Pull Requests** werden auf Englisch verfasst, da sie oftmals sehr verwachsen mit dem Code sind
 - **README sowie docs** werden auf Deutsch verfasst, da "Zielgruppe" (Vorlesung an der Hochschule) Deutsch spricht
 - **Commit messages** sind egal da nur noch squash merges möglich sind, und somit nur der Titel des Pull Requests erscheint
+- Das **User Interface** der Demo App wird auf Deutsch geschrieben
 
 ---
 
