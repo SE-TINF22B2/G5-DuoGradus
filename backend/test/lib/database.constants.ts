@@ -1,3 +1,5 @@
+import { FitnessProviderCredential } from '@prisma/client';
+
 export const Users = {
   exampleUser: {
     id: '0',
@@ -7,4 +9,10 @@ export const Users = {
     enabled: true,
     verified: false,
   },
+};
+
+export const FitnessCredetials = {
+  fitbit: {
+    type: 'fitbit',
+  } as FitnessProviderCredential,
 };

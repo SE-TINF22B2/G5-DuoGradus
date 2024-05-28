@@ -93,7 +93,10 @@
     "coveragePathIgnorePatterns": [
       "src/db/prisma.seed.ts",
       "main.ts"
-    ]
+    ],
+    "moduleNameMapper": {
+      "src/(.*)": "<rootDir>/src/"
+    }
   },
   "prisma": {
     "seed": "ts-node src/db/prisma.seed.ts"

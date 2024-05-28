@@ -11,9 +11,8 @@ import { FitnessRepository } from '../../db/repositories/fitness.repository';
 import { NestRequest } from '../../types/request.type';
 import { AutoGuard } from '../../auth/auto.guard';
 import { Response } from 'express';
-import { FitnessService } from 'src/integration/fitness/fitness.service';
-import { FitBitProvider } from 'src/integration/fitness/providers/fitbit.provider';
-import * as dayjs from 'dayjs';
+import { FitnessService } from '../../integration/fitness/fitness.service';
+import { FitBitProvider } from '../../integration/fitness/providers/fitbit.provider';
 
 @Controller('datasource')
 export class DatasourceController {

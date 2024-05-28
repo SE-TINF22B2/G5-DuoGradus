@@ -8,16 +8,17 @@ import {
   ProviderStatus,
 } from './provider.interface';
 import * as dayjs from 'dayjs';
-import { CredentialService } from 'src/integration/credentials/credential.service';
+import { CredentialService } from '../../credentials/credential.service';
+import { Injectable } from '@nestjs/common';
 
 type FitbitCredentials = {
   accessToken: string;
   userId: string;
 };
 
+@Injectable()
 export class FitBitProvider implements FitnessProvider {
   private FITBIT_API = 'https://api.fitbit.com';
-  private FITBIT_API_AUTH = 'https://www.fitbit.com';
   private FITBIT_TYPE = 'fitbit';
 
   private userCredentials: FitnessProviderCredential | null;

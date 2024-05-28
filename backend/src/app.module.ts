@@ -6,9 +6,8 @@ import { UserController } from './api/user/user.controller';
 import { PrismaModule } from './db/prisma.module';
 import { LOGGER_SERVICE } from './logger/logger.service';
 import { ConfigModule } from '@nestjs/config';
-import configuration from './config/configuration';
-import { DatasourceController } from './api/datasource/datasource.controller';
 import FitnessModule from './integration/fitness/fitness.module';
+import configuration from './config/configuration';
 
 @Module({
   imports: [
