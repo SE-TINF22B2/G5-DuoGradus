@@ -15,6 +15,7 @@ describe('UserRepository tests', () => {
     password: '1234',
     enabled: true,
     verified: false,
+    notificationMethod: 'EMAIL',
   };
 
   beforeEach(async () => {

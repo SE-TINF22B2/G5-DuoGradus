@@ -5,9 +5,10 @@ import { AuthModule } from './auth/auth.module';
 import { UserController } from './api/user/user.controller';
 import { PrismaModule } from './db/prisma.module';
 import { LOGGER_SERVICE } from './logger/logger.service';
+import { NotificationModule } from './notification/notification.module';
 
 @Module({
-  imports: [AuthModule, PrismaModule],
+  imports: [AuthModule, PrismaModule, NotificationModule],
   controllers: [AppController, UserController],
   providers: [
     AppService,
