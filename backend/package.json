@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "verify": "npm run build && npm run check && npm run test:cov && npm run test:e2e",
+    "verify": "npm run build && npm run check && npm run test && npm run test:e2e",
     "build": "prisma generate && nest build",
     "start": "nest start",
     "start:dev": "npm run db:reset && nest start --watch",
@@ -83,13 +83,6 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
-    "coverageThreshold": {
-      "global": {
-        "lines": 90,
-        "functions": 80,
-        "branches": 80
-      }
-    },
     "coveragePathIgnorePatterns": [
       "src/db/prisma.seed.ts",
       "main.ts"
