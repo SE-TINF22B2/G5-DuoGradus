@@ -7,9 +7,9 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    height: 10vh;
+    height: 9vh;
     background-color: var(--background-black);
-    opacity: 0.98;
+    opacity: 0.96;
     color: var(--white);
 
     //format navigation elements
@@ -18,14 +18,15 @@
         width: 25%;
         height: 100%;
 
+
         .icons{
-            width: 10vw;
+            width: 30px;
             max-width: 4.5rem;
             filter: brightness(0) invert(1);
             padding-top: 5%;
         }
         .text{
-            font-size: 3vw;
+            font-size: 12px;
             padding: 0;
             margin: 0;
 
@@ -35,10 +36,12 @@
         border-radius: 20px;
         background-color: var(--white)!important;
         .icons{
+            width: 33px;
+            max-width: 4.5rem;
             filter:invert(0);
         }
         .text{
-          font-size: 3vw;
+          font-size: 14px;
           font-weight: bold;
           padding: 0;
           margin: 0;

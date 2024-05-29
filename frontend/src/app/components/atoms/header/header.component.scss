@@ -3,13 +3,16 @@
 {
     width: 100vw;
     height: 30px;
-    background-color: var(--black-2);
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 14%, rgba(0,75,17,1) 82%, rgba(0,75,17,1) 100%);
     margin: 0;
     padding-top: 8px;
     padding-bottom: 5px;
     display: flex;
     justify-content: start;
     align-items: center;
+
+
 
     h3
     {

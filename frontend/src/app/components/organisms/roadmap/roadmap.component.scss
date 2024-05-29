@@ -1,18 +1,15 @@
 .map {
   margin-top: 130px;
-  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  overflow-y: scroll;
   background-color: var(--background-black);
 }
 
 .map::-webkit-scrollbar {
   display: none;
 }
-/* Nur jeder zweite Button */
+
 .button {
   margin-right: 50px;
 }

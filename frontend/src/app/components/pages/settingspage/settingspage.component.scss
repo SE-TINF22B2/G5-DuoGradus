@@ -4,7 +4,8 @@
 }
 #header{
     height: 4em;
-    background-color: var(--black-2);
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 14%, rgba(0,75,17,1) 82%, rgba(0,75,17,1) 100%);
     display: flex;
     flex: 1 2 auto;
     justify-content: space-between;
