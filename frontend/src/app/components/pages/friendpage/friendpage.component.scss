@@ -64,7 +64,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    background-color: var(--background-black);
+    height: 100vh;
   }
 
   .usercard:last-child
