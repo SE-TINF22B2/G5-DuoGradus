@@ -18,7 +18,7 @@
       justify-content: start;
       align-items: center;
       margin-top: 1.5rem;
-      background-color: var(--black-2);
+      background-color: var(--white);
       width: 80vw;
       border-radius: 12px;
       gap: 0.5rem;
@@ -28,6 +28,7 @@
     .img-container {
       margin-top: 2px;
       margin-left: 0.5rem;
+      filter: invert(100%);
     }
 
     i.img-container2
