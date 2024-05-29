@@ -1,7 +1,6 @@
 import { Test } from '@nestjs/testing';
 import { FitnessRepository } from '../../../db/repositories/fitness.repository';
 import { DeepMockProxy, mockDeep } from 'jest-mock-extended';
-import { ConfigService } from '@nestjs/config';
 import { FitBitProvider } from './fitbit.provider';
 import { TestConstants } from '../../../../test/lib/constants';
 import { PrismaModule } from '../../../db/prisma.module';

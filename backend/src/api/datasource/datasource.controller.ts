@@ -37,13 +37,12 @@ export class DatasourceController {
     @Req() request: NestRequest,
     @Param() params: any,
   ) {
-    const datasourceForUser =
-      await this.fitnessRepository.getProviderForUserById(
-        request.user.id,
-        params.id,
-      );
+    const datasource = this.fitnessService.getProviderForUserById(
+      request.user.id,
+      params.id,
+    );
 
-    return datasourceForUser;
+    return datasource;
   }
 
   @Delete('/:id')
@@ -80,13 +79,11 @@ export class DatasourceController {
     @Param() params: any,
     @Res() response: Response,
   ) {
-    const providers = await this.fitnessService.getDatasourcesForUser(
-      request.user.id,
-    );
-
-    const responsibleProvider = providers.find(
-      (provider) => provider.getInfo().name == params.id,
-    );
+    const responsibleProvider =
+      await this.fitnessService.getProviderForUserById(
+        request.user.id,
+        params.id,
+      );
 
     if (!responsibleProvider) {
       response.status(400).json({

@@ -14,5 +14,11 @@ export const Users = {
 export const FitnessCredetials = {
   fitbit: {
     type: 'fitbit',
+    accessToken: 'MOCK_AT',
+    refreshToken: 'MOCK_RF',
+    accessTokenExpires: new Date(),
+    userId: 'MOCK_UID',
+    enabled: true,
+    providerUserId: 'MOCK_PUID',
   } as FitnessProviderCredential,
 };

@@ -1,5 +1,5 @@
 import { FitnessProviderCredential } from '@prisma/client';
-import { FitnessGoal } from '../fitness.goal';
+import { FitnessData } from '../fitness.data';
 
 export type ProviderStatus = 'enabled' | 'disabled' | 'error' | 'unknown';
 
@@ -18,4 +18,5 @@ export interface FitnessProvider {
 
   getAuthorizeURL(): string;
   getAccessTokenFromCode(user: string, code: string): Promise<any>;
+  getFitnessData(user: string, start: Date, end: Date): Promise<FitnessData>;
 }
