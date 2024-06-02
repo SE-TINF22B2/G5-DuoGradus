@@ -9,7 +9,7 @@ import {
 } from './provider.interface';
 import * as dayjs from 'dayjs';
 import { CredentialService } from '../../credentials/credential.service';
-import { Injectable } from '@nestjs/common';
+import { Injectable, LoggerService } from '@nestjs/common';
 
 type FitbitCredentials = {
   accessToken: string;
@@ -27,6 +27,7 @@ export class FitBitProvider implements FitnessProvider {
   constructor(
     private fitnessRepository: FitnessRepository,
     private credentialStore: CredentialService,
+    private loggerService: LoggerService,
     private client_id: string,
     private client_secret: string,
   ) {}
@@ -88,6 +89,8 @@ export class FitBitProvider implements FitnessProvider {
 
     const { access_token, refresh_token, expires_in, user_id } =
       await response.json();
+
+    this.userStatus = 'enabled';
 
     await this.fitnessRepository.createProvider({
       type: 'fitbit',
@@ -155,7 +158,10 @@ export class FitBitProvider implements FitnessProvider {
     // Persist the access token in the background, to make the request faster
     setTimeout(async () => {
       // Save the credentials in the local cache
-      this.saveCredentials(user, credentials);
+      this.saveCredentials(user, {
+        accessToken: credentials.accessToken,
+        userId: credentials.providerUserId,
+      });
 
       // Update provider
       await this.fitnessRepository.updateProvider(this.FITBIT_TYPE, user, {
@@ -190,7 +196,9 @@ export class FitBitProvider implements FitnessProvider {
     );
 
     if (!response.ok) {
-      console.log(await response.text());
+      this.loggerService.error(
+        `[Fitbit]: Unable to retrieve daily activities via ${response.url}`,
+      );
       throw new Error('Invalid response received from FitBit');
     }
 

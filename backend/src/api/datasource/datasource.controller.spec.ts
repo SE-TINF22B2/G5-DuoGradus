@@ -8,6 +8,8 @@ import { NestRequest } from '../../types/request.type';
 import { FitnessRepository } from '../../db/repositories/fitness.repository';
 import { Response } from 'express';
 import { TestConstants } from '../../../test/lib/constants';
+import { ConsoleLogger } from '@nestjs/common';
+import { LOGGER_SERVICE } from '../../logger/logger.service';
 
 describe('Datasource controller', () => {
   let fitnessService: DeepMockProxy<FitnessService>;
@@ -17,7 +19,10 @@ describe('Datasource controller', () => {
   beforeAll(async () => {
     const module = await Test.createTestingModule({
       imports: [PrismaModule],
-      providers: [FitnessService],
+      providers: [
+        FitnessService,
+        { useClass: ConsoleLogger, provide: LOGGER_SERVICE },
+      ],
       controllers: [DatasourceController],
     })
       .overrideProvider(FitnessService)

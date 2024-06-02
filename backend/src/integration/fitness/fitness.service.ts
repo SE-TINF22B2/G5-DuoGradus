@@ -1,9 +1,10 @@
 import { ConfigService } from '@nestjs/config';
 import { FitnessRepository } from '../../db/repositories/fitness.repository';
 import { FitBitProvider } from './providers/fitbit.provider';
-import { FitnessProvider, ProviderInfo } from './providers/provider.interface';
-import { Injectable } from '@nestjs/common';
+import { FitnessProvider } from './providers/provider.interface';
+import { Inject, Injectable, LoggerService } from '@nestjs/common';
 import { CredentialService } from '../credentials/credential.service';
+import { LOGGER_SERVICE } from '../../logger/logger.service';
 
 @Injectable()
 export class FitnessService {
@@ -11,6 +12,8 @@ export class FitnessService {
     private fitnessRepository: FitnessRepository,
     private configService: ConfigService,
     private credentialService: CredentialService,
+    @Inject(LOGGER_SERVICE)
+    private loggerService: LoggerService,
   ) {}
 
   // public async syncUser(userId: string): Promise<void> {}
@@ -37,6 +40,7 @@ export class FitnessService {
         new FitBitProvider(
           this.fitnessRepository,
           this.credentialService,
+          this.loggerService,
           fitbit_client_id,
           fitbit_client_secret,
         ),
