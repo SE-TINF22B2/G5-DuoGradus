@@ -8,6 +8,7 @@ import { LOGGER_SERVICE } from './logger/logger.service';
 import { ConfigModule } from '@nestjs/config';
 import FitnessModule from './integration/fitness/fitness.module';
 import configuration from './config/configuration';
+import { NotificationModule } from './notification/notification.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import configuration from './config/configuration';
       load: [configuration],
     }),
     FitnessModule,
+    NotificationModule,
   ],
   controllers: [AppController, UserController],
   providers: [

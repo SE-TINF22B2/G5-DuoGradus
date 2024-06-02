@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginformComponent } from './loginform.component';
+import { InputfieldComponent } from 'app/components/atoms/inputfield/inputfield.component';
 
 describe('LoginformComponent', () => {
   let component: LoginformComponent;
@@ -8,7 +9,7 @@ describe('LoginformComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LoginformComponent]
+      declarations: [LoginformComponent, InputfieldComponent]
     })
     .compileComponents();
     
@@ -20,4 +21,10 @@ describe('LoginformComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create inputfield', () => {
+    const element: HTMLElement = fixture.nativeElement;
+    const inputfield = element.querySelector('app-inputfield');
+    expect(inputfield).toBeTruthy();
+  }); 
 });

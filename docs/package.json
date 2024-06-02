@@ -6,6 +6,7 @@
     "vitepress-plugin-mermaid": "^2.0.16"
   },
   "scripts": {
+    "verify": "npm run docs:build && npm run check:format",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",

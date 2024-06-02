@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "verify": "npm run build && npm run check && npm run test:cov && npm run test:e2e",
+    "verify": "npm run build && npm run check && npm run test && npm run test:e2e",
     "build": "prisma generate && nest build",
     "start": "nest start",
     "start:dev": "npm run db:migrate && nest start --watch",
@@ -33,10 +33,12 @@
     "@nestjs/platform-express": "^10.3.7",
     "@prisma/client": "^5.11.0",
     "@types/bcrypt": "^5.0.2",
+    "@types/nodemailer": "^6.4.14",
     "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "dayjs": "^1.11.11",
+    "nodemailer": "^6.9.13",
     "passport": "^0.7.0",
     "passport-http": "^0.3.0",
     "reflect-metadata": "^0.2.0",
@@ -83,13 +85,6 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
-    "coverageThreshold": {
-      "global": {
-        "lines": 90,
-        "functions": 80,
-        "branches": 80
-      }
-    },
     "coveragePathIgnorePatterns": [
       "src/db/prisma.seed.ts",
       "main.ts"

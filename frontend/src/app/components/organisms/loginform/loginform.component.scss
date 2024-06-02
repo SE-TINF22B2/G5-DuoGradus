@@ -18,6 +18,7 @@ p.create-account {
   justify-content: center;
   align-self: center;
   margin-right: 8px;
+  margin-top: 8px;
 
   .img {
     height: 15px;
@@ -35,6 +36,7 @@ p.create-account {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     width: 65%;
+    max-width: 400px;
     z-index: 1;
     -webkit-transition: all 0.3s ease;
     background-color: var(--background-black);
@@ -89,5 +91,22 @@ p.create-account {
     display: flex;
     width: 100%;
     justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 429px) {
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .center {
+      width: 65%;
+      max-width: 300px;
+      z-index: 1;
+      background-color: var(--background-black);
+      padding: 15px;
+      border-radius: 16px;
+      margin-top: 0;
+    }
   }
 }
