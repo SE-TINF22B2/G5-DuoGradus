@@ -5,6 +5,7 @@ import { FitBitProvider } from './fitbit.provider';
 import { TestConstants } from '../../../../test/lib/constants';
 import { PrismaModule } from '../../../db/prisma.module';
 import { CredentialService } from '../../credentials/credential.service';
+import { ConsoleLogger } from '@nestjs/common';
 
 describe('Fitbit Provider tests', () => {
   let fitnessRepository: DeepMockProxy<FitnessRepository>;
@@ -29,6 +30,7 @@ describe('Fitbit Provider tests', () => {
     fitbitProvider = new FitBitProvider(
       fitnessRepository,
       credentialService,
+      mockDeep<ConsoleLogger>(),
       'MOCKED',
       'MOCKED',
     );

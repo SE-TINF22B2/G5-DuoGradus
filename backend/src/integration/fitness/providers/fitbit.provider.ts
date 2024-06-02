@@ -48,7 +48,8 @@ export class FitBitProvider implements FitnessProvider {
   getInfo(): ProviderInfo {
     return {
       name: this.FITBIT_TYPE,
-      description: 'Import credentials from Fitbit',
+      description:
+        'Access Activities, Steps and further Data from Fitbit. This supports all devices supported by the Fitbit App, including the Google Pixel Watch',
       status: this.userStatus,
     };
   }

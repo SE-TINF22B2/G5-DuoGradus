@@ -41,12 +41,12 @@ export class DatasourceController {
     @Req() request: NestRequest,
     @Param() params: any,
   ) {
-    const datasource = this.fitnessService.getProviderForUserById(
+    const datasource = await this.fitnessService.getProviderForUserById(
       request.user.id,
       params.id,
     );
 
-    return datasource;
+    return datasource?.getInfo();
   }
 
   @Delete('/:id')

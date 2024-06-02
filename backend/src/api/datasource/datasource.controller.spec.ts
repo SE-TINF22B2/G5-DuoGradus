@@ -68,7 +68,7 @@ describe('Datasource controller', () => {
       { id: 'Mock' },
     );
 
-    expect(mockProvider).toBeInstanceOf(MockProvider);
+    expect(mockProvider).toStrictEqual(new MockProvider().getInfo());
   });
 
   it('Should be able to delete a fitness provider', async () => {
