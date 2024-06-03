@@ -57,9 +57,12 @@ describe('Fitbit Provider tests', () => {
     fitnessRepository.createProvider.mockResolvedValue(
       TestConstants.database.fitnessCredentials.fitbit,
     );
+    fitnessRepository.deleteProvider.mockResolvedValue(
+      TestConstants.database.fitnessCredentials.fitbit,
+    );
 
     // Call the function
-    const result = await fitbitProvider.getAccessTokenFromCode('MOCK', 'MOCK');
+    const result = await fitbitProvider.authorizeCallback('MOCK', 'MOCK');
 
     // Expect that the credential have been saved in the database
     expect(fitnessRepository.createProvider).toHaveBeenCalledTimes(1);

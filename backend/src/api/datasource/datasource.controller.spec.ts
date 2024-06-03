@@ -73,6 +73,8 @@ describe('Datasource controller', () => {
 
     const mockResponse = mockDeep<Response>();
 
+    mockResponse.status.mockReturnThis();
+
     await fitnessController.deleteDatasource(
       mockRequest,
       { id: 'MOCK' },

@@ -59,10 +59,15 @@ export class FitbitProvider implements FitnessProvider {
     code: string,
   ): Promise<FitbitCredentials> {
     // First, exchange the code against an access token
-    const credentials = await this.getAccessTokenFromCode(user, code);
+    const credentials = await this.getAccessTokenFromCode(code);
 
     // Set the user status to enabled, as we now have the credentials
     this.userStatus = 'enabled';
+
+    // First delete any configured provider for this type and user
+    await this.fitnessRepository.deleteProvider({
+      where: { userId: user, type: this.FITBIT_TYPE },
+    });
 
     // Save the credentials in the database
     await this.fitnessRepository.createProvider({
@@ -91,7 +96,6 @@ export class FitbitProvider implements FitnessProvider {
    * @returns api credentials
    */
   private async getAccessTokenFromCode(
-    user: string,
     code: string,
   ): Promise<FitbitCredentials & { refreshToken: string; expires: number }> {
     const searchParams = new URLSearchParams();
