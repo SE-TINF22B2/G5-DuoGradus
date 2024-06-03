@@ -17,6 +17,6 @@ export interface FitnessProvider {
   );
 
   getAuthorizeURL(): string;
-  getAccessTokenFromCode(user: string, code: string): Promise<any>;
+  authorizeCallback(user: string, code: string): Promise<any>;
   getFitnessData(user: string, start: Date, end: Date): Promise<FitnessData>;
 }

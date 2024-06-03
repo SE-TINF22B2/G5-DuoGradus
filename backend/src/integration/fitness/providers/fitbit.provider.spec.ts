@@ -1,7 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { FitnessRepository } from '../../../db/repositories/fitness.repository';
 import { DeepMockProxy, mockDeep } from 'jest-mock-extended';
-import { FitBitProvider } from './fitbit.provider';
+import { FitbitProvider } from './fitbit.provider';
 import { TestConstants } from '../../../../test/lib/constants';
 import { PrismaModule } from '../../../db/prisma.module';
 import { CredentialService } from '../../credentials/credential.service';
@@ -10,7 +10,7 @@ import { ConsoleLogger } from '@nestjs/common';
 describe('Fitbit Provider tests', () => {
   let fitnessRepository: DeepMockProxy<FitnessRepository>;
   let credentialService: DeepMockProxy<CredentialService>;
-  let fitbitProvider: FitBitProvider;
+  let fitbitProvider: FitbitProvider;
 
   beforeAll(async () => {
     const testModule = await Test.createTestingModule({
@@ -27,7 +27,7 @@ describe('Fitbit Provider tests', () => {
       testModule.get<DeepMockProxy<FitnessRepository>>(FitnessRepository);
     credentialService =
       testModule.get<DeepMockProxy<CredentialService>>(CredentialService);
-    fitbitProvider = new FitBitProvider(
+    fitbitProvider = new FitbitProvider(
       fitnessRepository,
       credentialService,
       mockDeep<ConsoleLogger>(),

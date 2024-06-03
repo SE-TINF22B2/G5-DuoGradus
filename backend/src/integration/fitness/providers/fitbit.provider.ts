@@ -17,7 +17,7 @@ type FitbitCredentials = {
 };
 
 @Injectable()
-export class FitBitProvider implements FitnessProvider {
+export class FitbitProvider implements FitnessProvider {
   private FITBIT_API = 'https://api.fitbit.com';
   private FITBIT_TYPE = 'fitbit';
 
@@ -54,6 +54,34 @@ export class FitBitProvider implements FitnessProvider {
     };
   }
 
+  public async authorizeCallback(
+    user: string,
+    code: string,
+  ): Promise<FitbitCredentials> {
+    // First, exchange the code against an access token
+    const credentials = await this.getAccessTokenFromCode(user, code);
+
+    // Set the user status to enabled, as we now have the credentials
+    this.userStatus = 'enabled';
+
+    // Save the credentials in the database
+    await this.fitnessRepository.createProvider({
+      type: 'fitbit',
+      providerUserId: credentials.userId,
+      accessToken: credentials.accessToken,
+      accessTokenExpires: dayjs().add(credentials.expires, 'seconds').toDate(),
+      refreshToken: credentials.refreshToken,
+      enabled: true,
+      owner: {
+        connect: {
+          id: user,
+        },
+      },
+    });
+
+    return { accessToken: credentials.accessToken, userId: credentials.userId };
+  }
+
   /**
    * Exchanges a code recieved after an authorized to an access token
    * and persists the client
@@ -62,10 +90,10 @@ export class FitBitProvider implements FitnessProvider {
    * @param code received authorization code
    * @returns api credentials
    */
-  public async getAccessTokenFromCode(
+  private async getAccessTokenFromCode(
     user: string,
     code: string,
-  ): Promise<FitbitCredentials> {
+  ): Promise<FitbitCredentials & { refreshToken: string; expires: number }> {
     const searchParams = new URLSearchParams();
     searchParams.append('client_id', this.client_id);
     searchParams.append('code', code);
@@ -91,23 +119,12 @@ export class FitBitProvider implements FitnessProvider {
     const { access_token, refresh_token, expires_in, user_id } =
       await response.json();
 
-    this.userStatus = 'enabled';
-
-    await this.fitnessRepository.createProvider({
-      type: 'fitbit',
-      providerUserId: user_id,
+    return {
       accessToken: access_token,
-      accessTokenExpires: dayjs().add(expires_in, 'seconds').toDate(),
+      userId: user_id,
       refreshToken: refresh_token,
-      enabled: true,
-      owner: {
-        connect: {
-          id: user,
-        },
-      },
-    });
-
-    return { accessToken: access_token, userId: user_id };
+      expires: expires_in,
+    };
   }
 
   /**

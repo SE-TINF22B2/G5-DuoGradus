@@ -13,7 +13,7 @@ import { NestRequest } from '../../types/request.type';
 import { AutoGuard } from '../../auth/auto.guard';
 import { Response } from 'express';
 import { FitnessService } from '../../integration/fitness/fitness.service';
-import { FitBitProvider } from '../../integration/fitness/providers/fitbit.provider';
+import { FitbitProvider } from '../../integration/fitness/providers/fitbit.provider';
 import { LOGGER_SERVICE, LoggerService } from '../../logger/logger.service';
 
 @Controller('datasource')
@@ -73,7 +73,7 @@ export class DatasourceController {
       where: { userId: request.user.id, type: params.id },
     });
 
-    res.status(204);
+    res.status(204).send();
   }
 
   @Get('/:id/authorize')
@@ -120,7 +120,7 @@ export class DatasourceController {
 
     const code = (request.query.code as string).split('#_=_')[0];
 
-    const result = await responsibleProvider.getAccessTokenFromCode(
+    const result = await responsibleProvider.authorizeCallback(
       request.user.id,
       code,
     );
@@ -154,7 +154,7 @@ export class DatasourceController {
       (await this.fitnessService.getProviderForUserById(
         request.user.id,
         id,
-      )) as FitBitProvider | null;
+      )) as FitbitProvider | null;
 
     if (!responsibleProvider) {
       response.status(400).json({

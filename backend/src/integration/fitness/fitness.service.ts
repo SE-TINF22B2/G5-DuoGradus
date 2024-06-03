@@ -1,6 +1,6 @@
 import { ConfigService } from '@nestjs/config';
 import { FitnessRepository } from '../../db/repositories/fitness.repository';
-import { FitBitProvider } from './providers/fitbit.provider';
+import { FitbitProvider } from './providers/fitbit.provider';
 import { FitnessProvider } from './providers/provider.interface';
 import { Inject, Injectable, LoggerService } from '@nestjs/common';
 import { CredentialService } from '../credentials/credential.service';
@@ -37,7 +37,7 @@ export class FitnessService {
 
     if (fitbit_client_id && fitbit_client_secret) {
       providers.push(
-        new FitBitProvider(
+        new FitbitProvider(
           this.fitnessRepository,
           this.credentialService,
           this.loggerService,

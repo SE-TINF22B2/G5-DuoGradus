@@ -50,7 +50,7 @@ export class MockProvider implements FitnessProvider {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async getAccessTokenFromCode(user: string, code: string): Promise<any> {
+  async authorizeCallback(user: string, code: string): Promise<any> {
     return true;
   }
 }
