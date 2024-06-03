@@ -43,7 +43,7 @@ export class MockProvider implements FitnessProvider {
       providerUserId: string;
     } | null,
   ) {
-    throw new Error('Method not implemented.');
+    return null;
   }
   getAuthorizeURL(): string {
     return 'MOCK_AURL';

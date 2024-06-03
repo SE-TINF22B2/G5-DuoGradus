@@ -15,6 +15,7 @@ describe('Datasource controller', () => {
   let fitnessService: DeepMockProxy<FitnessService>;
   let fitnessController: DeepMockProxy<DatasourceController>;
   let fitnessRepository: DeepMockProxy<FitnessRepository>;
+  let mockRequest: NestRequest;
 
   beforeAll(async () => {
     const module = await Test.createTestingModule({
@@ -34,6 +35,12 @@ describe('Datasource controller', () => {
     fitnessService = module.get(FitnessService);
     fitnessController = module.get(DatasourceController);
     fitnessRepository = module.get(FitnessRepository);
+
+    mockRequest = {
+      user: {
+        id: 'MOCK',
+      },
+    } as NestRequest;
   });
 
   it('It should return the datasources for a user', async () => {
@@ -41,12 +48,6 @@ describe('Datasource controller', () => {
     fitnessService.getDatasourcesForUser.mockResolvedValue([
       new MockProvider(),
     ]);
-
-    const mockRequest = {
-      user: {
-        id: 'MOCK',
-      },
-    } as NestRequest;
 
     const userProviders =
       await fitnessController.getDatasourcesForUser(mockRequest);
@@ -57,15 +58,9 @@ describe('Datasource controller', () => {
   it('Should return a specific datasource for the user', async () => {
     fitnessService.getProviderForUserById.mockResolvedValue(new MockProvider());
 
-    const mockRequest = {
-      user: {
-        id: 'MOCK',
-      },
-    } as NestRequest;
-
     const mockProvider = await fitnessController.getDatasourceForUser(
       mockRequest,
-      { id: 'Mock' },
+      { id: 'MOCK' },
     );
 
     expect(mockProvider).toStrictEqual(new MockProvider().getInfo());
@@ -75,12 +70,6 @@ describe('Datasource controller', () => {
     fitnessRepository.getProviderForUserById.mockResolvedValue(
       TestConstants.database.fitnessCredentials.fitbit,
     );
-
-    const mockRequest = {
-      user: {
-        id: 'MOCK',
-      },
-    } as NestRequest;
 
     const mockResponse = mockDeep<Response>();
 
@@ -95,12 +84,6 @@ describe('Datasource controller', () => {
 
   it('should resolve the authorize url of the provider', async () => {
     fitnessService.getProviderForUserById.mockResolvedValue(new MockProvider());
-
-    const mockRequest = {
-      user: {
-        id: 'MOCK',
-      },
-    } as NestRequest;
 
     const mockResponse = mockDeep<Response>();
     mockResponse.status.mockReturnThis();
@@ -121,14 +104,9 @@ describe('Datasource controller', () => {
     const mockedProvider = new MockProvider();
     fitnessService.getProviderForUserById.mockResolvedValue(mockedProvider);
 
-    const mockRequest = {
-      user: {
-        id: 'MOCK',
-      },
-      query: {
-        code: 'MOCKED_AP',
-      } as any,
-    } as NestRequest;
+    mockRequest.query = {
+      code: 'MOCKED_AP',
+    } as any;
 
     const mockResponse = mockDeep<Response>();
     mockResponse.status.mockReturnThis();
@@ -141,14 +119,9 @@ describe('Datasource controller', () => {
   it('should return the daily goals', async () => {
     fitnessService.getProviderForUserById.mockResolvedValue(new MockProvider());
 
-    const mockRequest = {
-      user: {
-        id: 'MOCK',
-      },
-      query: {
-        code: 'MOCKED_AP',
-      } as any,
-    } as NestRequest;
+    mockRequest.query = {
+      code: 'MOCKED_AP',
+    } as any;
 
     const mockResponse = mockDeep<Response>();
     mockResponse.status.mockReturnThis();

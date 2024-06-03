@@ -205,7 +205,18 @@ export class FitBitProvider implements FitnessProvider {
 
     const json = await response.json();
 
-    const goals: FitnessGoal[] = [
+    // The goals are transformed into the required format
+    return this.formatGoals(json);
+  }
+
+  /**
+   * Transforms Fitbit Goals into the regular goals.
+   *
+   * @param json
+   * @returns
+   */
+  private formatGoals(json: object): FitnessGoal[] {
+    return [
       {
         type: 'steps',
         goal: json['goals']['steps'],
@@ -213,8 +224,6 @@ export class FitBitProvider implements FitnessProvider {
         unit: 0,
       },
     ];
-
-    return goals;
   }
 
   /**
@@ -243,6 +252,14 @@ export class FitBitProvider implements FitnessProvider {
     };
   }
 
+  /**
+   * Stores credentials in the local cache.
+   * The cache is only valid per instance and not shared.
+   * The credentials are saved in plaintext in memory.
+   *
+   * @param user
+   * @param credentials
+   */
   private saveCredentials(user: string, credentials: FitbitCredentials) {
     this.credentialStore.saveCredential(
       `fitbit-credential-${user}`,
@@ -250,6 +267,13 @@ export class FitBitProvider implements FitnessProvider {
     );
   }
 
+  /**
+   * Retrieves credentials from the local cache.
+   * The cache is only valid per instance and not shared.
+   *
+   * @param user
+   * @returns
+   */
   private getCredentialsFromCache(user: string): FitbitCredentials | null {
     return this.credentialStore.getCredential(
       `fitbit-credential-${user}`,
