@@ -3,4 +3,4 @@
 **Welche Issues behebt dieser PR?**:
 Fixes #
 
-**Notizen für reviewer**:
+**Notizen für Reviewer**:
