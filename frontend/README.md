@@ -1,5 +1,4 @@
-### 🖥️Frontend DuoGradus
-___
+# 🖥️Frontend DuoGradus
 
 |                  |                        |
 | ---------------- | ---------------------- |
@@ -26,7 +25,7 @@ Zum Ausführen der Unit Tests, führe `ng test` in der Kommandozeile aus. Dabei 
 
 ### 🖊️ Frontend bearbeiten
 ---
-##### Schritte zum Bearbeiten des Frontends:
+#### Schritte zum Bearbeiten des Frontends:
 
 1. Erstelle eine neue Feature-Branche:
     ```
@@ -56,15 +55,46 @@ Zum Ausführen der Unit Tests, führe `ng test` in der Kommandozeile aus. Dabei 
     git push origin --delete feature/NeuesFeature
     ```
 
-### ❓Support
+### Frontend Struktur
 ---
-Bei Fragen oder Problemen, erstelle bitte ein Issue im [GitHub Repository](https://github.com/SE-TINF22B2/G5-DuoGradus) oder kontaktiere das Frontend-Entwicklerteam: @Jstn2004, @wwwLuis
+Die Struktur des Frontends entspricht der typischen Angular Anwendung (siehe [Doku](https://v17.angular.io/guide/file-structure))
+
+Übersicht Verzeichnis Frontend: 
+```
+frontend
+└── src
+    ├── app                            
+    |   |              
+    │   ├── components                  - Komponenten der Seite
+    │   │   ├── atoms
+    │   │   ├── organisms
+	|   |   └── pages
+    │   │ 
+    │   ├── pipes                           
+    │   │   ├── timer
+    │   │   ├── user-filter
+    │   │   └── ...
+	|   |                                
+    │   ├── services                    
+    │   │   ├── event.service.ts
+    │   │   ├── loader.service.ts
+    │   │   └── ...
+    |   |-- styles                     - Globale Design Regeln
+	|   |  
+    │   ├── app.component.ts
+    │   ├── app.module.ts
+    │   ├── app-routing.ts             - Routing Konfiguration
+    │   ├── authenticated.guard.ts     - AuthGuard
+    │   └── route-transition-animation.ts   - Animationsregeln
+    └── assets                         - Statische Assets 
+    
+```
 
 ### LoaderService
 ---
 Um den Loader ein- und ausblenden zu können, wurde ein LoaderService implementiert. Dieser stellt für beide Aufgaben jeweils eine Methode bereit, die beim abrufen der Daten aufgerufen werden können. 
 
-##### Anwendungsbeispiel: 
+#### Anwendungsbeispiel: 
 ---
 `loader.service.ts
 
@@ -101,3 +131,24 @@ constructor(private LoaderService: LoaderService) { }
 ...
 ```
 
+### ❓Support
+---
+Bei Fragen oder Problemen, erstelle bitte ein Issue im [GitHub Repository](https://github.com/SE-TINF22B2/G5-DuoGradus) oder kontaktiere das Frontend-Entwicklerteam: @Jstn2004, @www.Luis
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+---
