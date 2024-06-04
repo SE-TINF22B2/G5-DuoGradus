@@ -1,27 +1,26 @@
 ---
-name: Bug report
-about: Create a bug report to document a problem
+name: Bug Report
+about: Erstelle einen Bug Report um ein Problem zu dokumentieren
 title: ''
 labels: bug
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Beschreibe den Bug**
+Eine kurze und prägnante Beschreibung was der Bug ist/macht.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**Wie Reproduziert man den Bug?**
+Schritte um den Bug zu reproduzieren
+1. Gehe auf '...'
+2. Klicke auf ...
+3. Bug tritt auf
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Erwartetes Verhalten**
+Eine kurze Erklärung welches Verhalten eigentlich hätte auftreten sollen.
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
+Falls möglich, Screenshots helfen dabei den Bug zu beheben
 
-**Additional context**
-Add any other context about the problem here.
+**Weiterer Context**
+Füge jeglichen weiteren Context hinzu, der helfen könnte den Bug zu beheben.
