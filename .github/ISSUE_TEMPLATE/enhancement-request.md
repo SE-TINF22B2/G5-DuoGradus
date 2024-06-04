@@ -17,4 +17,4 @@ Eine Beschreibung was du erwartest was die Verbesserung tun sollte.
 Gibt es andere Möglichkeiten die das Problem lösen oder gibt es andere Möglichkeiten die Idee einzubauen.
 
 **Weiterer Context**
-Füge jeglichen weiteren Context hinzu, der helfen könnte das Feature einzubauen.
+Füge jeglichen weiteren Kontext hinzu, der helfen könnte das Feature einzubauen.
