@@ -1,4 +1,4 @@
-**Was macht dieser PR/ warum brauchen wir ihn?**:
+**Was macht dieser PR/warum brauchen wir ihn?**:
 
 **Welche Issues behebt dieser PR?**:
 Fixes #
