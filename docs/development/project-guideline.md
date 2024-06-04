@@ -14,7 +14,7 @@ Hier beschrieben ist eine Anleitung für alle Projektmitglieder für das beitrag
 
 ## Projektmanagement
 
-Das Projektmanagement dieses Projektes gliedert sich in folgende Teile:
+Das Projekt gliedert sich in folgende Teile:
 
 - Das repository [G5-DuoGradus](https://github.com/SE-TINF22B2/G5-DuoGradus) enthält den gesamten source code für die Applikation. Es ist im wesentlichen in drei Teile unterteilt
   - [frontend](https://github.com/SE-TINF22B2/G5-DuoGradus/tree/main/frontend) beinhaltet den frontend code
@@ -22,9 +22,8 @@ Das Projektmanagement dieses Projektes gliedert sich in folgende Teile:
   - [docs](https://github.com/SE-TINF22B2/G5-DuoGradus/tree/main/docs) beinhaltet die gesamte Dokumentation des Projektes und ist auf [docs.duo-gradus.de](https://docs.duo-gradus.de) öffentlich zur Verfügung gestellt
 - Die [Issues](https://github.com/SE-TINF22B2/G5-DuoGradus/issues) des repositories werden verwendet um Tasks aufzuteilen, bugs festzuhalten und (in der Zukunft) feature requests zu verwirklichen
 - Die [Pull requests](https://github.com/SE-TINF22B2/G5-DuoGradus/pulls) verwendet um größere Änderungen Issues zuzuordnen und gemeinsam über diese Änderungen zu diskutieren
-- Die [Discussions](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions) werden aktuell für drei Dinge verwendet:
-  - Um [Anforderungen](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions/categories/anforderungen) festzuhalten, über sie abzustimmen und über sie zu diskutieren
-  - Um über [generelle](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions/categories/general) Themen die das Projekt betreffen zu diskutieren
+- Die [Discussions](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions) werden genutzt um  [Anforderungen](https://github.com/SE-TINF22B2/G5-DuoGradus/discussions/categories/anforderungen) festzuhalten, über sie abzustimmen und über sie zu diskutieren
+- Die DuoGradus Anwendung wird unter [staging.duo-gradus.de](https://staging.duo-gradus.de) für testzwecke zur Verfügung gestellt, zur Anmeldung müssen Benutzername und Passwort leer gelassen werden
 
 Das Projektmanagement wird zudem über ein Github [Project](https://github.com/orgs/SE-TINF22B2/projects/14) ergänzt.
 
