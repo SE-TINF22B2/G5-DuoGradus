@@ -10,7 +10,7 @@ assignees: ''
 **Beschreibe den Bug**
 Eine kurze und prägnante Beschreibung was der Bug ist/macht.
 
-**Wie Reproduziert man den Bug?**
+**Wie reproduziert man den Bug?**
 Schritte um den Bug zu reproduzieren
 1. Gehe auf '...'
 2. Klicke auf ...
