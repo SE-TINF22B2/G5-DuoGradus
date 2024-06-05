@@ -96,7 +96,7 @@ paths:
                 points: 20
                 streak: 1
                 history:
-                  - day: "2024-06-04"
+                  - day: '2024-06-04'
                     points: 10
                     streak: 0
 
