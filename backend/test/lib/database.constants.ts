@@ -1,4 +1,4 @@
-import { User } from '@prisma/client';
+import { FitnessProviderCredential, User } from '@prisma/client';
 
 export const Users: { exampleUser: User } = {
   exampleUser: {
@@ -10,4 +10,16 @@ export const Users: { exampleUser: User } = {
     verified: false,
     notificationMethod: 'EMAIL',
   },
+};
+
+export const FitnessCredetials = {
+  fitbit: {
+    type: 'fitbit',
+    accessToken: 'MOCK_AT',
+    refreshToken: 'MOCK_RF',
+    accessTokenExpires: new Date(),
+    userId: 'MOCK_UID',
+    enabled: true,
+    providerUserId: 'MOCK_PUID',
+  } as FitnessProviderCredential,
 };

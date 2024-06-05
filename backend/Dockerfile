@@ -15,5 +15,8 @@ ENV NODE_ENV production
 
 RUN npm run build
 
+RUN npm run db:migrate
+
 EXPOSE 3000
+
 CMD [ "npm", "run", "start:prod" ]

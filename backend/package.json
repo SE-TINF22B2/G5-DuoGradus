@@ -9,7 +9,7 @@
     "verify": "npm run build && npm run check && npm run test && npm run test:e2e",
     "build": "prisma generate && nest build",
     "start": "nest start",
-    "start:dev": "npm run db:reset && nest start --watch",
+    "start:dev": "npm run db:migrate && nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "npm run db:migrate && node dist/main",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -37,6 +37,7 @@
     "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
+    "dayjs": "^1.11.11",
     "nodemailer": "^6.9.13",
     "passport": "^0.7.0",
     "passport-http": "^0.3.0",
@@ -87,7 +88,10 @@
     "coveragePathIgnorePatterns": [
       "src/db/prisma.seed.ts",
       "main.ts"
-    ]
+    ],
+    "moduleNameMapper": {
+      "src/(.*)": "<rootDir>/src/"
+    }
   },
   "prisma": {
     "seed": "ts-node src/db/prisma.seed.ts"
