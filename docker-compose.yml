@@ -5,9 +5,11 @@ services:
       - "8080:3000"
     environment:
       # DATABASE_URL: "postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-development_only}@postgres:5432/duogradus?schema=public"
-      DATABASE_URL: "file:./database.dev.sqlite"
+      DATABASE_URL: "file:/usr/src/app/database/database.sqlite"
     networks:
       - backend
+    volumes:
+      - database:/usr/src/app/database
   webserver:
     build: ./frontend
     ports:
@@ -27,9 +29,15 @@ services:
   #     - backend
   #   restart: always
 
-
 networks:
-   backend:
+  backend:
 
 # volumes:
 #   postgres:
+volumes:
+  database:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/database
+      o: bind
