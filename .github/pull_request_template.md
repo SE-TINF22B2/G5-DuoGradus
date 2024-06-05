@@ -1,6 +1,6 @@
-**Was macht dieser PR/warum brauchen wir ihn?**:
+**What this PR does/why we need it?**:
 
-**Welche Issues behebt dieser PR?**:
+**Which Issues does this PR fix?**:
 Fixes #
 
-**Notizen für Reviewer**:
+**Notes for reviewers**:
