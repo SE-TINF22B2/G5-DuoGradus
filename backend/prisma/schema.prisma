@@ -19,6 +19,7 @@ model User {
   verified           Boolean                     @default(false)
   providers          FitnessProviderCredential[]
   notificationMethod String                      @default("EMAIL")
+  Points             Points[]
 }
 
 model FitnessProviderCredential {
@@ -30,4 +31,14 @@ model FitnessProviderCredential {
   userId             String   @unique
   enabled            Boolean
   providerUserId     String
+}
+
+model Points {
+  userId String
+  owner  User   @relation(fields: [userId], references: [id])
+  day    Int
+  points Int
+  streak Int
+
+  @@id([userId, day])
 }

@@ -90,7 +90,7 @@
       "main.ts"
     ],
     "moduleNameMapper": {
-      "src/(.*)": "<rootDir>/src/"
+      "src/*": "<rootDir>/src/$1"
     }
   },
   "prisma": {
