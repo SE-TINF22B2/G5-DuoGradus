@@ -1,7 +1,9 @@
+//page wrapper
 #wrapper{
     background-color: var(--background-black);
     height: 100vh;
 }
+
 #header{
     height: 4em;
     background-color: var(--font);
@@ -9,6 +11,8 @@
     flex: 1 2 auto;
     justify-content: space-between;
 }
+
+//cross icon to close page
 #close-settings{
     width: auto;
     height: 60%;
@@ -17,11 +21,14 @@
     filter: invert(1);
     padding-bottom: 0.3em;
 }
+
 #headline{
     font-size: 2.5em;
     color: var(--white);
     margin: auto;
 }
+
+//save button
 #save{
     margin: auto;
     margin-right: 5%;
@@ -29,6 +36,8 @@
     color: var(--green);
     text-align: right;
 }
+
+//avatar section
 #avatar{
     height: 30vh;
     text-align: center;
@@ -37,21 +46,27 @@
     background-color: var(--font);
     border-radius: 1em;
 }
+//avatar placeholder
 #avatar-img{
     height: 70%;
 }
+
+//change avatar link
 #change-avatar{
     margin-top: 0.5em;
     font-size: 1.5em;
 }
+//nessesary for small screens
 @media (height <= 400px) {
     #change-avatar{
         font-size: 0.5em;
     }
 }
+//logout section
 #logout{
     text-align: center;
 }
+//logout button
 #logout-bt{
     background-color: var(--green);
     color: var(--black-2);

@@ -1,6 +1,7 @@
 $gap-size: 10px;
 $font-weight-bold: bold;
 
+//list with column flex to display the ranking
 .ranking-list {
     display: flex;
     flex-direction: column;
@@ -19,6 +20,7 @@ $font-weight-bold: bold;
             width: 40%;
         }
     }
+    //align the user cards with header
     .uc{
         padding-left: 2%;
     }

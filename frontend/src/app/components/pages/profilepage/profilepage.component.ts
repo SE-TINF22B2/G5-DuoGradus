@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrl: './profilepage.component.scss'
 })
 export class ProfilepageComponent {
+  //input with default values for showcase
+  //statistics is dynamic array
   name: string = "David Hasselhoff";
   email: string = "david.hasselhoff@duo-gradus.de";
   statistics: {name: string, value: string}[] = [
@@ -21,6 +23,7 @@ export class ProfilepageComponent {
     this.router = router;
   }
 
+  //gets called to open settings
   settings(){
     this.router.navigate(['/settings']);
   }

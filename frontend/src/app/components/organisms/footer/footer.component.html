@@ -1,4 +1,9 @@
 <div id="container">
+    <!-- 
+        navigation bar that is always visible
+        contains 4 icons that represent the main pages of the app
+        the icon of the current page is highlighted
+     -->
     <div id="nav-main"
         (click)="navigate('/main')"
         [ngClass]="isOnPage('/main')? 'nav-element highlight': 'nav-element'">

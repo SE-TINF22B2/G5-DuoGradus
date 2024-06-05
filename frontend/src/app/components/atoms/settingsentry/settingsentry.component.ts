@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './settingsentry.component.scss'
 })
 export class SettingsentryComponent {
+  //input with default values for showcase
   @Input() name :String = 'default';
   @Input() value :String = 'default';
 }

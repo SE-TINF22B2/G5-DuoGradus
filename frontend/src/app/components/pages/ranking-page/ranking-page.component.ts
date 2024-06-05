@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./ranking-page.component.scss']
 })
 export class RankingPageComponent {
-  //Default values for showcase 
+  //input with default values for showcase 
   users: any[] = [
     { name: 'Susi', placement: 1, winstreak: 43 },
     { name: 'Max', placement: 2, winstreak: 38 },

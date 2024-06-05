@@ -6,6 +6,7 @@ import { Component, Input, NgModule } from '@angular/core';
   styleUrl: './ranking-table.component.scss'
 })
 export class RankingTableComponent {
+  //input, default values in parent element
   @Input() users: any[] = [
   ];
 }

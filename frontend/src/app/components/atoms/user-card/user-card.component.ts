@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./user-card.component.scss']
 })
 export class UserCardComponent {
+  //input with default values for showcase
   @Input() placement: number = 0;
   @Input() name: string = "default";
   @Input() winstreak: number = 0;
