@@ -74,12 +74,7 @@ describe('streak service testing', () => {
 
     // Mock streak, two days in a row
     streakRepository.getStreakHistory.mockResolvedValue([
-      {
-        userId: TestConstants.database.users.exampleUser.id,
-        points: 1,
-        streak: 0,
-        day: yesteryesterday,
-      },
+      TestConstants.database.points.streakTwoDaysAgo,
     ] as Points[]);
 
     const streak = await cut.getStreakOf(
@@ -91,5 +86,31 @@ describe('streak service testing', () => {
       streak: 0,
       history: [],
     } as Streak);
+  });
+
+  it('should create a new points entry when there is none', async () => {
+    streakRepository.getStreakHistory.mockResolvedValue([]);
+    streakRepository.createStreak.mockResolvedValue(
+      TestConstants.database.points.noStreakToday,
+    );
+
+    // Add points
+    await cut.addPoints(TestConstants.database.users.exampleUser.id, 10);
+
+    expect(streakRepository.createStreak).toHaveBeenCalled();
+  });
+
+  it('should update the points of the entry when there is one', async () => {
+    streakRepository.getStreakHistory.mockResolvedValue([
+      TestConstants.database.points.noStreakToday,
+    ]);
+    streakRepository.updatePoints.mockResolvedValue(
+      TestConstants.database.points.noStreakToday,
+    );
+
+    // Add points
+    await cut.addPoints(TestConstants.database.users.exampleUser.id, 10);
+
+    expect(streakRepository.updatePoints).toHaveBeenCalled();
   });
 });

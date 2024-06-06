@@ -1,4 +1,5 @@
-import { FitnessProviderCredential, User } from '@prisma/client';
+import { FitnessProviderCredential, Points, User } from '@prisma/client';
+import * as dayjs from 'dayjs';
 
 export const Users: { exampleUser: User } = {
   exampleUser: {
@@ -22,4 +23,31 @@ export const FitnessCredetials = {
     enabled: true,
     providerUserId: 'MOCK_PUID',
   } as FitnessProviderCredential,
+};
+
+export const PointEntries = {
+  streakToday: {
+    userId: Users.exampleUser.id,
+    day: parseInt(dayjs().format('YYMMDD')),
+    points: 10,
+    streak: 1,
+  } as Points,
+  streakYesterday: {
+    userId: Users.exampleUser.id,
+    day: parseInt(dayjs().subtract(1, 'day').format('YYMMDD')),
+    points: 10,
+    streak: 0,
+  } as Points,
+  streakTwoDaysAgo: {
+    userId: Users.exampleUser.id,
+    day: parseInt(dayjs().subtract(2, 'days').format('YYMMDD')),
+    points: 10,
+    streak: 0,
+  } as Points,
+  noStreakToday: {
+    userId: Users.exampleUser.id,
+    day: parseInt(dayjs().format('YYMMDD')),
+    points: 10,
+    streak: 0,
+  },
 };
