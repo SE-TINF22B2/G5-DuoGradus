@@ -68,10 +68,6 @@ describe('streak service testing', () => {
   });
 
   it('should not show a streak if the user lost the streak', async () => {
-    const yesteryesterday = parseInt(
-      dayjs().subtract(2, 'days').format('YYMMDD'),
-    );
-
     // Mock streak, two days in a row
     streakRepository.getStreakHistory.mockResolvedValue([
       TestConstants.database.points.streakTwoDaysAgo,
