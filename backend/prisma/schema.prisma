@@ -31,3 +31,13 @@ model FitnessProviderCredential {
   enabled            Boolean
   providerUserId     String
 }
+
+model TaskLog {
+  userId String
+  task   String
+  start  DateTime
+  end    DateTime?
+  status String
+
+  @@id([userId, task])
+}

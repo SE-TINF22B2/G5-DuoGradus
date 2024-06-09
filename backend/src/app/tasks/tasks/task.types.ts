@@ -14,7 +14,7 @@ export type TaskInfo = {
 export type TaskStatus = 'available' | 'completed' | 'locked' | 'unknown';
 
 export type TaskLog = {
-  status: 'completed' | 'in progress' | 'failed';
+  status: 'completed' | 'in progress' | 'failed' | 'pending';
   start?: string;
   end?: string;
   points: number;
