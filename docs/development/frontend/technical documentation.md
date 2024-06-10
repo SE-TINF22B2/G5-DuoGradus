@@ -41,6 +41,8 @@ frontend
     
 ```
 
+Zusätlich befindet sich zu jeder Datei eine Testdatei. 
+
 ### LoaderService
 ---
 Um den Loader ein- und ausblenden zu können, wurde ein LoaderService implementiert. Dieser stellt für beide Aufgaben jeweils eine Methode bereit, die beim abrufen der Daten aufgerufen werden können. 
