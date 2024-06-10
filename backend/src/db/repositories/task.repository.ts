@@ -1,6 +1,8 @@
 import { Prisma, TaskLog } from '@prisma/client';
 import { PrismaService } from '../prisma.service';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class TaskRepository {
   constructor(private prismaService: PrismaService) {}
 
@@ -50,6 +52,15 @@ export class TaskRepository {
           userId,
           task: taskId,
         },
+      },
+    });
+  }
+
+  async getStartedTasksForUser(userId: string): Promise<TaskLog[]> {
+    return await this.prismaService.taskLog.findMany({
+      where: {
+        userId,
+        start: undefined,
       },
     });
   }
