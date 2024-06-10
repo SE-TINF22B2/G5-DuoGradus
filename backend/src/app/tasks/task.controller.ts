@@ -1,7 +1,13 @@
-import { Controller, Get, Param, Req, UseGuards } from '@nestjs/common';
-import { TaskService } from './task.service';
+import { Controller, Get, Param, Req, Res, UseGuards } from '@nestjs/common';
+import {
+  FitnessDataNotAvailable,
+  TaskNotAvailableError,
+  TaskNotStartedError,
+  TaskService,
+} from './task.service';
 import { AutoGuard } from '../../auth/auto.guard';
 import { NestRequest } from '../../types/request.type';
+import { Response } from 'express';
 
 @Controller('task')
 export class TaskController {
@@ -17,8 +23,26 @@ export class TaskController {
 
   @Get('/:id/start')
   @UseGuards(AutoGuard)
-  public async startTask(@Req() req: NestRequest, @Param('id') id: string) {
-    return await this.taskService.startTask(req.user.id, id);
+  public async startTask(
+    @Req() req: NestRequest,
+    @Param('id') id: string,
+    @Res() response: Response,
+  ) {
+    try {
+      const result = await this.taskService.startTask(req.user.id, id);
+
+      return response.json(result);
+    } catch (e) {
+      if (e instanceof TaskNotAvailableError) {
+        return response.status(400).json({ error: 'Invalid task' });
+      } else if (e instanceof FitnessDataNotAvailable) {
+        return response
+          .status(400)
+          .json({ error: 'No fitness provider connected.' });
+      }
+
+      response.status(500).json({ error: 'Unknown error' });
+    }
   }
 
   @Get('/:id/stop')

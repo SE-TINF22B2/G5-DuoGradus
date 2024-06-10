@@ -33,11 +33,12 @@ model FitnessProviderCredential {
 }
 
 model TaskLog {
-  userId String
-  task   String
-  start  DateTime
-  end    DateTime?
-  status String
+  userId   String
+  task     String
+  start    DateTime
+  end      DateTime?
+  status   String
+  metadata String?
 
   @@id([userId, task])
 }

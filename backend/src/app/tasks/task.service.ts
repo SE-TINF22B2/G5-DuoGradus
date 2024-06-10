@@ -1,17 +1,23 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { Task1 } from './tasks/static/task.1';
 import { Task } from './tasks/task.base';
 import { TaskRepository } from '../../db/repositories/task.repository';
 import * as dayjs from 'dayjs';
 import { TaskLog } from '@prisma/client';
+import { FitnessService } from '../../integration/fitness/fitness.service';
+import { LOGGER_SERVICE, LoggerService } from '../../logger/logger.service';
 
 export class ConcurrentTaskError extends Error {}
 export class TaskNotAvailableError extends Error {}
 export class TaskNotStartedError extends Error {}
+export class FitnessDataNotAvailable extends Error {}
 
 @Injectable()
 export class TaskService {
-  constructor(private taskRepository: TaskRepository) {}
+  constructor(
+    private taskRepository: TaskRepository,
+    private fitnessService: FitnessService,
+  ) {}
 
   private availableTasks = {
     '1': Task1,
@@ -50,11 +56,24 @@ export class TaskService {
       throw new TaskNotAvailableError('Task not found');
     }
 
+    const datasources = await this.fitnessService.getDatasourcesForUser(user);
+
+    if (datasources.length < 1) {
+      throw new FitnessDataNotAvailable();
+    }
+
+    const fitnessData = await datasources[0].getFitnessData(
+      user,
+      dayjs().toDate(),
+      dayjs().toDate(),
+    );
+
     return await this.taskRepository.saveTaskLog({
       task,
       userId: user,
       start: dayjs().toDate(),
       status: 'in progress',
+      metadata: JSON.stringify(fitnessData),
     });
   }
 
@@ -65,9 +84,37 @@ export class TaskService {
       throw new TaskNotStartedError();
     }
 
+    // Verify the task in three minutes
+    setTimeout(() => this.verifyTask(user, task), 3 * 60 * 1000);
+
     return await this.taskRepository.updateTaskLog(user, task, {
       status: 'pending',
       end: dayjs().toDate(),
+    });
+  }
+
+  public async verifyTask(user: string, task: string): Promise<void> {
+    const log = await this.taskRepository.getTaskLog(user, task);
+
+    if (!log) {
+      console.debug('Log to verify not found');
+      throw new Error('no log found to verify');
+    }
+
+    // Retrieve the fitness data
+    const fitnessData = this.fitnessService.getFitnessDataForUser(user);
+
+    // Verify the task#
+    const taskValidator = this.availableTasks[log.task];
+    const result = taskValidator.validate(
+      JSON.parse(log.metadata!),
+      fitnessData,
+    );
+
+    console.debug(`Fitness Task verified: ${result}`);
+
+    this.taskRepository.updateTaskLog(user, task, {
+      status: result ? 'completed' : 'failed',
     });
   }
 }
