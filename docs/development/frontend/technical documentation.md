@@ -1,4 +1,5 @@
 # Technical documentation
+
 |                      |                            |
 | -------------------- | -------------------------- |
 | **Sprache**          | **Typescript, HTML, SCSS** |
@@ -7,47 +8,55 @@
 | **Packetverwaltung** | **npm**                    |
 
 ### Frontend Struktur
+
 ---
+
 Die Struktur des Frontends entspricht der typischen Angular Anwendung (siehe [Doku](https://v17.angular.io/guide/file-structure))
 
-Übersicht Verzeichnis Frontend: 
+Übersicht Verzeichnis Frontend:
+
 ```
 frontend
 └── src
-    ├── app                            
-    |   |              
+    ├── app
+    |   |
     │   ├── components                  - Komponenten der Seite
     │   │   ├── atoms
     │   │   ├── organisms
 	|   |   └── pages
-    │   │ 
-    │   ├── pipes                           
+    │   │
+    │   ├── pipes
     │   │   ├── timer
     │   │   ├── user-filter
     │   │   └── ...
-	|   |                                
-    │   ├── services                    
+	|   |
+    │   ├── services
     │   │   ├── event.service.ts
     │   │   ├── loader.service.ts
     │   │   └── ...
     |   |-- styles                     - Globale Design Regeln
-	|   |  
+	|   |
     │   ├── app.component.ts
     │   ├── app.module.ts
     │   ├── app-routing.ts             - Routing Konfiguration
     │   ├── authenticated.guard.ts     - AuthGuard
     │   └── route-transition-animation.ts   - Animationsregeln
-    └── assets                         - Statische Assets 
-    
+    └── assets                         - Statische Assets
+
 ```
 
-Zusätlich befindet sich zu jeder Datei eine Testdatei. 
+Zusätlich befindet sich zu jeder Datei eine Testdatei.
 
 ### LoaderService
+
 ---
-Um den Loader ein- und ausblenden zu können, wurde ein LoaderService implementiert. Dieser stellt für beide Aufgaben jeweils eine Methode bereit, die beim abrufen der Daten aufgerufen werden können. 
-#### Anwendungsbeispiel: 
+
+Um den Loader ein- und ausblenden zu können, wurde ein LoaderService implementiert. Dieser stellt für beide Aufgaben jeweils eine Methode bereit, die beim abrufen der Daten aufgerufen werden können.
+
+#### Anwendungsbeispiel:
+
 ---
+
 `loader.service.ts
 
 ```ts
@@ -84,18 +93,7 @@ constructor(private LoaderService: LoaderService) { }
 ```
 
 ### Backend Kommunikation
+
 ---
+
 Die Kommunikation mit dem Backend erfolgt über eine REST-API. Eine Service-Klasse sendet HTTP-Anfragen an das Backend, und die eingehenden Daten werden von den Komponenten genutzt. Der Service wird im Konstruktor der Komponenten aufgerufen.
-
-
-
-
-
-
-
-
-
-
-
-
-
