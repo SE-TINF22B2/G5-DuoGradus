@@ -1,7 +1,5 @@
 import dayjs from 'dayjs';
 import { Task } from './task.base';
-import { TaskLog } from './task.types';
-import { FitnessProvider } from '../../../integration/fitness/providers/provider.interface';
 import { FitnessData } from '../../../integration/fitness/fitness.data';
 
 export abstract class StepTask extends Task {

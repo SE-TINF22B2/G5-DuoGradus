@@ -1,5 +1,5 @@
 import { StepTask } from '../task.step';
-import { TaskInfo } from '../task.types';
+import { TaskInfo, TaskStatus } from '../task.types';
 
 export class Task1 extends StepTask {
   getRequiredSteps(): number {

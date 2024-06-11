@@ -85,7 +85,7 @@ export class TaskService {
     }
 
     // Verify the task in three minutes
-    setTimeout(() => this.verifyTask(user, task), 3 * 60 * 1000);
+    setTimeout(() => this.verifyTask(user, task), 3 * 1000);
 
     return await this.taskRepository.updateTaskLog(user, task, {
       status: 'pending',
@@ -102,10 +102,10 @@ export class TaskService {
     }
 
     // Retrieve the fitness data
-    const fitnessData = this.fitnessService.getFitnessDataForUser(user);
+    const fitnessData = await this.fitnessService.getFitnessDataForUser(user);
 
     // Verify the task#
-    const taskValidator = this.availableTasks[log.task];
+    const taskValidator = new this.availableTasks[log.task]();
     const result = taskValidator.validate(
       JSON.parse(log.metadata!),
       fitnessData,
