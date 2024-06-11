@@ -1,22 +1,63 @@
-$padding-size: 10px;
-$border-radius-size: 10px;
-$background-color: var(--white);
-$font-color: var(--font);
+.main-container {
+  display: flex;
+  flex-direction: row;
+  background-color: inherit;
+  align-items: center;
+  width: 82vw;
+  border-top: 0.1px solid rgb(85, 85, 85);
+  padding: 5px;
+  justify-content: space-between;
+  gap: 0;
 
-.user-card {
+
+
+  .rank {
+    background-color: var(--white);
+    padding: 5px;
+    text-align: center;
+    border-radius: 50%;
+    width: 15px;
+    margin: 0;
+    font-size: 1rem;
+    color: var(--font);
+  }
+
+  .gold
+  {
+    background-color: gold;
+    color: var(--white);
+  }
+
+  .silver
+  {
+    background-color: silver;
+    color: var(--white);
+  }
+
+  .copper
+  {
+    background-color: rgb(184, 115, 51);
+    color: var(--white);
+  }
+
+  .name {
+    font-size: 1rem;
+    margin-left: 5rem;
+    color: var(--white);
+    margin-top: 0px;
+  }
+
+  .winstreak {
+    font-size: 1rem;
+    margin-left: 1rem;
+    color: var(--white);
+    margin-top: 2px;
+  }
+
+  .inner-container {
     display: flex;
-    justify-content: space-between;
-    align-items: left;
-    width: 98%;
-    padding: $padding-size;
-    box-sizing: border-box;
-    border-radius: $border-radius-size;
-    background-color: $background-color;
-    color: $font-color;
-    #uc-plce, #uc-wins{
-        width: auto;
-    }
-    #uc-name{
-        width: 40%;
-    }
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
 }

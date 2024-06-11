@@ -1,5 +1,13 @@
-<div class="user-card">
-    <div id="uc-plce">{{placement}}</div>
-    <div id="uc-name">{{name}}</div>
-    <div id="uc-wins">{{winstreak}}</div>
+<div class="main-container">
+  <div class="inner-container">
+        <h3 [ngClass]="{
+          'gold': placement === 1,
+          'silver': placement === 2,
+          'copper': placement === 3,
+        }"  class="rank">
+          {{placement}}
+        </h3>
+      <h3 class="name">{{name}}</h3>
+  </div>
+  <h3 class="winstreak">{{winstreak}}</h3>
 </div>

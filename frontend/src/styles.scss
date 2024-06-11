@@ -7,4 +7,13 @@ body {
     margin: 0;
     font-family: 'League Spartan', sans-serif;
     color: var(--white);
+    background-color: var(--background-color);
+  }
+
+  main
+  {
+    display: block;
+  transition: transform 0.5s ease;
+  background-color: var(--background-color);
+
   }

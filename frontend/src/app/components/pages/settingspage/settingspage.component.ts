@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class SettingspageComponent {
 
-  @Input() settings =[{name:'Name', value:'David Hasselhoff'},
-                      {name:'Email',value:'david.hasselhoff@duo-gradus.de'}];
+  @Input() settings =[{name:'name', value:'David Hasselhoff'},
+                      {name:'email',value:'david.hasselhoff@duo-gradus.de'}];
 
-  constructor(private router: Router) { 
+  constructor(private router: Router) {
   }
 
   goBack() {
