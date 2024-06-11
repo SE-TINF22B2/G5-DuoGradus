@@ -3,13 +3,13 @@ import { TaskInfo, TaskStatus } from '../task.types';
 
 export class Task1 extends StepTask {
   getRequiredSteps(): number {
-    return 1000;
+    return 100;
   }
   getInfo(): TaskInfo {
     return {
       id: '1',
       title: 'Ein leichter Start',
-      description: 'Erreiche mindestens 1.000 Schritte in der nächsten Stunde',
+      description: 'Erreiche mindestens 100 Schritte',
       conditions: [],
       status: this.userStatus,
     };

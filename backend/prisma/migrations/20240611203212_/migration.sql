@@ -5,7 +5,7 @@ CREATE TABLE "TaskLog" (
     "start" DATETIME NOT NULL,
     "end" DATETIME,
     "status" TEXT NOT NULL,
-    "metadata" TEXT NOT NULL,
+    "metadata" TEXT,
 
     PRIMARY KEY ("userId", "task")
 );

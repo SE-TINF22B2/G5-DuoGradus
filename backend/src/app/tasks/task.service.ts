@@ -6,6 +6,8 @@ import * as dayjs from 'dayjs';
 import { TaskLog } from '@prisma/client';
 import { FitnessService } from '../../integration/fitness/fitness.service';
 import { LOGGER_SERVICE, LoggerService } from '../../logger/logger.service';
+import { Task2 } from './tasks/static/task2';
+import { Task3 } from './tasks/static/task3';
 
 export class ConcurrentTaskError extends Error {}
 export class TaskNotAvailableError extends Error {}
@@ -21,10 +23,12 @@ export class TaskService {
 
   private availableTasks = {
     '1': Task1,
+    '2': Task2,
+    '3': Task3,
   };
 
   private getLogForTask(logs: TaskLog[], task: string): TaskLog | undefined {
-    return logs.find((t) => (t.task = task));
+    return logs.find((t) => t.task == task);
   }
 
   /**
