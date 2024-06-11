@@ -7,7 +7,7 @@ import {
 } from './task.service';
 import { AutoGuard } from '../../auth/auto.guard';
 import { NestRequest } from '../../types/request.type';
-import { Response } from 'express';
+import { Response, response } from 'express';
 
 @Controller('task')
 export class TaskController {
@@ -49,5 +49,21 @@ export class TaskController {
   @UseGuards(AutoGuard)
   public async stopTask(@Req() req: NestRequest, @Param('id') id: string) {
     return await this.taskService.stopTask(req.user.id, id);
+  }
+
+  @Get('/:id')
+  @UseGuards(AutoGuard)
+  public async getTask(
+    @Req() req: NestRequest,
+    @Param('id') id: string,
+    @Res() response: Response,
+  ) {
+    const task = await this.taskService.getTask(req.user.id, id);
+
+    if (!task) {
+      return response.status(404).json({ error: 'Task not found' });
+    }
+
+    return response.status(200).json(task.getInfo());
   }
 }

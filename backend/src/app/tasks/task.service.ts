@@ -41,11 +41,26 @@ export class TaskService {
 
     const tasksWithLogs = Object.keys(this.availableTasks).map((t) => {
       return new this.availableTasks[t](
-        this.getLogForTask(logs, t)?.status || 'unknown',
+        this.getLogForTask(logs, t)?.status || 'not started',
       );
     });
 
     return tasksWithLogs;
+  }
+
+  public async getTask(
+    user: string,
+    taskId: string,
+  ): Promise<Task | undefined> {
+    const task = this.availableTasks[taskId];
+
+    if (!task) {
+      return undefined;
+    }
+
+    const log = await this.taskRepository.getTaskLog(user, taskId);
+
+    return new task(log?.status ?? 'not started');
   }
 
   public async startTask(user: string, task: string): Promise<TaskLog> {
