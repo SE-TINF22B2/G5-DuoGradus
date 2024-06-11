@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { LoaderService } from './services/loader.service';
+import { RouterOutlet } from '@angular/router';
+import { slideInAnimation} from './route-transition-animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  animations: [slideInAnimation]
 })
 
 export class AppComponent implements OnInit{
@@ -14,7 +17,12 @@ export class AppComponent implements OnInit{
   constructor(private loaderService: LoaderService) {
 
   }
-  
+
+  prepareRoute(outlet: RouterOutlet) {
+    console
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
+
     hasFooter() {
     const footerPages: string[] = ['/main', '/ranking', '/profile', '/friends'];
     return footerPages.includes(window.location.pathname);

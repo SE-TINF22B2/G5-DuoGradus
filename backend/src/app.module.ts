@@ -10,6 +10,7 @@ import FitnessModule from './integration/fitness/fitness.module';
 import configuration from './config/configuration';
 import { NotificationModule } from './notification/notification.module';
 import { TaskModule } from './app/tasks/task.module';
+import { StreakModule } from './app/streaks/streak.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { TaskModule } from './app/tasks/task.module';
     FitnessModule,
     NotificationModule,
     TaskModule,
+    StreakModule,
   ],
   controllers: [AppController, UserController],
   providers: [

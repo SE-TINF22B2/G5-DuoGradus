@@ -4,7 +4,8 @@
 }
 #header{
     height: 4em;
-    background-color: var(--font);
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 14%, rgba(0,75,17,1) 82%, rgba(0,75,17,1) 100%);
     display: flex;
     flex: 1 2 auto;
     justify-content: space-between;
@@ -18,15 +19,15 @@
     padding-bottom: 0.3em;
 }
 #headline{
-    font-size: 2.5em;
+    font-size: 2em;
     color: var(--white);
     margin: auto;
 }
 #save{
     margin: auto;
     margin-right: 5%;
-    font-size: 1.5em;
-    color: var(--green);
+    font-size: 1.2em;
+    color: var(--white);
     text-align: right;
 }
 #avatar{
@@ -34,7 +35,7 @@
     text-align: center;
     padding-top: 1em;
     margin: 1em 1em 1em 1em;
-    background-color: var(--font);
+    background-color: var(--black-3);
     border-radius: 1em;
 }
 #avatar-img{
@@ -57,8 +58,10 @@
     color: var(--black-2);
     border-radius: 1em;
     border-width: 0em;
-    height: 1.7em;
-    width: 6em;
-    font-size: 1.5em;
+    height: 35px;
+    width: 50%;
+    font-size: 1em;
     font-weight: bold;
+
+
 }

@@ -63,6 +63,43 @@ paths:
           description: Invalid content
         '403':
           description: Not allowed to change attribute
+  '/user/me/streak':
+    get:
+      summary: Displays information about the Streak of the user
+      operationId: streakUser
+      tags:
+        - User
+      responses:
+        '200':
+          description: Streak of the user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  points:
+                    type: number
+                  streak:
+                    type: number
+                  history:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        day:
+                          type: string
+                        points:
+                          type: number
+                        streak:
+                          type: number
+              example:
+                points: 20
+                streak: 1
+                history:
+                  - day: '2024-06-04'
+                    points: 10
+                    streak: 0
+
   '/datasource':
     get:
       summary: Get a list of all connected data sources for the current user

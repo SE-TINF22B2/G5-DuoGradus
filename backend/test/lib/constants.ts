@@ -1,5 +1,9 @@
-import { FitnessCredetials, Users } from './database.constants';
+import { FitnessCredetials, PointEntries, Users } from './database.constants';
 
 export const TestConstants = {
-  database: { users: Users, fitnessCredentials: FitnessCredetials },
+  database: {
+    users: Users,
+    fitnessCredentials: FitnessCredetials,
+    points: PointEntries,
+  },
 };

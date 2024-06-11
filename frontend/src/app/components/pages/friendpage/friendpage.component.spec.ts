@@ -6,6 +6,7 @@ import { SearchbarComponent } from 'app/components/atoms/searchbar/searchbar.com
 import { FormsModule } from '@angular/forms';
 import { UserfilterPipe } from 'app/pipes/userfilter.pipe';
 import { FriendCardComponent } from 'app/components/atoms/friend-card/friend-card.component';
+import { RouterModule } from '@angular/router';
 
 describe('FriendpageComponent', () => {
   let component: FriendpageComponent;
@@ -14,10 +15,10 @@ describe('FriendpageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FriendpageComponent, HeaderComponent, SearchbarComponent, UserfilterPipe, FriendCardComponent],
-      imports: [FormsModule]
+      imports: [FormsModule, RouterModule.forRoot([])],
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(FriendpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -9,12 +9,12 @@ import { Component, Input } from '@angular/core';
 })
 export class FriendCardComponent{
   @Input() name: string = "";
-  @Input() picture: string = "../../../../assets/icons/avatar.svg";
+  @Input() picture: string = "../../../../assets/icons/001-sportler.png";
   removeIsPressed: boolean = false;
-  
-  toggleRemove() 
+
+  toggleRemove()
     {
       this.removeIsPressed = !this.removeIsPressed;
-  
+
     }
 }

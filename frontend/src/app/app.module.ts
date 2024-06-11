@@ -36,6 +36,7 @@ import { SearchbarComponent } from './components/atoms/searchbar/searchbar.compo
 import { FriendCardComponent } from './components/atoms/friend-card/friend-card.component';
 import { DeleteDialogComponent } from './components/organisms/delete-dialog/delete-dialog.component';
 import { UserfilterPipe } from './pipes/userfilter.pipe';
+import { provideRouter, withViewTransitions } from '@angular/router';
 
 @NgModule({
   declarations: [

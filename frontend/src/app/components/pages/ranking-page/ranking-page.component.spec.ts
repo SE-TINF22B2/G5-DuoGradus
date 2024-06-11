@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RankingPageComponent } from './ranking-page.component';
 import { RankingTableComponent } from 'app/components/organisms/ranking-table/ranking-table.component';
 import { UserCardComponent } from 'app/components/atoms/user-card/user-card.component';
+import { HeaderComponent } from 'app/components/atoms/header/header.component';
 
 describe('RankingPageComponent', () => {
   let component: RankingPageComponent;
@@ -10,10 +11,10 @@ describe('RankingPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [RankingPageComponent, RankingTableComponent, UserCardComponent]
+      declarations: [RankingPageComponent, RankingTableComponent, UserCardComponent, HeaderComponent],
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(RankingPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
