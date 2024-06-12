@@ -1,17 +1,15 @@
-# Authentication
+# Authentifizierung
 
-> [!WARNING]
-> The currently used authentication mechanism is subject to changes and only intended for development purposes.
+> [!WARNING] Warnung
+> Der aktuelle Authentifizierungsmechanismus ist nur für Entwicklungszwecke und kann sich in Zukunft ändern.
 
-## Local Authentication (Development)
+## Lokale Authentifizierung (Entwicklung)
 
-During development `Basic`-Authentication is enabled to make authentication easier. You need to supply a username and a password.
-There are example users available, when using the database seeds.
+Um die Authentifizierung während der Entwicklung zu vereinfachen wird `Basic`-Authentication eingesetzt. Testnutzer werden mithilfe von Datenbank-Seeds bereitgestellt.
 
-### Example Users
+### Testnutzer
 
-The password for all available example users is
-`1234`.
-Please note that those users are not available in production.
+Das Passwort aller Testnutzer ist `1234`.
+Diese Nutzer sind in der Produktivumgebung nicht verfügbar.
 
 - `max@example.org`: Max Mustermann

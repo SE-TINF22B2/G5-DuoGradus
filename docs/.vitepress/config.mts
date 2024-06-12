@@ -63,7 +63,7 @@ export default withMermaid({
           link: '/development/backend/overview',
           items: [
             {
-              text: 'Authentication',
+              text: 'Authentifizierung',
               link: '/development/backend/authentication',
             },
             { text: 'Logging', link: '/development/backend/logging' },
