@@ -39,9 +39,8 @@ export class UserController {
       userPatch.email,
       userPatch.displayName,
       userPatch.password,
+      false,
     );
-    const user = await this.userRepository.findByEmail(userPatch.email);
-    this.userRepository.updateUser(user?.id ?? '', { enabled: false });
   }
 
   /**

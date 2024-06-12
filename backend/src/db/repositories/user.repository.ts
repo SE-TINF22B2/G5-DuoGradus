@@ -32,12 +32,14 @@ export class UserRepository {
     email: string,
     displayName: string,
     password: string,
+    enabled?: boolean,
   ): Promise<User> {
     return await this.prisma.user.create({
       data: {
         email,
         displayName,
         password,
+        enabled,
       },
     });
   }
