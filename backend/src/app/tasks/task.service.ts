@@ -1,11 +1,10 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Task1 } from './tasks/static/task.1';
 import { Task } from './tasks/task.base';
 import { TaskRepository } from '../../db/repositories/task.repository';
 import * as dayjs from 'dayjs';
 import { TaskLog } from '@prisma/client';
 import { FitnessService } from '../../integration/fitness/fitness.service';
-import { LOGGER_SERVICE, LoggerService } from '../../logger/logger.service';
 import { Task2 } from './tasks/static/task2';
 import { Task3 } from './tasks/static/task3';
 
