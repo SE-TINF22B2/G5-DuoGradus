@@ -15,13 +15,39 @@ externalDocs:
   url: https://github.com/SE-TINF22B2/G5-DuoGradus
 tags:
   - name: User
-    description: Endpoints relatexd to the user, his account and other personal configurations
+    description: Endpoints related to the user, his account and other personal configurations
   - name: Datasource
     description: Thirdparty data sources, like FitBit
   - name: Leaderboard
   - name: Goal
     description: User and system defined Goals
 paths:
+  '/user':
+    post:
+      summary: Registers a new user
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                displayName:
+                  type: string
+                password:
+                  type: string
+            example:
+              name: Ingolf Neiße
+              email: ingolf@neis.se
+              password: password123
+      responses:
+        '200':
+          description: User registered successfully
+        '400':
+          description: Invalid content
   '/user/me':
     get:
       summary: Displays the current users settings

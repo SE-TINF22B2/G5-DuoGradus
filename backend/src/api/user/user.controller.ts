@@ -3,6 +3,7 @@ import {
   Controller,
   Get,
   Patch,
+  Post,
   Req,
   Res,
   UseGuards,
@@ -11,6 +12,7 @@ import { Prisma, User } from '@prisma/client';
 import { Response } from 'express';
 import { AutoGuard } from '../../auth/auto.guard';
 import { PatchUserDTO } from './patch.user.dto';
+import { RegisterUserDTO } from './register.user.dto';
 import { AuthService } from '../../auth/auth.service';
 import { UserRepository } from '../../db/repositories/user.repository';
 import { NestRequest } from '../../types/request.type';
@@ -29,6 +31,16 @@ export class UserController {
 
     delete sanitizedUser.password;
     return sanitizedUser;
+  }
+
+  @Post('/')
+  async postRegister(@Body() userPatch: RegisterUserDTO) {
+    this.userRepository.createUser(
+      userPatch.email,
+      userPatch.displayName,
+      userPatch.password,
+      false,
+    );
   }
 
   /**

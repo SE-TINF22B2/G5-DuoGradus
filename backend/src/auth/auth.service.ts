@@ -21,7 +21,11 @@ export class AuthService {
   ): Promise<User | null> {
     const user = await this.userRepository.findByEmail(username);
 
-    if (user && (await bcrypt.compare(password, user.password))) {
+    if (
+      user &&
+      user.enabled &&
+      (await bcrypt.compare(password, user.password))
+    ) {
       return user;
     }
 
