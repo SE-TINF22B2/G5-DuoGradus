@@ -6,6 +6,7 @@ import { TaskRepository } from '../../db/repositories/task.repository';
 import { FitnessService } from '../../integration/fitness/fitness.service';
 import FitnessModule from '../../integration/fitness/fitness.module';
 import { TestConstants } from '../../../test/lib/constants';
+import { MockProvider } from '../../integration/fitness/providers/mock.provider';
 
 describe('task service tests', () => {
   let taskService: TaskService;
@@ -70,5 +71,44 @@ describe('task service tests', () => {
     const task1Info = task!.getInfo();
     expect(task1Info.id).toBe('1');
     expect(task1Info.status).toBe('pending');
+  });
+
+  it('should be able to start a task', async () => {
+    taskRepository.getStartedTasksForUser.mockResolvedValue([]);
+
+    fitnessService.getDatasourcesForUser.mockResolvedValue([
+      new MockProvider(),
+    ]);
+
+    taskRepository.saveTaskLog.mockResolvedValue(
+      TestConstants.database.taskLogs.task3,
+    );
+
+    const log = await taskService.startTask(
+      TestConstants.database.users.exampleUser.id,
+      TestConstants.database.taskLogs.task3.task,
+    );
+
+    expect(log).toBeDefined();
+    expect(log.task).toBe('3');
+    expect(log.status).toBe('in progress');
+  });
+
+  it('should be able to stop a running task', async () => {
+    taskRepository.getTaskLog.mockResolvedValue(
+      TestConstants.database.taskLogs.task3,
+    );
+
+    taskRepository.updateTaskLog.mockResolvedValue(
+      TestConstants.database.taskLogs.task3,
+    );
+
+    const log = await taskService.stopTask(
+      TestConstants.database.users.exampleUser.id,
+      TestConstants.database.taskLogs.task3.task,
+    );
+
+    expect(log).toBeDefined();
+    expect(log.task).toBe('3');
   });
 });

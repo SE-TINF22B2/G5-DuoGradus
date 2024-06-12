@@ -71,4 +71,11 @@ export const TaskLogs = {
     end: dayjs().toDate(),
     status: 'failed',
   } as TaskLog,
+  task3: {
+    task: '3',
+    userId: Users.exampleUser.id,
+    start: dayjs().subtract(1, 'hour').toDate(),
+    end: null,
+    status: 'in progress',
+  } as TaskLog,
 };
