@@ -60,7 +60,7 @@ export class TaskRepository {
     return await this.prismaService.taskLog.findMany({
       where: {
         userId,
-        start: undefined,
+        status: 'in progress',
       },
     });
   }

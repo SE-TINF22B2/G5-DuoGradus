@@ -1,5 +1,6 @@
 import { Controller, Get, Param, Req, Res, UseGuards } from '@nestjs/common';
 import {
+  ConcurrentTaskError,
   FitnessDataNotAvailable,
   TaskNotAvailableError,
   TaskNotStartedError,
@@ -39,6 +40,12 @@ export class TaskController {
         return response
           .status(400)
           .json({ error: 'No fitness provider connected.' });
+      }
+
+      if (e instanceof ConcurrentTaskError) {
+        return response
+          .status(400)
+          .json({ error: 'You already have a running task' });
       }
 
       response.status(500).json({ error: 'Unknown error' });
