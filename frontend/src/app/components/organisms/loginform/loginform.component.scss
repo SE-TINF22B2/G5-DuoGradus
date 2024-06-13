@@ -110,3 +110,21 @@ p.create-account {
     }
   }
 }
+
+.input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding: 8px 15px;
+  font-size: 12px;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+  &::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+}

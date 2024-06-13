@@ -19,7 +19,7 @@ export class SettingspageComponent {
   }
 
   logout() {
-    localStorage.removeItem('bearerToken');
+    localStorage.removeItem('credentials');
     this.router.navigate(['/home']);
   }
 }

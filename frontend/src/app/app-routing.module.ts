@@ -10,17 +10,17 @@ import { ProfilepageComponent } from './components/pages/profilepage/profilepage
 import { SettingspageComponent } from './components/pages/settingspage/settingspage.component';
 import { AddfriendpageComponent } from './components/pages/addfriendpage/addfriendpage.component';
 import { FriendpageComponent } from './components/pages/friendpage/friendpage.component';
+import { authGuard } from './auth.guard';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: LandingpageComponent },
-  { path: 'main', component: MainpageComponent },
-  { path: 'ranking', component: RankingPageComponent},
-  { path: 'profile', component: ProfilepageComponent, data: { animation: 'one' }},
-  { path: 'settings', component: SettingspageComponent, data: { animation: 'two' }},
-  { path: 'friends', component: FriendpageComponent, data: { animation: 'one' }},
-  { path: 'addfriend', component: AddfriendpageComponent, data : { animation: 'two' }},
+  { path: 'main', component: MainpageComponent , canActivate: [authGuard] },
+  { path: 'ranking', component: RankingPageComponent , canActivate: [authGuard]},
+  { path: 'profile', component: ProfilepageComponent, data: { animation: 'one' } , canActivate: [authGuard]},
+  { path: 'settings', component: SettingspageComponent, data: { animation: 'two' } , canActivate: [authGuard]},
+  { path: 'friends', component: FriendpageComponent, data: { animation: 'one' } , canActivate: [authGuard]},
+  { path: 'addfriend', component: AddfriendpageComponent, data : { animation: 'two' }, canActivate: [authGuard]},
   {
     path: 'auth',
     component: AuthenticationpageComponent,
