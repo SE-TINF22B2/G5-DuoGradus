@@ -1,4 +1,3 @@
-import dayjs from 'dayjs';
 import { Task } from './task.base';
 import { FitnessData } from '../../../integration/fitness/fitness.data';
 

@@ -1,6 +1,5 @@
 import { FitnessData } from '../../../integration/fitness/fitness.data';
-import { FitnessProvider } from '../../../integration/fitness/providers/provider.interface';
-import { TaskInfo, TaskLog, TaskStatus } from './task.types';
+import { TaskInfo, TaskStatus } from './task.types';
 
 /**
  * Task

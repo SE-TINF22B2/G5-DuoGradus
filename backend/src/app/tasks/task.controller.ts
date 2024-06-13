@@ -13,13 +13,11 @@ import {
   FitnessDataNotAvailable,
   TaskAlreadyCompleted,
   TaskNotAvailableError,
-  TaskNotStartedError,
   TaskService,
 } from './task.service';
 import { AutoGuard } from '../../auth/auto.guard';
 import { NestRequest } from '../../types/request.type';
-import { Response, response } from 'express';
-import { escape } from 'querystring';
+import { Response } from 'express';
 
 @Controller('task')
 export class TaskController {

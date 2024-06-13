@@ -56,6 +56,10 @@ export class TaskService {
     user: string,
     taskId: string,
   ): Promise<Task | undefined> {
+    if (!(taskId in this.availableTasks)) {
+      return;
+    }
+
     const task = this.availableTasks[taskId];
 
     if (!task) {
