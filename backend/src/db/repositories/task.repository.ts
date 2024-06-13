@@ -45,7 +45,7 @@ export class TaskRepository {
     });
   }
 
-  async deleteTaskLog(userId, string, taskId: string) {
+  async deleteTaskLog(userId: string, taskId: string) {
     return await this.prismaService.taskLog.delete({
       where: {
         userId_task: {

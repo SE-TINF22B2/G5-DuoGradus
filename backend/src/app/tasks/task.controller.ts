@@ -1,7 +1,17 @@
-import { Controller, Get, Param, Req, Res, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Put,
+  Req,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
 import {
   ConcurrentTaskError,
   FitnessDataNotAvailable,
+  TaskAlreadyCompleted,
   TaskNotAvailableError,
   TaskNotStartedError,
   TaskService,
@@ -9,6 +19,7 @@ import {
 import { AutoGuard } from '../../auth/auto.guard';
 import { NestRequest } from '../../types/request.type';
 import { Response, response } from 'express';
+import { escape } from 'querystring';
 
 @Controller('task')
 export class TaskController {
@@ -22,17 +33,31 @@ export class TaskController {
     );
   }
 
-  @Get('/:id/start')
+  @Put('/:id')
   @UseGuards(AutoGuard)
-  public async startTask(
+  public async putTask(
     @Req() req: NestRequest,
     @Param('id') id: string,
+    @Body('action') action: string,
     @Res() response: Response,
   ) {
-    try {
-      const result = await this.taskService.startTask(req.user.id, id);
+    if (action == 'start') {
+      return this.startTask(req, id, response);
+    } else if (action == 'stop') {
+      return this.stopTask(req, id, response);
+    } else {
+      response
+        .status(500)
+        .json({ error: 'action must be either start or stop' });
+    }
+  }
 
-      return response.json(result);
+  private async startTask(req: NestRequest, id: string, response: Response) {
+    try {
+      await this.taskService.startTask(req.user.id, id);
+      const task = await this.taskService.getTask(req.user.id, id);
+
+      return response.json(task?.getInfo());
     } catch (e) {
       if (e instanceof TaskNotAvailableError) {
         return response.status(400).json({ error: 'Invalid task' });
@@ -46,16 +71,22 @@ export class TaskController {
         return response
           .status(400)
           .json({ error: 'You already have a running task' });
+      } else if (e instanceof TaskAlreadyCompleted) {
+        return response
+          .status(400)
+          .json({ error: 'You already completed this task' });
       }
 
       response.status(500).json({ error: 'Unknown error' });
     }
   }
 
-  @Get('/:id/stop')
-  @UseGuards(AutoGuard)
-  public async stopTask(@Req() req: NestRequest, @Param('id') id: string) {
-    return await this.taskService.stopTask(req.user.id, id);
+  private async stopTask(req: NestRequest, id: string, response: Response) {
+    await this.taskService.stopTask(req.user.id, id);
+
+    const task = await this.taskService.getTask(req.user.id, id);
+
+    response.status(200).json(task?.getInfo());
   }
 
   @Get('/:id')

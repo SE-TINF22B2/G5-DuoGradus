@@ -1,5 +1,6 @@
+import * as dayjs from 'dayjs';
 import { StepTask } from '../task.step';
-import { TaskInfo, TaskStatus } from '../task.types';
+import { TaskInfo } from '../task.types';
 
 export class Task1 extends StepTask {
   getRequiredSteps(): number {
@@ -12,6 +13,8 @@ export class Task1 extends StepTask {
       description: 'Erreiche mindestens 100 Schritte',
       conditions: [],
       status: this.userStatus,
+      start: this.start ? dayjs(this.start).format() : undefined,
+      stop: this.stop ? dayjs(this.stop).format() : undefined,
     };
   }
 }

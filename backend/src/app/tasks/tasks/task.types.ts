@@ -9,6 +9,8 @@ export type TaskInfo = {
     icon: string;
   }[];
   status: TaskStatus;
+  start?: string;
+  stop?: string;
 };
 
 export type TaskStatus = 'available' | 'completed' | 'locked' | 'unknown';

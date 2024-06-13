@@ -12,6 +12,7 @@ export class ConcurrentTaskError extends Error {}
 export class TaskNotAvailableError extends Error {}
 export class TaskNotStartedError extends Error {}
 export class FitnessDataNotAvailable extends Error {}
+export class TaskAlreadyCompleted extends Error {}
 
 @Injectable()
 export class TaskService {
@@ -39,8 +40,12 @@ export class TaskService {
     const logs = await this.taskRepository.getTaskLogsForUser(user);
 
     const tasksWithLogs = Object.keys(this.availableTasks).map((t) => {
+      const log = this.getLogForTask(logs, t);
+
       return new this.availableTasks[t](
-        this.getLogForTask(logs, t)?.status || 'not started',
+        log?.status || 'not started',
+        log?.start,
+        log?.end,
       );
     });
 
@@ -68,6 +73,18 @@ export class TaskService {
 
     if (startedTasks.length > 0) {
       throw new ConcurrentTaskError('User already has a started task');
+    }
+
+    // Check whether the task was already completed
+    const log = await this.taskRepository.getTaskLog(user, task);
+
+    if (log) {
+      // If the log is failed, delete the log and start over
+      if (log.status == 'failed') {
+        await this.taskRepository.deleteTaskLog(user, task);
+      } else {
+        throw new TaskAlreadyCompleted();
+      }
     }
 
     if (!(task in this.availableTasks)) {

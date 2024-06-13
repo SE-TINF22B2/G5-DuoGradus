@@ -84,6 +84,8 @@ describe('task service tests', () => {
       TestConstants.database.taskLogs.task3,
     );
 
+    taskRepository.getTaskLog.mockResolvedValue(null);
+
     const log = await taskService.startTask(
       TestConstants.database.users.exampleUser.id,
       TestConstants.database.taskLogs.task3.task,
