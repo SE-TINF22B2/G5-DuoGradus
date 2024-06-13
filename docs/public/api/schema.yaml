@@ -397,7 +397,7 @@ components:
                 type: string
         status:
           type: string
-          enum: [available, unavailable, fulfilled, started]
+          enum: [not started, in progress, pending, completed, failed]
     Datasource:
       type: object
     ShopItem:
