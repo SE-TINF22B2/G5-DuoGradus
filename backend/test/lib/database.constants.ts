@@ -1,4 +1,9 @@
-import { FitnessProviderCredential, Points, User } from '@prisma/client';
+import {
+  FitnessProviderCredential,
+  Points,
+  TaskLog,
+  User,
+} from '@prisma/client';
 import * as dayjs from 'dayjs';
 
 export const Users: { exampleUser: User } = {
@@ -50,4 +55,27 @@ export const PointEntries = {
     points: 10,
     streak: 0,
   },
+};
+
+export const TaskLogs = {
+  task1: {
+    task: '1',
+    userId: Users.exampleUser.id,
+    start: dayjs().toDate(),
+    status: 'pending',
+  } as TaskLog,
+  task2: {
+    task: '2',
+    userId: Users.exampleUser.id,
+    start: dayjs().subtract(1, 'hour').toDate(),
+    end: dayjs().toDate(),
+    status: 'failed',
+  } as TaskLog,
+  task3: {
+    task: '3',
+    userId: Users.exampleUser.id,
+    start: dayjs().subtract(1, 'hour').toDate(),
+    end: null,
+    status: 'in progress',
+  } as TaskLog,
 };
