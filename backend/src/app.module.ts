@@ -11,6 +11,7 @@ import configuration from './config/configuration';
 import { NotificationModule } from './notification/notification.module';
 import { TaskModule } from './app/tasks/task.module';
 import { StreakModule } from './app/streaks/streak.module';
+import { GoalModule } from './app/goals/goal.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { StreakModule } from './app/streaks/streak.module';
     NotificationModule,
     TaskModule,
     StreakModule,
+    GoalModule,
   ],
   controllers: [AppController, UserController],
   providers: [
