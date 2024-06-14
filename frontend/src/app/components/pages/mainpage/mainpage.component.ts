@@ -14,10 +14,6 @@ export class MainpageComponent implements OnInit{
   ngOnInit(): void {
     this.LoaderService.show();
 
-    //Simulate a html request
-    setTimeout(() => {
-      this.LoaderService.hide();
-    }, 500);
   }
 
 }

@@ -3,6 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoaderService } from './loader.service';
 import { AuthService } from './auth.service';
+import { timeInterval } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,9 @@ export class TaskService {
     });
     this.http.get<any>(this.apiUrl, { headers: headers }).subscribe(
       (data: any) => {
-        this.loaderService.show();
+        setTimeout(() => {
+          this.loaderService.hide();
+        }, 500);
         console.error('datas:', data);
         this.taskdata = data;
       },
@@ -36,6 +39,31 @@ export class TaskService {
         console.error('error:', error);
       }
     );;
+
+  }
+
+  beginTask(taskId: string)
+  {
+    const credentials = this.authService.getCredentials();
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Basic ${credentials}`
+    });
+
+    const body = {
+      action: 'start'
+    };
+
+    this.http.put<any>(`${this.apiUrl}/${taskId}`, body, { headers: headers }).subscribe(
+      (data: any) => {
+        this.loaderService.hide();
+        console.error('task started:', data);
+        this.taskdata = data;
+      },
+      (error: any) => {
+        console.error('error task start:', error);
+      }
+    );
 
   }
 

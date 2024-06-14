@@ -6,9 +6,9 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { ChallengeButtonComponent } from 'app/components/atoms/challenge-button/challenge-button.component';
 import { EventService } from 'app/services/event.service';
-import { timeout } from 'rxjs';
+import { TaskService } from 'app/services/task.service';
+
 
 @Component({
   selector: 'app-challenge-dialog',
@@ -39,7 +39,7 @@ export class ChallengeDialogComponent {
   @Input() trigger: boolean = false;
 
 
-  constructor(public eventservice:EventService)
+  constructor(public eventservice:EventService, public taskService: TaskService)
   {
       this.eventservice = eventservice;
   }
@@ -50,6 +50,7 @@ export class ChallengeDialogComponent {
 
   startEvent()
   {
+    this.taskService.beginTask(this.id);
     this.closeDialog.emit();
     this.eventservice.steps = this.extractNumberFromSentence(this.description);
     this.eventservice.disabled = true;

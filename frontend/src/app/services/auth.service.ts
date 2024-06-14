@@ -32,7 +32,7 @@ export class AuthService {
     });
     this.http.get<any>(this.apiUrl, { headers: headers }).subscribe(
       (data: any) => {
-        this.loaderService.show();
+        this.loaderService.hide();
         localStorage.setItem('credentials', JSON.stringify(this.credentials));
         this.router.navigate(['/main']);
       },
@@ -50,6 +50,10 @@ export class AuthService {
   {
       this.credentials = btoa(`${username}:${password}`);
   }
+
+  /**
+   * @returns the credentials from local storage
+   */
 
   getCredentials()
   {
