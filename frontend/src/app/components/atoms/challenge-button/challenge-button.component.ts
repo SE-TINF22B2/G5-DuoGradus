@@ -8,8 +8,9 @@ import { EventService } from 'app/services/event.service';
 })
 export class ChallengeButtonComponent {
   @Input() num: number = 1;
-  @Input() steps: number = 0;
-  @Input() time: number = 0;
+  @Input() id: string = "";
+  @Input() title: string = "";
+  @Input() description: string = "";
   @Output() toggleStopButton = new EventEmitter<void>();
   buttonIsclicked: boolean = false;
 

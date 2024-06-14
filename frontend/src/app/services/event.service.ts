@@ -8,7 +8,7 @@ export class EventService {
   disabled: boolean = false;
   toggleStopButton: boolean = false;
   time: number = 0;
-  steps: number = 0;
+  steps: string = "";
   interval: any;
   classNameToast: string = '';
   snackbarBackgroundColor: string = '';
@@ -28,7 +28,7 @@ export class EventService {
 
   stopTraining() {
     clearInterval(this.interval);
-    this.steps = 0;
+    this.steps = "0";
     this.time = 0;
   }
 

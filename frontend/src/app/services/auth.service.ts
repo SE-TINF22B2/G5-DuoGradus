@@ -17,7 +17,9 @@ export class AuthService {
   }
 
   /**
-   * Sends a request to the server to login the user
+   * Logs in the user
+   * @param username
+   * @param password
    */
   loginUser(username: string, password: string)
   {
@@ -48,4 +50,20 @@ export class AuthService {
   {
       this.credentials = btoa(`${username}:${password}`);
   }
+
+  getCredentials()
+  {
+    const userData = localStorage.getItem('credentials');
+      if (userData) {
+        try {
+          const userObject = JSON.parse(userData);
+          return userObject;
+        } catch (error) {
+          console.error('error:', error);
+        }
+      } else {
+        console.log('No datas in local storage');
+      }
+  }
+
 }

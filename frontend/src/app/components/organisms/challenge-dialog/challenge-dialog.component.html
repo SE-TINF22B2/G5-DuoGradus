@@ -6,16 +6,8 @@
       <button class="done-button" (click)="triggerEvent()">Done</button>
     </div>
     <div class="training-infos">
-      <ul>
-        <li class="steps"><span class="span-1">Steps:</span></li>
-        <li class="time"><span class="span-1">Time:</span></li>
-        <li class="points"><span class="span-1">Points:</span></li>
-      </ul>
-      <ul>
-        <li>{{ steps }}</li>
-        <li>{{ time }}</li>
-        <li>{{ points }}</li>
-      </ul>
+      <p>{{title}}</p>
+      <p>{{description}}</p>
     </div>
     <button class="start-button" (click)="startEvent()">Start Training</button>
   </div>
