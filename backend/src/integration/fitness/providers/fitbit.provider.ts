@@ -65,9 +65,7 @@ export class FitbitProvider implements FitnessProvider {
     this.userStatus = 'enabled';
 
     // First delete any configured provider for this type and user
-    await this.fitnessRepository.deleteProvider({
-      where: { userId: user, type: this.FITBIT_TYPE },
-    });
+    await this.fitnessRepository.deleteProviderForUser(user, this.FITBIT_TYPE);
 
     // Save the credentials in the database
     await this.fitnessRepository.createProvider({

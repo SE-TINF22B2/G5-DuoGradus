@@ -33,6 +33,17 @@ model FitnessProviderCredential {
   providerUserId     String
 }
 
+model TaskLog {
+  userId   String
+  task     String
+  start    DateTime
+  end      DateTime?
+  status   String
+  metadata String?
+
+  @@id([userId, task])
+}
+
 model Points {
   userId String
   owner  User   @relation(fields: [userId], references: [id])

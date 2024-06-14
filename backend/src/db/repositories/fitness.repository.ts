@@ -39,6 +39,15 @@ export class FitnessRepository {
     return await this.prisma.fitnessProviderCredential.delete(provider);
   }
 
+  public async deleteProviderForUser(user: string, type: string) {
+    return await this.prisma.fitnessProviderCredential.deleteMany({
+      where: {
+        userId: user,
+        type,
+      },
+    });
+  }
+
   public async updateProvider(
     type: string,
     user: string,

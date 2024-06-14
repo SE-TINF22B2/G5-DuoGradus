@@ -5,6 +5,8 @@ import { FitnessProvider } from './providers/provider.interface';
 import { Inject, Injectable, LoggerService } from '@nestjs/common';
 import { CredentialService } from '../credentials/credential.service';
 import { LOGGER_SERVICE } from '../../logger/logger.service';
+import { FitnessData } from './fitness.data';
+import * as dayjs from 'dayjs';
 
 @Injectable()
 export class FitnessService {
@@ -88,5 +90,21 @@ export class FitnessService {
     );
 
     return responsibleProvider ?? null;
+  }
+
+  public async getFitnessDataForUser(
+    userId: string,
+  ): Promise<FitnessData | undefined> {
+    const providers = await this.getDatasourcesForUser(userId);
+
+    if (providers.length < 1) {
+      return undefined;
+    }
+
+    return await providers[0].getFitnessData(
+      userId,
+      dayjs().toDate(),
+      dayjs().toDate(),
+    );
   }
 }
