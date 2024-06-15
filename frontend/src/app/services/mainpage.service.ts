@@ -3,14 +3,15 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoaderService } from './loader.service';
 import { AuthService } from './auth.service';
-import { timeInterval } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TaskService {
-  apiUrl = '/api/task';
+export class MainpageService {
+  apiUrlTask = '/api/task';
+  apiUrlStreak = '/api/user/me/streak';
   taskdata: any;
+  streak: any;
 
   constructor( private router: Router, private http: HttpClient, private loaderService: LoaderService, public authService: AuthService) {
 
@@ -27,22 +28,27 @@ export class TaskService {
       'Content-Type': 'application/json',
       'Authorization': `Basic ${credentials}`
     });
-    this.http.get<any>(this.apiUrl, { headers: headers }).subscribe(
+    this.http.get<any>(this.apiUrlTask, { headers: headers }).subscribe(
       (data: any) => {
         setTimeout(() => {
           this.loaderService.hide();
-        }, 500);
+        }, 200);
         console.error('datas:', data);
         this.taskdata = data;
       },
       (error:any) => {
         console.error('error:', error);
       }
-    );;
+    );
 
   }
 
-  beginTask(taskId: string)
+  /**
+   * starts a task
+   * @param taskId
+   */
+
+  beginAndStopTask(taskId: string)
   {
     const credentials = this.authService.getCredentials();
     const headers = new HttpHeaders({
@@ -54,7 +60,7 @@ export class TaskService {
       action: 'start'
     };
 
-    this.http.put<any>(`${this.apiUrl}/${taskId}`, body, { headers: headers }).subscribe(
+    this.http.put<any>(`${this.apiUrlTask}/${taskId}`, body, { headers: headers }).subscribe(
       (data: any) => {
         this.loaderService.hide();
         console.error('task started:', data);
@@ -65,6 +71,27 @@ export class TaskService {
       }
     );
 
+  }
+
+  /**
+   * get the current Streak of the user
+   */
+  getStreak()
+  {
+    const credentials = this.authService.getCredentials();
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Basic ${credentials}`
+    });
+    this.http.get<any>(this.apiUrlStreak, { headers: headers }).subscribe(
+      (data: any) => {
+        console.error('datas:', data);
+        this.streak = data;
+      },
+      (error:any) => {
+        console.error('error:', error);
+      }
+    );
   }
 
 

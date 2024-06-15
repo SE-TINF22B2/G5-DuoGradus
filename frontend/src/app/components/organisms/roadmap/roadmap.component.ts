@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'app/services/event.service';
-import { TaskService } from 'app/services/task.service';
-
+import {MainpageService} from 'app/services/mainpage.service';
 @Component({
   selector: 'app-roadmap',
   templateUrl: './roadmap.component.html',
@@ -9,12 +8,12 @@ import { TaskService } from 'app/services/task.service';
 })
 export class RoadmapComponent implements OnInit{
 
-  constructor(public eventservice:EventService, public taskservice: TaskService)
+  constructor(public eventservice:EventService, public mainpageservice: MainpageService)
   {
       this.eventservice = eventservice;
   }
   ngOnInit(): void {
-    this.taskservice.getListOfAllTasks();
+    this.mainpageservice.getListOfAllTasks();
   }
 
 }
