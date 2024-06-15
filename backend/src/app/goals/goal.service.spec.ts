@@ -1,5 +1,5 @@
 import { Test } from '@nestjs/testing';
-import { GoalService, FitnessDataNotAvailable } from './goal.service';
+import { GoalService } from './goal.service';
 import { GoalRepository } from '../../db/repositories/goal.repository';
 import { FitnessService } from '../../integration/fitness/fitness.service';
 import { DeepMockProxy, mockDeep } from 'jest-mock-extended';
