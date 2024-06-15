@@ -23,8 +23,7 @@ export class AuthService {
    */
   loginUser(username: string, password: string)
   {
-    console.log(username);
-    console.log(password);
+
     this.createCredentials(username, password);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
