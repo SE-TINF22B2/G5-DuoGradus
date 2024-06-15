@@ -4,12 +4,10 @@ const PROXY_CONFIG = [
         context: [
           "/api/"
         ],
-        target: "https://staging.duo-gradus.de/api",
+        target: "https://staging.duo-gradus.de",
         changeOrigin: true,
         secure: false,
-        pathRewrite: {
-            "^/api": ""
-        }
+
 
       }
     ];

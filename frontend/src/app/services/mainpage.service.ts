@@ -23,6 +23,7 @@ export class MainpageService {
    */
   getListOfAllTasks()
   {
+    console.log('getListOfAllTasks');
     const credentials = this.authService.getCredentials();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -30,9 +31,6 @@ export class MainpageService {
     });
     this.http.get<any>(this.apiUrlTask, { headers: headers }).subscribe(
       (data: any) => {
-        setTimeout(() => {
-          this.loaderService.hide();
-        }, 200);
         console.error('datas:', data);
         this.taskdata = data;
       },

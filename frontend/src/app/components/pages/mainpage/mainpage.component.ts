@@ -12,7 +12,7 @@ export class MainpageComponent implements OnInit{
   constructor(private LoaderService: LoaderService) { }
 
   ngOnInit(): void {
-    this.LoaderService.show();
+
 
   }
 

@@ -31,6 +31,7 @@ export class AuthService {
     });
     this.http.get<any>(this.apiUrl, { headers: headers }).subscribe(
       (data: any) => {
+        console.log('success');
         this.loaderService.hide();
         localStorage.setItem('credentials', JSON.stringify(this.credentials));
         this.router.navigate(['/main']);
