@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ChallengeButtonComponent } from './challenge-button.component';
 import { ChallengeDialogComponent } from 'app/components/organisms/challenge-dialog/challenge-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient } from '@angular/common/http';
+import { HttpHandler } from '@angular/common/http';
 
 describe('ChallengeButtonComponent', () => {
   let component: ChallengeButtonComponent;
@@ -12,9 +13,11 @@ describe('ChallengeButtonComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ChallengeButtonComponent, ChallengeDialogComponent],
       imports: [BrowserAnimationsModule],
+      providers: [HttpClient, HttpHandler]
+
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ChallengeButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -30,6 +33,6 @@ describe('ChallengeButtonComponent', () => {
     expect(routerOutlet).toBeTruthy();
   });
 
- 
+
 
 });

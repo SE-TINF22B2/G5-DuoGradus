@@ -22,18 +22,7 @@ export class SignupformComponent {
 
   constructor(public event:EventService) {}
 
-  test() {
-    this.event.testHttpRequest().subscribe(
-      (data: any) => {
-        console.log('Daten erhalten:', data);
-        // Hier kannst du weitere Logik hinzufügen, um die Daten zu verarbeiten
-      },
-      (error:any) => {
-        console.error('Fehler beim Abrufen der Daten:', error);
-        // Hier kannst du Fehlerbehandlung hinzufügen
-      }
-    );
-  }
+
   }
 
 
