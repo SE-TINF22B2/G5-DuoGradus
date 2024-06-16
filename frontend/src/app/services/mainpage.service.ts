@@ -23,7 +23,7 @@ export class MainpageService {
    */
   getListOfAllTasks()
   {
-    console.log('getListOfAllTasks');
+    this.loaderService.show();
     const credentials = this.authService.getCredentials();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -31,6 +31,7 @@ export class MainpageService {
     });
     this.http.get<any>(this.apiUrlTask, { headers: headers }).subscribe(
       (data: any) => {
+        this.loaderService.hide();
         console.error('datas:', data);
         this.taskdata = data;
       },
@@ -60,7 +61,6 @@ export class MainpageService {
 
     this.http.put<any>(`${this.apiUrlTask}/${taskId}`, body, { headers: headers }).subscribe(
       (data: any) => {
-        this.loaderService.hide();
         console.error('task started:', data);
         this.taskdata = data;
       },
