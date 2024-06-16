@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-loginform',
@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 export class LoginformComponent {
   passwordFieldType: string = 'password';
   img: string = '';
+  password: string = '';
+  username: string = '';
   showPassword: boolean = false;
 
-  constructor( private router: Router) {
-
-    this.router = router;
+  constructor(public authService: AuthService) {
   }
 
   toggleType() {
@@ -26,7 +26,14 @@ export class LoginformComponent {
 
   login()
   {
-    this.router.navigate(['/main']);
+    this.authService.loginUser(this.username, this.password);
   }
 
+
+
+
+
+
 }
+
+

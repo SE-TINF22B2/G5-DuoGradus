@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClient } from '@angular/common/http';
+import { HttpHandler } from '@angular/common/http';
 import { ChallengeDialogComponent } from './challenge-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -11,6 +12,8 @@ describe('ChallengeDialogComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ChallengeDialogComponent],
       imports: [BrowserAnimationsModule],
+      providers: [HttpClient, HttpHandler]
+
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChallengeDialogComponent);

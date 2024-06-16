@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -7,12 +8,13 @@ export class EventService {
   disabled: boolean = false;
   toggleStopButton: boolean = false;
   time: number = 0;
-  steps: number = 0;
+  steps: string = "0";
   interval: any;
   classNameToast: string = '';
   snackbarBackgroundColor: string = '';
   snackbarText: string = '';
   query: string = '';
+
 
   reduceTimer() {
     this.interval = setInterval(() => {
@@ -26,7 +28,8 @@ export class EventService {
 
   stopTraining() {
     clearInterval(this.interval);
-    this.steps = 0;
+    this.steps = "0";
     this.time = 0;
   }
+
 }

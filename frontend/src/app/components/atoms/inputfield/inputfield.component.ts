@@ -9,4 +9,12 @@ export class InputfieldComponent {
   @Input() typetext: string = 'Hallo';
   @Input() placeholder: string = '';
   @Input() labeltext: string = '';
+  @Input() nameOfNgModel: string = '';
+
+
+
+
+
+
+
 }

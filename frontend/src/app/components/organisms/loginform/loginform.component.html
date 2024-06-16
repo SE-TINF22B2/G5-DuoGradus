@@ -3,18 +3,12 @@
   <div class="center">
     <h2 class="form-title" id="login">Login</h2>
     <div class="form-holder">
-      <app-inputfield
-        [labeltext]="'Username'"
-        [typetext]="'text'"
-        [placeholder]="'Enter Username'"
-      ></app-inputfield>
+
+      <input class="input" type="text" placeholder="Enter Username" [(ngModel)]="username"/>
+
       <div class="password">
-        <app-inputfield
-          [labeltext]="'Password'"
-          [typetext]="passwordFieldType"
-          [placeholder]="'Enter Password'"
-        >
-        </app-inputfield>
+        <input class="input" type="password" placeholder="Enter Password" [(ngModel)]="password"/>
+
         <span class="eyeimg" (click)="toggleType()"
           ><img class="img" [src]="img || '../../../../assets/ausblenden.png' "
         /></span>

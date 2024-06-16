@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EventService } from 'app/services/event.service';
 
 @Component({
   selector: 'app-signupform',
@@ -18,4 +19,12 @@ export class SignupformComponent {
       ? '../../../assets/icons/ausblenden.png'
       : '../../../assets/icons/aussicht.png';
   }
-}
+
+  constructor(public event:EventService) {}
+
+
+  }
+
+
+
+

@@ -57,10 +57,14 @@
   }
 
   .training-infos {
+    margin-top: 30px;
+    margin-bottom: 30px;
     display: flex;
-    justify-content: start;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     width: 100%;
-    margin-left: 130px;
+
     ul {
       margin-top: 30px;
       font-size: 12px;
