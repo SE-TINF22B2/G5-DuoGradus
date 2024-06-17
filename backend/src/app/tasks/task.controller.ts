@@ -13,11 +13,14 @@ import {
   FitnessDataNotAvailable,
   TaskAlreadyCompleted,
   TaskNotAvailableError,
+  TaskNotStartedError,
   TaskService,
 } from './task.service';
 import { AutoGuard } from '../../auth/auto.guard';
 import { NestRequest } from '../../types/request.type';
 import { Response } from 'express';
+import { Validate } from 'class-validator';
+import { TaskAction, TaskStartStopDTO } from './dto/TaskStartStopDTO';
 
 @Controller('task')
 export class TaskController {
@@ -33,20 +36,17 @@ export class TaskController {
 
   @Put('/:id')
   @UseGuards(AutoGuard)
+  @Validate(TaskStartStopDTO)
   public async putTask(
     @Req() req: NestRequest,
     @Param('id') id: string,
-    @Body('action') action: string,
+    @Body() taskAction: TaskStartStopDTO,
     @Res() response: Response,
   ) {
-    if (action == 'start') {
+    if (taskAction.action == TaskAction.START) {
       return this.startTask(req, id, response);
-    } else if (action == 'stop') {
+    } else if (taskAction.action == TaskAction.STOP) {
       return this.stopTask(req, id, response);
-    } else {
-      response
-        .status(500)
-        .json({ error: 'action must be either start or stop' });
     }
   }
 
@@ -80,11 +80,19 @@ export class TaskController {
   }
 
   private async stopTask(req: NestRequest, id: string, response: Response) {
-    await this.taskService.stopTask(req.user.id, id);
+    try {
+      await this.taskService.stopTask(req.user.id, id);
 
-    const task = await this.taskService.getTask(req.user.id, id);
+      const task = await this.taskService.getTask(req.user.id, id);
 
-    response.status(200).json(task?.getInfo());
+      response.status(200).json(task?.getInfo());
+    } catch (e) {
+      if (e instanceof TaskNotStartedError) {
+        return response.status(400).json({ error: 'Task not started' });
+      }
+
+      return response.status(500).json({ error: 'Unknown error' });
+    }
   }
 
   @Get('/:id')

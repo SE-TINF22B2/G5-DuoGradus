@@ -11,6 +11,7 @@ export class Task1 extends StepTask {
       id: '1',
       title: 'Ein leichter Start',
       description: 'Erreiche mindestens 100 Schritte',
+      points: 10,
       conditions: [],
       status: this.userStatus,
       start: this.start ? dayjs(this.start).format() : undefined,

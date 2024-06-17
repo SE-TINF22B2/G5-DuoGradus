@@ -10,6 +10,7 @@ export class Task3 extends StepTask {
       id: '3',
       title: 'Deine Reise wird fortgesetzt',
       description: 'Erreiche mindestens 2.000 Schritte',
+      points: 10,
       conditions: [],
       status: this.userStatus,
     };

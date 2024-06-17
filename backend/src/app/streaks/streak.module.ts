@@ -7,5 +7,6 @@ import { StreakController } from './streak.controller';
   imports: [PrismaModule],
   providers: [StreakService],
   controllers: [StreakController],
+  exports: [StreakService],
 })
 export class StreakModule {}

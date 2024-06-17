@@ -7,6 +7,7 @@ import { TaskLog } from '@prisma/client';
 import { FitnessService } from '../../integration/fitness/fitness.service';
 import { Task2 } from './tasks/static/task2';
 import { Task3 } from './tasks/static/task3';
+import { StreakService } from '../streaks/streak.service';
 
 export class ConcurrentTaskError extends Error {}
 export class TaskNotAvailableError extends Error {}
@@ -19,6 +20,7 @@ export class TaskService {
   constructor(
     private taskRepository: TaskRepository,
     private fitnessService: FitnessService,
+    private streakService: StreakService,
   ) {}
 
   private availableTasks = {
@@ -143,7 +145,7 @@ export class TaskService {
     // Retrieve the fitness data
     const fitnessData = await this.fitnessService.getFitnessDataForUser(user);
 
-    // Verify the task#
+    // Verify the task
     const taskValidator = new this.availableTasks[log.task]();
     const result = taskValidator.validate(
       JSON.parse(log.metadata!),
@@ -151,6 +153,9 @@ export class TaskService {
     );
 
     console.debug(`Fitness Task verified: ${result}`);
+
+    // Increase the points of the user
+    this.streakService.addPoints(user, taskValidator.getInfo().points);
 
     this.taskRepository.updateTaskLog(user, task, {
       status: result ? 'completed' : 'failed',
