@@ -14,7 +14,6 @@ import { AutoGuard } from '../../auth/auto.guard';
 import { PatchUserDTO } from './patch.user.dto';
 import { RegisterUserDTO } from './register.user.dto';
 import { AuthService } from '../../auth/auth.service';
-import { UserRepository } from '../../db/repositories/user.repository';
 import { NestRequest } from '../../types/request.type';
 
 type SanitizedUser = Omit<User, 'password'>;

@@ -63,7 +63,7 @@ describe('AuthService', () => {
   it('should be able to create a user and hash the password', async () => {
     jest
       .spyOn(service, 'hashPassword')
-      .mockImplementation(async (password) => 'HASHED');
+      .mockImplementation(async (_) => 'HASHED');
 
     userRepository.createUser.mockResolvedValue(
       TestConstants.database.users.exampleUser,
