@@ -44,6 +44,7 @@ export class StreakRepository {
     day: number,
     points: number,
     streak = 0,
+    dailyGoalReached = false,
   ): Promise<Points> {
     return await this.prisma.points.create({
       data: {
@@ -51,6 +52,7 @@ export class StreakRepository {
         points,
         day,
         streak,
+        goalReached: dailyGoalReached,
       },
     });
   }
@@ -67,6 +69,7 @@ export class StreakRepository {
     user: string,
     day: number,
     points: number,
+    dailyGoalReached = false,
   ): Promise<Points> {
     return await this.prisma.points.update({
       where: {
@@ -77,6 +80,9 @@ export class StreakRepository {
       },
       data: {
         points,
+        // There is only the option to set this, but not to unset this, so that the goalReached
+        // is not deleted, when a task log is verified.
+        goalReached: dailyGoalReached ? dailyGoalReached : undefined,
       },
     });
   }

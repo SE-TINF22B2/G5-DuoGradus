@@ -8,4 +8,5 @@ export type Streak = {
   points: number;
   streak: number;
   history: StreakHistory[];
+  dailyGoalsReached?: boolean;
 };

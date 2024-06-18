@@ -87,4 +87,17 @@ export class UserRepository {
       where,
     });
   }
+
+  /**
+   * Returns all enabled users
+   *
+   * @returns All enabled users
+   */
+  public async findAllEnabledUsers(): Promise<User[]> {
+    return await this.prisma.user.findMany({
+      where: {
+        enabled: true,
+      },
+    });
+  }
 }

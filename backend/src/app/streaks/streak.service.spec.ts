@@ -7,6 +7,7 @@ import { Points } from '@prisma/client';
 import { TestConstants } from '../../../test/lib/constants';
 import * as dayjs from 'dayjs';
 import { Streak } from './streak.type';
+import { GoalModule } from '../goals/goal.module';
 
 describe('streak service testing', () => {
   let cut: StreakService;
@@ -14,7 +15,7 @@ describe('streak service testing', () => {
 
   beforeAll(async () => {
     const module = await Test.createTestingModule({
-      imports: [PrismaModule],
+      imports: [PrismaModule, GoalModule],
       providers: [StreakService],
     })
       .overrideProvider(StreakRepository)
@@ -64,6 +65,7 @@ describe('streak service testing', () => {
           day: yesterday,
         },
       ],
+      dailyGoalsReached: false,
     } as Streak);
   });
 
@@ -81,6 +83,7 @@ describe('streak service testing', () => {
       points: 0,
       streak: 0,
       history: [],
+      dailyGoalsReached: false,
     } as Streak);
   });
 
