@@ -4,6 +4,7 @@ import { DeepMockProxy, mockDeep } from 'jest-mock-extended';
 import { hashSync } from 'bcrypt';
 import { PrismaClient } from '@prisma/client';
 import { UserRepository } from '../db/repositories/user.repository';
+import { TestConstants } from '../../test/lib/constants';
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -57,5 +58,25 @@ describe('AuthService', () => {
     expect(
       await service.validateUserPassword('max@example.org', 'incorrect'),
     ).toBeNull();
+  });
+
+  it('should be able to create a user and hash the password', async () => {
+    jest
+      .spyOn(service, 'hashPassword')
+      .mockImplementation(async () => 'HASHED');
+
+    userRepository.createUser.mockResolvedValue(
+      TestConstants.database.users.exampleUser,
+    );
+
+    const result = await service.createUser('MOCKED', 'MOCKED', 'MOCKED');
+
+    expect(result).toStrictEqual(TestConstants.database.users.exampleUser);
+    expect(userRepository.createUser).toHaveBeenCalledWith(
+      'MOCKED',
+      'MOCKED',
+      'HASHED',
+      false,
+    );
   });
 });

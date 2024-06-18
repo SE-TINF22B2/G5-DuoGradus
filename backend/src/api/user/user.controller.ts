@@ -14,17 +14,13 @@ import { AutoGuard } from '../../auth/auto.guard';
 import { PatchUserDTO } from './patch.user.dto';
 import { RegisterUserDTO } from './register.user.dto';
 import { AuthService } from '../../auth/auth.service';
-import { UserRepository } from '../../db/repositories/user.repository';
 import { NestRequest } from '../../types/request.type';
 
 type SanitizedUser = Omit<User, 'password'>;
 
 @Controller('user')
 export class UserController {
-  constructor(
-    private authService: AuthService,
-    private userRepository: UserRepository,
-  ) {}
+  constructor(private authService: AuthService) {}
 
   _sanitizeUser(user: User): SanitizedUser {
     const sanitizedUser: SanitizedUser & { password?: string } = user;
@@ -34,13 +30,20 @@ export class UserController {
   }
 
   @Post('/')
-  async postRegister(@Body() userPatch: RegisterUserDTO) {
-    this.userRepository.createUser(
+  async postRegister(@Body() userPatch: RegisterUserDTO, @Res() res: Response) {
+    const user = await this.authService.createUser(
       userPatch.email,
       userPatch.displayName,
       userPatch.password,
-      false,
     );
+
+    if (user) {
+      return res.status(201).json({ status: 'Registration was successfull' });
+    } else {
+      return res
+        .status(500)
+        .json({ status: 'Registration was not successfull' });
+    }
   }
 
   /**
@@ -84,10 +87,7 @@ export class UserController {
     }
 
     if (Object.keys(userChanges).length > 0) {
-      const user = await this.userRepository.updateUser(
-        req.user.id,
-        userChanges,
-      );
+      const user = await this.authService.updateUser(req.user.id, userChanges);
 
       res.status(200).json(this._sanitizeUser(user));
     } else {
