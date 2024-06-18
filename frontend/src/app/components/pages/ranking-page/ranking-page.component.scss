@@ -1,15 +1,27 @@
-#pg-container{
-    min-height: 100vh;
-    background-color: var(--background-black);
-    #pg-ranked-header{
-        text-align: center;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        #headline-wrapper{
-            border: 1px solid var(--white);
-            border-radius: 5em;
-            margin-left:4%;
-            margin-right:4%;
-        }
+/**
+ * Styles for the ranking page component.
+ */
+
+#pg-container {
+  min-height: 100vh;
+  background-color: var(--background-black);
+
+  /**
+     * Styles for the ranked header section.
+     */
+  #pg-ranked-header {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    /**
+         * Styles for the headline wrapper.
+         */
+    #headline-wrapper {
+      border: 1px solid var(--white);
+      border-radius: 5em;
+      margin-left: 4%;
+      margin-right: 4%;
     }
+  }
 }

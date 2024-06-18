@@ -4,6 +4,13 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'timer',
 })
 export class TimerPipe implements PipeTransform {
+  /**
+   * Transforms a number value representing seconds into a string formatted as 'HH:MM:SS'.
+   * If the value is not a number or is NaN, it returns '00:00:00'.
+   *
+   * @param value - The number value representing seconds.
+   * @returns The formatted string in the format 'HH:MM:SS'.
+   */
   transform(value: number): string {
     if (!value || isNaN(value)) {
       return '00:00:00';

@@ -13,9 +13,11 @@ export class LoginformComponent {
   username: string = '';
   showPassword: boolean = false;
 
-  constructor(public authService: AuthService) {
-  }
+  constructor(public authService: AuthService) {}
 
+  /**
+   * Toggles the visibility of the password field.
+   */
   toggleType() {
     this.showPassword = !this.showPassword;
     this.passwordFieldType = this.showPassword ? 'text' : 'password';
@@ -24,16 +26,7 @@ export class LoginformComponent {
       : '../../../../assets/icons/aussicht.png';
   }
 
-  login()
-  {
+  login() {
     this.authService.loginUser(this.username, this.password);
   }
-
-
-
-
-
-
 }
-
-

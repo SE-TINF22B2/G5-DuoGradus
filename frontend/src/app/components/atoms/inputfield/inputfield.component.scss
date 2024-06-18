@@ -1,4 +1,10 @@
+/**
+ * Styles for the input field component.
+ *
+ * FILEPATH: /c:/Users/huber/Desktop/Semester 4/SE-Progammierung/G5-DuoGradus/frontend/src/app/components/atoms/inputfield/inputfield.component.scss
+ */
 .input {
+  // Styles for the input field
   border: 0;
   outline: none;
   box-shadow: none;
@@ -13,8 +19,8 @@
   &:last-child {
     border-bottom: 0;
   }
+
   &::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.4);
   }
 }
-

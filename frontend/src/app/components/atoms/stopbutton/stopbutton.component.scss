@@ -1,3 +1,20 @@
+/**
+ * Styles for the stop button component.
+ *
+ * The stop button is a custom button component used to stop a process or action.
+ * It has a red background color and a white text color.
+ * The button has a fixed position on the page and is 90px wide and 40px high.
+ * It has a border radius of 16px and a border width of 5px at the bottom.
+ * The button transitions the filter property with a duration of 0.2s on hover.
+ * It also has a hover effect that increases the brightness by 10%.
+ * The button can be disabled, in which case it has a different style and the cursor is set to auto.
+ * The button has a pseudo-element after it that adds a red border at the bottom.
+ * The button text has uppercase letters and a font size of 12px.
+ * The button is positioned 140px from the top and 3% from the left of its container.
+ *
+ * @class StopButtonComponent
+ */
+
 .stopbutton {
   appearance: button;
   background-color: #f55959e5;
@@ -28,11 +45,8 @@
   margin-top: 15px;
   position: fixed;
   top: 140px;
-  left: 0%; 
+  left: 0%;
   margin-left: 3%;
-
-
- 
 }
 
 .stopbutton:after {
@@ -73,4 +87,3 @@
   font-weight: 100;
   font-size: 10px;
 }
-

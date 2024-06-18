@@ -8,11 +8,19 @@ import { Router } from '@angular/router';
   styleUrl: './friendpage.component.scss',
 })
 export class FriendpageComponent {
-  constructor(public eventService: EventService, private router: Router) {
+  constructor(
+    public eventService: EventService,
+    private router: Router,
+  ) {
     this.eventService = eventService;
     this.router = router;
   }
 
+  /**
+   * Mockdatas
+   * Array of user objects.
+   * Each user object has an `id` and a `name` property.
+   */
   users = [
     { id: 3, name: 'Alice Smith' },
     { id: 4, name: 'Bob Johnson' },
@@ -26,6 +34,9 @@ export class FriendpageComponent {
     { id: 12, name: 'Alexander Garcia' },
   ];
 
+  /**
+   * This method logs a message to the console and navigates to the '/addfriend' route.
+   */
   addFriend() {
     console.log('add friend');
     this.router.navigate(['/addfriend']);

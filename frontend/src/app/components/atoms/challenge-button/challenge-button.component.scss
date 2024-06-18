@@ -1,3 +1,6 @@
+/**
+ * Styles for the challenge button component.
+ */
 .button-19 {
   appearance: button;
   background-color: #a0a0a0ef;
@@ -29,6 +32,26 @@
   margin-top: 15px;
 }
 
+/**
+ * Styles for the pseudo-element ":after" of the .button-19 class.
+ *
+ * This pseudo-element is used to create a circular background with a border at the bottom of the button.
+ * It is positioned absolutely and covers the entire button.
+ *
+ * CSS Properties:
+ * - background-clip: Specifies how the background image or color should be clipped.
+ * - background-color: Specifies the background color of the pseudo-element.
+ * - border: Specifies the border style of the pseudo-element.
+ * - border-radius: Specifies the border radius of the pseudo-element, making it circular.
+ * - border-width: Specifies the width of the border at the bottom of the pseudo-element.
+ * - bottom: Specifies the distance between the bottom edge of the pseudo-element and its containing element.
+ * - content: Specifies the content to be displayed in the pseudo-element.
+ * - left: Specifies the distance between the left edge of the pseudo-element and its containing element.
+ * - position: Specifies the positioning method of the pseudo-element.
+ * - right: Specifies the distance between the right edge of the pseudo-element and its containing element.
+ * - top: Specifies the distance between the top edge of the pseudo-element and its containing element.
+ * - z-index: Specifies the stack order of the pseudo-element.
+ */
 .button-19:after {
   background-clip: padding-box;
   background-color: var(--white);
@@ -44,25 +67,45 @@
   z-index: -1;
 }
 
+/**
+ * Styles for the .button-19 class when it is the main element or in focus state.
+ * Allows user selection of the element.
+ */
 .button-19:main,
 .button-19:focus {
   user-select: auto;
 }
 
+/**
+ * Styles for the .button-19 class when it is being hovered, not disabled.
+ * Increases the brightness of the button by 10%.
+ */
 .button-19:hover:not(:disabled) {
   filter: brightness(1.1);
   -webkit-filter: brightness(1.1);
 }
 
+/**
+ * Styles for the .button-19 class when it is disabled.
+ * Sets the cursor to auto.
+ */
 .button-19:disabled {
   cursor: auto;
 }
 
+/**
+ * Styles for the active state of the .button-19 class.
+ * This style removes the background and adds a 4px border at the top.
+ */
 .button-19:active {
   border-width: 4px 0 0;
   background: none;
 }
 
+/**
+ * Styles for the #button-top ID.
+ * This style sets the font weight to 100 and font size to 10px.
+ */
 #button-top {
   font-weight: 100;
   font-size: 10px;

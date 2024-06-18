@@ -14,7 +14,6 @@ $font-weight-bold: bold;
     align-items: left;
     text-align: left;
 
-
     #hd-plce,
     #hd-wins {
       border-radius: 12px;
@@ -43,9 +42,7 @@ $font-weight-bold: bold;
     .uc {
       padding-left: 2%;
 
-
       &:last-child {
-
       }
     }
   }
@@ -57,5 +54,3 @@ $font-weight-bold: bold;
     background-color: var(--white);
   }
 }
-
-

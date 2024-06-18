@@ -1,32 +1,49 @@
-$font-size:1.2em;
-#wrapper{
-    height:14vh;
-    text-align: center;
-    padding-top: 1em;
-    margin: 1em 1em 1em 1em;
-    background-color: var(--black-3);
-    border-radius: 1em;
-    display:flex;
-    flex-direction: column;
+/**
+ * This SCSS file defines the styles for the settingsentry component.
+ */
 
+$font-size: 1.2em;
+
+/**
+ * The wrapper element of the settingsentry component.
+ */
+#wrapper {
+  height: 14vh;
+  text-align: center;
+  padding-top: 1em;
+  margin: 1em 1em 1em 1em;
+  background-color: var(--black-3);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
-#value{
-    background-color: var(--white);
-    color: var(--black-2);
-    border-radius: 1em;
-    border-width: 0em;
-    width: 90%;
-    height: 35px;
-    margin:auto;
-    text-align: center;
-    font-size: $font-size;
+/**
+ * The value element of the settingsentry component.
+ */
+#value {
+  background-color: var(--white);
+  color: var(--black-2);
+  border-radius: 1em;
+  border-width: 0em;
+  width: 90%;
+  height: 35px;
+  margin: auto;
+  text-align: center;
+  font-size: $font-size;
 }
 
-#value:focus{
-    border-color: var(--green);
+/**
+ * The focused state of the value element of the settingsentry component.
+ */
+#value:focus {
+  border-color: var(--green);
 }
-#name{
-    font-weight: bold;
-    font-size: $font-size;
+
+/**
+ * The name element of the settingsentry component.
+ */
+#name {
+  font-weight: bold;
+  font-size: $font-size;
 }

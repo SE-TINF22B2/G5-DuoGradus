@@ -1,17 +1,29 @@
+/**
+ * Styles for the friendpage component.
+ */
 .main {
   width: 100%;
   background-color: var(--background-black);
 
+  /**
+   * Styles for the horizontal rule element.
+   */
   hr {
     background-color: var(--white);
     margin-top: 1.5rem;
     width: 93vw;
   }
 
+  /**
+   * Styles for the search button container.
+   */
   .btn-search-container {
     display: flex;
     justify-content: space-between;
 
+    /**
+     * Styles for the search bar container.
+     */
     .searchbar-container {
       display: flex;
       justify-content: start;
@@ -22,23 +34,29 @@
       border-radius: 12px;
       gap: 0.5rem;
       margin-left: 10px;
-
     }
 
+    /**
+     * Styles for the image container.
+     */
     .img-container {
       margin-top: 2px;
       margin-left: 0.5rem;
       filter: invert(100%);
     }
 
-    i.img-container2
-    {
+    /**
+     * Styles for the second image container.
+     */
+    i.img-container2 {
       margin-top: 2px;
       filter: invert(100%);
     }
 
-    .addfriends-button
-    {
+    /**
+     * Styles for the add friends button.
+     */
+    .addfriends-button {
       background-color: var(--green);
       color: var(--white);
       width: 40px;
@@ -50,16 +68,20 @@
       transition: 0.3s;
       margin-right: 1rem;
       margin-top: 1.5rem;
-      transition: background-color 0.1s ease; /* Übergangseigenschaft für die Hintergrundfarbe */
-
-
+      transition: background-color 0.1s ease;
     }
 
+    /**
+     * Styles for the active state of the add friends button.
+     */
     .addfriends-button:active {
-      background-color: lighten(#00ff7f, 30%); /* Die Hintergrundfarbe wird beim Klicken um 20% aufgehellt */
-  }
+      background-color: lighten(#00ff7f, 30%);
+    }
   }
 
+  /**
+   * Styles for the users container.
+   */
   .users-container {
     display: flex;
     flex-direction: column;
@@ -68,10 +90,10 @@
     height: 100vh;
   }
 
-  .usercard:last-child
-  {
+  /**
+   * Styles for the last user card.
+   */
+  .usercard:last-child {
     margin-bottom: 11vh;
   }
-
-
 }

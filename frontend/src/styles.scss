@@ -1,19 +1,22 @@
-@use "app/styles/color.scss";
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+/**
+ * This SCSS file defines the styles for the application.
+ * It imports the color variables from "app/styles/color.scss" and the "League Spartan" font from Google Fonts.
+ * The styles defined in this file are applied to the body and main elements of the application.
+ */
 
+@use "app/styles/color.scss";
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan&display=swap");
 
 body {
-    padding: 0;
-    margin: 0;
-    font-family: 'League Spartan', sans-serif;
-    color: var(--white);
-    background-color: var(--background-color);
-  }
+  padding: 0;
+  margin: 0;
+  font-family: "League Spartan", sans-serif;
+  color: var(--white);
+  background-color: var(--background-color);
+}
 
-  main
-  {
-    display: block;
+main {
+  display: block;
   transition: transform 0.5s ease;
   background-color: var(--background-color);
-
-  }
+}

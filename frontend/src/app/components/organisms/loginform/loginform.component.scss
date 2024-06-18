@@ -1,35 +1,58 @@
+/**
+ * Styles for the login form component.
+ */
 p.create-account {
   font-size: 0.8rem;
   text-align: center;
   margin-top: 20px;
 
+  /**
+   * Styles for the create account link within the login form.
+   */
   a {
     font-weight: bold;
     color: var(--white);
     text-decoration: none;
     margin-top: 20px;
   }
+
+  /**
+   * Styles for the create account link when hovered.
+   */
   a:hover {
     text-decoration: underline;
   }
 }
 
+/**
+ * Styles for the eye image within the login form.
+ */
 .eyeimg {
   justify-content: center;
   align-self: center;
   margin-right: 8px;
   margin-top: 8px;
 
+  /**
+   * Styles for the image within the eye image.
+   */
   .img {
     height: 15px;
     width: 15px;
   }
 }
+
+/**
+ * Styles for the login form.
+ */
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
 
+  /**
+   * Styles for the center container within the login form.
+   */
   .center {
     position: absolute;
     top: calc(50% - 10%);
@@ -44,6 +67,9 @@ p.create-account {
     border-radius: 16px;
     margin-top: 14%;
 
+    /**
+     * Styles for the form title within the center container.
+     */
     .form-title {
       color: var(--white);
       font-size: 1.7em;
@@ -51,6 +77,9 @@ p.create-account {
       margin-top: 30px;
     }
 
+    /**
+     * Styles for the form holder within the center container.
+     */
     .form-holder {
       border-radius: 15px;
       background-color: #fff;
@@ -62,6 +91,9 @@ p.create-account {
       -webkit-transition: all 0.3s ease;
     }
 
+    /**
+     * Styles for the button within the center container.
+     */
     .button {
       background-color: var(--green);
       color: var(--font);
@@ -79,6 +111,9 @@ p.create-account {
       visibility: visible;
       -webkit-transition: all 0.3s ease;
 
+      /**
+       * Styles for the button when hovered.
+       */
       &:hover {
         transition: all 0.1s ease;
         background-color: var(--white);
@@ -87,6 +122,9 @@ p.create-account {
     }
   }
 
+  /**
+   * Styles for the password container within the login form.
+   */
   .password {
     display: flex;
     width: 100%;
@@ -94,11 +132,21 @@ p.create-account {
   }
 }
 
+/**
+ * Media query for screens with a minimum width of 429px.
+ */
 @media screen and (min-width: 429px) {
+  /**
+   * Styles for the login form within the media query.
+   */
   .login {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /**
+     * Styles for the center container within the login form within the media query.
+     */
     .center {
       width: 65%;
       max-width: 300px;
@@ -111,6 +159,9 @@ p.create-account {
   }
 }
 
+/**
+ * Styles for the input fields within the login form.
+ */
 .input {
   border: 0;
   outline: none;
@@ -121,9 +172,16 @@ p.create-account {
   padding: 8px 15px;
   font-size: 12px;
 
+  /**
+   * Styles for the last input field within the login form.
+   */
   &:last-child {
     border-bottom: 0;
   }
+
+  /**
+   * Styles for the input field placeholder text within the login form.
+   */
   &::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.4);
   }

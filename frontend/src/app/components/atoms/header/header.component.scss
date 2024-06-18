@@ -1,26 +1,32 @@
+/**
+ * Styles for the header component.
+ */
+.header {
+  width: 100vw;
+  height: 30px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 14%,
+    rgba(0, 75, 17, 1) 82%,
+    rgba(0, 75, 17, 1) 100%
+  );
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 
-.header
-{
-    width: 100vw;
-    height: 30px;
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 14%, rgba(0,75,17,1) 82%, rgba(0,75,17,1) 100%);
+  /**
+     * Styles for the heading element within the header component.
+     */
+  h3 {
+    color: var(--white-1);
+    font-size: 2rem;
     margin: 0;
-    padding-top: 8px;
-    padding-bottom: 5px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-
-
-
-    h3
-    {
-        color: var(--white-1);
-        font-size: 2rem;
-        margin: 0;
-        text-align: start;
-        align-horizontally: center;
-        margin-left: 1rem;
-    }
+    text-align: start;
+    align-horizontally: center;
+    margin-left: 1rem;
+  }
 }

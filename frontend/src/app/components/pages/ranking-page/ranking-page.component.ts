@@ -3,10 +3,12 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-ranking-page',
   templateUrl: './ranking-page.component.html',
-  styleUrls: ['./ranking-page.component.scss']
+  styleUrls: ['./ranking-page.component.scss'],
 })
 export class RankingPageComponent {
-  //Default values for showcase
+  /**
+   * Mockdatas for the Rankingpage
+   */
   users: any[] = [
     { name: 'Susi', placement: 1, winstreak: 43 },
     { name: 'Max', placement: 2, winstreak: 38 },
