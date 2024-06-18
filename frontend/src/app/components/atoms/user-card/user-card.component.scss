@@ -1,3 +1,6 @@
+/**
+ * Styles for the user card component.
+ */
 .main-container {
   display: flex;
   flex-direction: row;
@@ -9,8 +12,9 @@
   justify-content: space-between;
   gap: 0;
 
-
-
+  /**
+   * Styles for the rank element.
+   */
   .rank {
     background-color: var(--white);
     padding: 5px;
@@ -22,24 +26,33 @@
     color: var(--font);
   }
 
-  .gold
-  {
+  /**
+   * Styles for the gold rank.
+   */
+  .gold {
     background-color: gold;
     color: var(--white);
   }
 
-  .silver
-  {
+  /**
+   * Styles for the silver rank.
+   */
+  .silver {
     background-color: silver;
     color: var(--white);
   }
 
-  .copper
-  {
+  /**
+   * Styles for the copper rank.
+   */
+  .copper {
     background-color: rgb(184, 115, 51);
     color: var(--white);
   }
 
+  /**
+   * Styles for the name element.
+   */
   .name {
     font-size: 1rem;
     margin-left: 5rem;
@@ -47,6 +60,9 @@
     margin-top: 0px;
   }
 
+  /**
+   * Styles for the winstreak element.
+   */
   .winstreak {
     font-size: 1rem;
     margin-left: 1rem;
@@ -54,6 +70,9 @@
     margin-top: 2px;
   }
 
+  /**
+   * Styles for the inner container.
+   */
   .inner-container {
     display: flex;
     flex-direction: row;

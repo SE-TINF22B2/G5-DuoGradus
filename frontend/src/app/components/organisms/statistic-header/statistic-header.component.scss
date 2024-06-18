@@ -1,8 +1,16 @@
+/**
+ * Styles for the header component of the statistics section.
+ */
 .header {
   margin: 0;
   padding: 0;
-  background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,1) 14%, rgba(0,75,17,1) 82%, rgba(0,75,17,1) 100%);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 14%,
+    rgba(0, 75, 17, 1) 82%,
+    rgba(0, 75, 17, 1) 100%
+  );
   width: 100%;
   height: 130px;
   position: fixed;
@@ -10,11 +18,18 @@
   z-index: 1;
 
   box-shadow: 0 0 2px var(--black-2) 2px var(--black-2);
+
+  /**
+   * Styles for the paragraphs within the header component.
+   */
   p {
     margin: 0;
     padding: 0;
   }
 
+  /**
+   * Styles for the image within the header component.
+   */
   img {
     width: 150px;
     height: 50px;
@@ -25,6 +40,9 @@
     margin-left: 18px;
   }
 
+  /**
+   * Styles for the statistic container within the header component.
+   */
   .statistic-container {
     width: calc(100% - 20px); /* 20px für den Rand */
     margin: 0 auto; /* Zentriert den Container horizontal */
@@ -32,14 +50,23 @@
     display: flex;
     justify-content: space-between;
 
+    /**
+     * Styles for the time section within the statistic container.
+     */
     .time {
       width: 30vw;
       margin-left: 10px;
 
+      /**
+       * Styles for the spans within the time section.
+       */
       span {
         color: var(--green);
       }
 
+      /**
+       * Styles for the h2 headings within the time section.
+       */
       h2 {
         margin: 0;
         margin-top: 10px;
@@ -47,14 +74,23 @@
       }
     }
 
+    /**
+     * Styles for the steps section within the statistic container.
+     */
     .steps {
       width: 30vw;
       margin-left: 35px;
 
+      /**
+       * Styles for the spans within the steps section.
+       */
       span {
         color: var(--green);
       }
 
+      /**
+       * Styles for the h2 headings within the steps section.
+       */
       h2 {
         margin: 0;
         margin-top: 10px;
@@ -62,17 +98,27 @@
       }
     }
 
+    /**
+     * Styles for the streak section within the statistic container.
+     */
     .streak {
       width: 30vw;
       display: flex;
       justify-content: center;
       align-items: start;
+
+      /**
+       * Styles for the images within the streak section.
+       */
       img {
         width: 25px;
         height: 25px;
         margin-right: 8px;
       }
 
+      /**
+       * Styles for the h2 headings within the streak section.
+       */
       h2 {
         margin: 0;
         margin-top: 7px;

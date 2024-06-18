@@ -1,20 +1,29 @@
-#wrapper{
-    background-color: var(--white);
-    text-align: center;
-    height: 6em;
-    color: var(--font);
-    text-indent: 0em;
-    border-radius: 1em;
-    display: flex;
-    flex-direction: column;
-    min-width: 8em;
-    padding: 0.5em;
-    div{
-        height: 40%;
-        width: 100%;
-    }
+/**
+ * Styles for the statistic entry component.
+ */
+
+#wrapper {
+  background-color: var(--white);
+  text-align: center;
+  height: 6em;
+  color: var(--font);
+  text-indent: 0em;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  min-width: 8em;
+  padding: 0.5em;
+
+  /**
+     * Styles for the inner div element.
+     */
+  div {
+    height: 40%;
+    width: 100%;
+  }
 }
-#name{
-    padding-top: 1em;
-    font-weight: bold;
+
+#name {
+  padding-top: 1em;
+  font-weight: bold;
 }

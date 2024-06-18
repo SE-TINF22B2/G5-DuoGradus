@@ -4,14 +4,17 @@ import { EventService } from 'app/services/event.service';
 @Component({
   selector: 'app-signupform',
   templateUrl: './signupform.component.html',
-  styleUrl: './signupform.component.scss'
+  styleUrl: './signupform.component.scss',
 })
 export class SignupformComponent {
-
   passwordFieldType: string = 'password';
   img: string = '../../../assets/ausblenden.png';
   showPassword: boolean = false;
 
+  /**
+   * Toggles the visibility of the password field.
+   * Updates the password field type and the image source accordingly.
+   */
   toggleType() {
     this.showPassword = !this.showPassword;
     this.passwordFieldType = this.showPassword ? 'text' : 'password';
@@ -20,11 +23,5 @@ export class SignupformComponent {
       : '../../../assets/icons/aussicht.png';
   }
 
-  constructor(public event:EventService) {}
-
-
-  }
-
-
-
-
+  constructor(public event: EventService) {}
+}

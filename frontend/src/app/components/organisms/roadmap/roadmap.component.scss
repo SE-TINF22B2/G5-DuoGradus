@@ -1,3 +1,6 @@
+/**
+ * Styles for the roadmap component.
+ */
 .map {
   margin-top: 130px;
   height: 100vh;
@@ -8,18 +11,30 @@
   margin-bottom: 10vh;
 }
 
+/**
+ * Styles for hiding the scrollbar in the roadmap component.
+ */
 .map::-webkit-scrollbar {
   display: none;
 }
 
+/**
+ * Styles for the buttons in the roadmap component.
+ */
 .button {
   margin-right: 50px;
 }
 
+/**
+ * Styles for the last button in the roadmap component.
+ */
 .button:last-child {
   margin-bottom: 11vh;
 }
 
+/**
+ * Styles for the odd-numbered buttons in the roadmap component.
+ */
 .button:nth-child(odd) {
   margin-left: 100px;
 }

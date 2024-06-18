@@ -1,67 +1,84 @@
-#wrapper{
-    background-color: var(--background-black);
-    height: 100vh;
+/**
+ * Styles for the settings page component.
+ */
+
+#wrapper {
+  background-color: var(--background-black);
+  height: 100vh;
 }
-#header{
-    height: 4em;
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 14%, rgba(0,75,17,1) 82%, rgba(0,75,17,1) 100%);
-    display: flex;
-    flex: 1 2 auto;
-    justify-content: space-between;
+
+#header {
+  height: 4em;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 14%,
+    rgba(0, 75, 17, 1) 82%,
+    rgba(0, 75, 17, 1) 100%
+  );
+  display: flex;
+  flex: 1 2 auto;
+  justify-content: space-between;
 }
-#close-settings{
-    width: auto;
-    height: 60%;
-    margin: auto;
-    margin-left: 5%;
-    filter: invert(1);
-    padding-bottom: 0.3em;
+
+#close-settings {
+  width: auto;
+  height: 60%;
+  margin: auto;
+  margin-left: 5%;
+  filter: invert(1);
+  padding-bottom: 0.3em;
 }
-#headline{
-    font-size: 2em;
-    color: var(--white);
-    margin: auto;
+
+#headline {
+  font-size: 2em;
+  color: var(--white);
+  margin: auto;
 }
-#save{
-    margin: auto;
-    margin-right: 5%;
-    font-size: 1.2em;
-    color: var(--white);
-    text-align: right;
+
+#save {
+  margin: auto;
+  margin-right: 5%;
+  font-size: 1.2em;
+  color: var(--white);
+  text-align: right;
 }
-#avatar{
-    height: 30vh;
-    text-align: center;
-    padding-top: 1em;
-    margin: 1em 1em 1em 1em;
-    background-color: var(--black-3);
-    border-radius: 1em;
+
+#avatar {
+  height: 30vh;
+  text-align: center;
+  padding-top: 1em;
+  margin: 1em 1em 1em 1em;
+  background-color: var(--black-3);
+  border-radius: 1em;
 }
-#avatar-img{
-    height: 70%;
+
+#avatar-img {
+  height: 70%;
 }
-#change-avatar{
-    margin-top: 0.5em;
-    font-size: 1.5em;
+
+#change-avatar {
+  margin-top: 0.5em;
+  font-size: 1.5em;
 }
+
 @media (height <= 400px) {
-    #change-avatar{
-        font-size: 0.5em;
-    }
+  #change-avatar {
+    font-size: 0.5em;
+  }
 }
-#logout{
-    text-align: center;
+
+#logout {
+  text-align: center;
 }
-#logout-bt{
-    background-color: var(--green);
-    color: var(--black-2);
-    border-radius: 1em;
-    border-width: 0em;
-    height: 35px;
-    width: 50%;
-    font-size: 1em;
-    font-weight: bold;
 
-
+#logout-bt {
+  background-color: var(--green);
+  color: var(--black-2);
+  border-radius: 1em;
+  border-width: 0em;
+  height: 35px;
+  width: 50%;
+  font-size: 1em;
+  font-weight: bold;
 }
