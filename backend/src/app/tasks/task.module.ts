@@ -4,9 +4,10 @@ import { TaskService } from './task.service';
 import { TaskController } from './task.controller';
 import FitnessModule from '../../integration/fitness/fitness.module';
 import { StreakModule } from '../streaks/streak.module';
+import { NotificationModule } from '../../notification/notification.module';
 
 @Module({
-  imports: [PrismaModule, FitnessModule, StreakModule],
+  imports: [PrismaModule, FitnessModule, StreakModule, NotificationModule],
   providers: [TaskService],
   controllers: [TaskController],
 })

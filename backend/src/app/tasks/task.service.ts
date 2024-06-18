@@ -8,6 +8,7 @@ import { FitnessService } from '../../integration/fitness/fitness.service';
 import { Task2 } from './tasks/static/task2';
 import { Task3 } from './tasks/static/task3';
 import { StreakService } from '../streaks/streak.service';
+import { NotificationService } from '../../notification/notification.service';
 
 export class ConcurrentTaskError extends Error {}
 export class TaskNotAvailableError extends Error {}
@@ -21,6 +22,7 @@ export class TaskService {
     private taskRepository: TaskRepository,
     private fitnessService: FitnessService,
     private streakService: StreakService,
+    private notificationService: NotificationService,
   ) {}
 
   private availableTasks = {
@@ -146,19 +148,30 @@ export class TaskService {
     const fitnessData = await this.fitnessService.getFitnessDataForUser(user);
 
     // Verify the task
-    const taskValidator = new this.availableTasks[log.task]();
-    const result = taskValidator.validate(
+    const taskValidator: Task = new this.availableTasks[log.task]();
+    const isCompleted = taskValidator.validate(
       JSON.parse(log.metadata!),
-      fitnessData,
+      fitnessData!,
     );
 
-    console.debug(`Fitness Task verified: ${result}`);
+    console.debug(`Fitness Task verified: ${isCompleted}`);
 
-    // Increase the points of the user
-    this.streakService.addPoints(user, taskValidator.getInfo().points);
+    if (isCompleted) {
+      const taskInfo = taskValidator.getInfo();
+
+      // Increase the points of the user
+      this.streakService.addPoints(user, taskInfo.points);
+
+      // send notification
+      this.notificationService.notify(
+        user,
+        'DuoGradus Task completed!',
+        `Congratulations! You completed the task ${taskInfo.title}. You received ${taskInfo.points} points.`,
+      );
+    }
 
     this.taskRepository.updateTaskLog(user, task, {
-      status: result ? 'completed' : 'failed',
+      status: isCompleted ? 'completed' : 'failed',
     });
   }
 }
