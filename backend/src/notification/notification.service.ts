@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { EmailNotifier } from './emailNotifier';
-import { UserRepository } from 'src/db/repositories/user.repository';
+import { UserRepository } from '../db/repositories/user.repository';
 
 @Injectable()
 export class NotificationService {

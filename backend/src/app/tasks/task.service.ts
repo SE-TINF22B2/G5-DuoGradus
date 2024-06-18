@@ -8,7 +8,7 @@ import { FitnessService } from '../../integration/fitness/fitness.service';
 import { Task2 } from './tasks/static/task2';
 import { Task3 } from './tasks/static/task3';
 import { StreakService } from '../streaks/streak.service';
-import { NotificationService } from 'src/notification/notification.service';
+import { NotificationService } from '../../notification/notification.service';
 
 export class ConcurrentTaskError extends Error {}
 export class TaskNotAvailableError extends Error {}
