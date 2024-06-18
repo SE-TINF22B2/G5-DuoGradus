@@ -20,6 +20,7 @@ model User {
   providers          FitnessProviderCredential[]
   notificationMethod String                      @default("EMAIL")
   Points             Points[]
+  Goal               Goal[]
 }
 
 model FitnessProviderCredential {
@@ -52,4 +53,17 @@ model Points {
   streak Int
 
   @@id([userId, day])
+}
+
+model Goal {
+  userId String
+  owner  User     @relation(fields: [userId], references: [id])
+  type   String
+  source String
+  target Float
+  value  Float
+  metric String
+  synced DateTime
+
+  @@id([userId, type])
 }
