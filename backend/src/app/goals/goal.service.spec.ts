@@ -79,7 +79,7 @@ describe('GoalService', () => {
         target: 200,
         value: 100,
         metric: 'steps',
-        synced: dayjs().subtract(2, 'hours').toDate(),
+        synced: goal.synced,
       } as Goal);
 
       const goals = await goalService.getGoalsForUser(
