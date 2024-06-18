@@ -121,21 +121,26 @@ export class StreakService {
    * @param user ID of the user
    */
   private async verifyDailyGoalsForUser(user: string) {
-    // Verify that the daily goals have not been met yet.
-    const streak = await this.getStreakOf(user);
+    try {
+      // Verify that the daily goals have not been met yet.
+      const streak = await this.getStreakOf(user);
 
-    if (streak.dailyGoalsReached == true) {
-      return;
-    }
+      if (streak.dailyGoalsReached == true) {
+        return;
+      }
 
-    const goals = await this.goalService.getGoalsForUser(user);
+      const goals = await this.goalService.getGoalsForUser(user);
 
-    if (goals.length > 0) {
-      for (const goal of goals) {
-        if (goal.value > goal.target) {
-          await this.addPoints(user, 10, true);
+      if (goals.length > 0) {
+        for (const goal of goals) {
+          if (goal.value > goal.target) {
+            await this.addPoints(user, 10, true);
+          }
         }
       }
+    } catch (e) {
+      // If something fails here, this should not stop the others
+      console.warn(e);
     }
   }
 
