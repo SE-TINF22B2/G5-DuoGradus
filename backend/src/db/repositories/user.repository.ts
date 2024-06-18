@@ -7,6 +7,20 @@ export class UserRepository {
   constructor(private prisma: PrismaService) {}
 
   /**
+   * Returns a user by his user id
+   *
+   * @param id
+   * @returns
+   */
+  public async findById(id: string): Promise<User | null> {
+    return await this.prisma.user.findUnique({
+      where: {
+        id,
+      },
+    });
+  }
+
+  /**
    * Returns a user by his email address
    *
    * @param email
