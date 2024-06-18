@@ -24,7 +24,18 @@ export class GoalService {
   }
 
   public async refreshGoals(userId, existing: Goal[]): Promise<Goal[]> {
-    const fitnessData = await this.fitnessService.getFitnessDataForUser(userId);
+    // Verify that the user has at least ony fitness service configured
+    const providers = await this.fitnessService.getDatasourcesForUser(userId);
+
+    if (providers.length < 1) return [];
+
+    let fitnessData;
+    try {
+      fitnessData = await this.fitnessService.getFitnessDataForUser(userId);
+    } catch (e) {
+      // Seems that the fitness provider is not available anymore
+      return [];
+    }
 
     if (!fitnessData) {
       throw new FitnessDataNotAvailable();

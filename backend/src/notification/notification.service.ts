@@ -21,7 +21,7 @@ export class NotificationService {
 
     // only supports email notifications for now
     this.notifiers?.[user?.notificationMethod ?? '']?.notify(
-      userId,
+      user,
       title,
       content,
     );

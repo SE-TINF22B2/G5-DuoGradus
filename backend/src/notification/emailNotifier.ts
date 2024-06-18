@@ -17,11 +17,15 @@ export class EmailNotifier implements Notifier {
   }
 
   async notify(user: User, title: string, content: string) {
-    await this.transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: user.email,
-      subject: title,
-      text: content,
-    });
+    try {
+      await this.transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: user.email,
+        subject: title,
+        text: content,
+      });
+    } catch (e) {
+      console.warn('Error while sending an email: ', e);
+    }
   }
 }

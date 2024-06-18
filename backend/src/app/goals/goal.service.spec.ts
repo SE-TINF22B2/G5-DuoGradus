@@ -8,6 +8,7 @@ import { TestConstants } from '../../../test/lib/constants';
 import * as dayjs from 'dayjs';
 import { FitnessData } from '../../integration/fitness/fitness.data';
 import { FitnessGoal } from '../../integration/fitness/fitness.goal';
+import { MockProvider } from '../../integration/fitness/providers/mock.provider';
 
 describe('GoalService', () => {
   let goalService: GoalService;
@@ -72,6 +73,10 @@ describe('GoalService', () => {
           } as FitnessGoal,
         ],
       } as FitnessData);
+
+      fitnessService.getDatasourcesForUser.mockResolvedValue([
+        new MockProvider(),
+      ]);
 
       goalRepository.updateGoal.mockResolvedValue({
         userId: TestConstants.database.users.exampleUser.id,
