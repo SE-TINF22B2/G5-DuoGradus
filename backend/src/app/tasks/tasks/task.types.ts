@@ -2,6 +2,7 @@ export type TaskInfo = {
   id: string;
   title: string;
   description: string;
+  points: number;
   conditions: {
     name: string;
     description: string;

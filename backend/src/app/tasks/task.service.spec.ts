@@ -7,6 +7,8 @@ import { FitnessService } from '../../integration/fitness/fitness.service';
 import FitnessModule from '../../integration/fitness/fitness.module';
 import { TestConstants } from '../../../test/lib/constants';
 import { MockProvider } from '../../integration/fitness/providers/mock.provider';
+import { StreakModule } from '../streaks/streak.module';
+import { StreakService } from '../streaks/streak.service';
 
 describe('task service tests', () => {
   let taskService: TaskService;
@@ -15,13 +17,15 @@ describe('task service tests', () => {
 
   beforeAll(async () => {
     const testModule = await Test.createTestingModule({
-      imports: [PrismaModule, FitnessModule],
+      imports: [PrismaModule, FitnessModule, StreakModule],
       providers: [TaskService],
     })
       .overrideProvider(TaskRepository)
       .useValue(mockDeep<TaskRepository>())
       .overrideProvider(FitnessService)
       .useValue(mockDeep<FitnessService>())
+      .overrideProvider(StreakService)
+      .useValue(mockDeep<StreakService>())
       .compile();
 
     taskService = testModule.get(TaskService);

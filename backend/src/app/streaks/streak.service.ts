@@ -38,7 +38,7 @@ export class StreakService {
       points,
       streak,
       history: isStreak
-        ? streakEntries.map((s) => {
+        ? streakEntries.slice(0, streak + 1).map((s) => {
             return {
               day: s.day,
               points: s.points,
@@ -70,6 +70,8 @@ export class StreakService {
       this.repository.updatePoints(user, today, history[0].points + points);
     } else if (history[0].day == yesterday) {
       this.repository.createStreak(user, points, history[0].streak);
+    } else {
+      this.createStreak(user, points, 0);
     }
   }
 
