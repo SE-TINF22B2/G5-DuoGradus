@@ -10,6 +10,7 @@ services:
       - backend
     volumes:
       - database:/usr/src/app/database
+      - ${PWD}/.env/usr/src/app/.env
   webserver:
     build: ./frontend
     ports:
