@@ -47,6 +47,22 @@ frontend
 
 Zusätlich befindet sich zu jeder Datei eine Testdatei.
 
+### EventService
+
+---
+
+Der EventService wird verwendet, um Daten zwischen den Komponenten auszutauschen. Dazu müssen die Komponenten den EventService importieren und ihn im Konstruktor einbinden.
+
+```ts
+import { EventService } from 'app/services/event.service';
+
+[...]
+
+ constructor(public eventService: EventService) {
+    this.eventService = eventService;
+  }
+```
+
 ### LoaderService
 
 ---
@@ -97,3 +113,30 @@ constructor(private LoaderService: LoaderService) { }
 ---
 
 Die Kommunikation mit dem Backend erfolgt über eine REST-API. Eine Service-Klasse sendet HTTP-Anfragen an das Backend, und die eingehenden Daten werden von den Komponenten genutzt. Der Service wird im Konstruktor der Komponenten aufgerufen.
+
+#### Bsp:
+
+Das folgende Diagramm veranschaulicht die Kommunikation, die zur Abfrage der "Tasks" vom Backend zuständig ist:
+
+```mermaid
+sequenceDiagram
+
+actor U as User
+participant D as RoadmapComponent
+participant F as MainpageService
+participant B as Backend
+
+activate U
+U->>D: ruft Seite auf
+
+activate D
+D->>F: löst getListOfAllTasks() aus
+
+activate B
+F->>B: schickt http-get Befehl
+B->>F: response: Task als JSON
+
+F->>D: seichert Daten in taskdata
+D->>U: lädt die Daten in UI
+
+```

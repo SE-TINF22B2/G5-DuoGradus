@@ -77,7 +77,13 @@ export default withMermaid({
         {
           text: 'Frontend',
           link: '/development/frontend/overview',
-          items: [{ text: 'Testing', link: '/development/frontend/testing' }],
+          items: [
+            { text: 'Testing', link: '/development/frontend/testing' },
+            {
+              text: 'Technical documentation',
+              link: '/development/frontend/technical documentation.md',
+            },
+          ],
         },
       ],
     },
