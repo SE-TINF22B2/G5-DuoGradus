@@ -12,6 +12,7 @@ import { NotificationModule } from './notification/notification.module';
 import { TaskModule } from './app/tasks/task.module';
 import { StreakModule } from './app/streaks/streak.module';
 import { GoalModule } from './app/goals/goal.module';
+import { WebcronModule } from './app/webcron/webcron.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { GoalModule } from './app/goals/goal.module';
     TaskModule,
     StreakModule,
     GoalModule,
+    WebcronModule,
   ],
   controllers: [AppController, UserController],
   providers: [

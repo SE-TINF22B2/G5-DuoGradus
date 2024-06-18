@@ -7,6 +7,7 @@ import FitnessModule from '../../integration/fitness/fitness.module';
 @Module({
   imports: [PrismaModule, FitnessModule],
   providers: [GoalService],
+  exports: [GoalService],
   controllers: [GoalController],
 })
 export class GoalModule {}

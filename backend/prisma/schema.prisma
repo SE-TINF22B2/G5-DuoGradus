@@ -46,11 +46,12 @@ model TaskLog {
 }
 
 model Points {
-  userId String
-  owner  User   @relation(fields: [userId], references: [id])
-  day    Int
-  points Int
-  streak Int
+  userId      String
+  owner       User    @relation(fields: [userId], references: [id])
+  day         Int
+  points      Int
+  streak      Int
+  goalReached Boolean @default(false)
 
   @@id([userId, day])
 }

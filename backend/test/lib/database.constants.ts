@@ -42,18 +42,21 @@ export const PointEntries = {
     day: parseInt(dayjs().subtract(1, 'day').format('YYMMDD')),
     points: 10,
     streak: 0,
+    goalReached: false,
   } as Points,
   streakTwoDaysAgo: {
     userId: Users.exampleUser.id,
     day: parseInt(dayjs().subtract(2, 'days').format('YYMMDD')),
     points: 10,
     streak: 0,
+    goalReached: false,
   } as Points,
   noStreakToday: {
     userId: Users.exampleUser.id,
     day: parseInt(dayjs().format('YYMMDD')),
     points: 10,
     streak: 0,
+    goalReached: false,
   },
 };
 
