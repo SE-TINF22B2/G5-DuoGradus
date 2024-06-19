@@ -25,6 +25,7 @@ export default withMermaid({
             { text: 'Das User Interface', link: '/project/user-interface' },
           ],
         },
+        { text: 'Projektübernahme', link: '/project/project-takeover' },
       ],
 
       '/reports/': [
