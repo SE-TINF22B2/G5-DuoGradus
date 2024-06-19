@@ -9,6 +9,7 @@ import { Task2 } from './tasks/static/task2';
 import { Task3 } from './tasks/static/task3';
 import { StreakService } from '../streaks/streak.service';
 import { NotificationService } from '../../notification/notification.service';
+import { Task4 } from './tasks/static/task4';
 
 export class ConcurrentTaskError extends Error {}
 export class TaskNotAvailableError extends Error {}
@@ -29,6 +30,7 @@ export class TaskService {
     '1': Task1,
     '2': Task2,
     '3': Task3,
+    '4': Task4,
   };
 
   private getLogForTask(logs: TaskLog[], task: string): TaskLog | undefined {
