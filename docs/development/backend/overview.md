@@ -21,3 +21,11 @@ Innerhalb des Projekts wird `TypeORM` verwendet, da dieses bereits eine gute Int
 TypeORM bietet zwei Ansätze für den Datenzugriff: Entweder über das "Data Mapper pattern", welches Repositories verwendet, oder das "Active Record" pattern, welches ohne Repositories auskommt.
 Beide haben ähnliche Prinzipien, der einzige Unterschied ist das bei Repositories eine zusätzliche Klasse den Zugriff regelt. Da diese im Normalfall an eine Entität gebunden ist, bietet diese in diesem Fall keine bekannten Vorteile.
 Zunächst wird der "Active Record" Weg gewählt.
+
+## Architektur
+
+![Architekturetwurf](/concept/architecture.jpg)
+
+## ER-Diagram
+
+![ER-Diagram des Backends](/concept/backend_er-diagram.jpg)
