@@ -7,7 +7,7 @@ export class Task4 extends StepTask {
   }
   getInfo(): TaskInfo {
     return {
-      id: '3',
+      id: '4',
       title: 'Schritte-Meister: Junior',
       description: 'Erreiche mindestens 4.000 Schritte',
       points: 20,
