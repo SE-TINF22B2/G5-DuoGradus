@@ -91,7 +91,7 @@ export class StreakService {
         user,
         today,
         points,
-        history[0].streak,
+        history[0].streak + 1,
         dailyGoalReached,
       );
     } else {
